@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": "netherandend:cooked_strider_meat",
+  "result": {
+    "id": "netherandend:hardened_strider_meat"
+  }
+}

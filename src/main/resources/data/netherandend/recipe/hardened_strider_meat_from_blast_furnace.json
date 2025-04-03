@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": "#minecraft:strider_meat_blastable",
+  "result": {
+    "id": "netherandend:hardened_strider_meat"
+  }
+}

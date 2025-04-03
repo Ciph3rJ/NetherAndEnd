@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "netherandend:block/chorus_slab"
+    },
+    "type=double": {
+      "model": "netherandend:block/chorus_planks"
+    },
+    "type=top": {
+      "model": "netherandend:block/chorus_slab_top"
+    }
+  }
+}

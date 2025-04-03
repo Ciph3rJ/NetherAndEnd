@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catrgory": "building_blocks",
+  "pattern": [
+    " # ",
+    "#F#",
+    " # "
+  ],
+  "key": {
+    "#": "netherandend:chorus_block",
+    "F": "minecraft:furnace"
+  },
+  "result": {
+    "id": "minecraft:smoker",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+// 1.21.4	-999999999-01-01T00:00:00	Nether And End/Tags for minecraft:item
+2c68b715422a68b2d7cf9898c2ed4a2863f334e5 data/minecraft/tags/item/enchantable/fire_aspect.json
+2c68b715422a68b2d7cf9898c2ed4a2863f334e5 data/minecraft/tags/item/enchantable/sharp_weapon.json
+2c68b715422a68b2d7cf9898c2ed4a2863f334e5 data/minecraft/tags/item/enchantable/sword.json
+2c68b715422a68b2d7cf9898c2ed4a2863f334e5 data/minecraft/tags/item/enchantable/vanishing.json
+61aa51db4d2d0e27189573edb0733e7eda0102ef data/minecraft/tags/item/hogchop.json
+1179b82944fbff5d0fbd4257fea0e297818a6a56 data/minecraft/tags/item/meat.json
+37bcc0a70896a99bb9e1713faf485bc6edd021dd data/minecraft/tags/item/strider_meat.json
+a1c422e9812c806de6715112cec5524b0ffa09ba data/minecraft/tags/item/strider_meat_blastable.json

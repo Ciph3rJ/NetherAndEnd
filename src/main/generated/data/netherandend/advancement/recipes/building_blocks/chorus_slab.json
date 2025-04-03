@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_chorus_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherandend:chorus_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "netherandend:chorus_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_chorus_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "netherandend:chorus_slab"
+    ]
+  }
+}

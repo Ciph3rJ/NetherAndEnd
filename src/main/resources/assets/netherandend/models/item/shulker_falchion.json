@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "netherandend:item/shulker_falchion"
+  }
+}
