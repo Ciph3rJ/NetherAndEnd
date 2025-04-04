@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.generators;
+package net.enderboy500.netherandend.datagen.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
@@ -7,8 +7,8 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NetherAndEndWorldGenerator extends FabricDynamicRegistryProvider {
-    public NetherAndEndWorldGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+public class NetherAndEndRegistryProvider extends FabricDynamicRegistryProvider {
+    public NetherAndEndRegistryProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -20,6 +20,6 @@ public class NetherAndEndWorldGenerator extends FabricDynamicRegistryProvider {
 
     @Override
     public String getName() {
-        return "Nether & End World Generator";
+        return "Nether & End Registry Provider";
     }
 }

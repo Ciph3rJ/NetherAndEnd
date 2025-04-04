@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.world;
+package net.enderboy500.netherandend.world.feature;
 
 import net.enderboy500.netherandend.NetherAndEnd;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
@@ -26,7 +26,7 @@ public class NetherAndEndConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> NETHER_EMERALD_ORE_KEY = register("nether_emerald_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> NETHER_LAPIS_ORE_KEY = register("nether_lapis_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> NETHER_DIAMOND_ORE_KEY = register("nether_diamond_ore");
-//    public static final RegistryKey<ConfiguredFeature<?,?>> CRACKED_BEDROCK_KEY = registryKey("cracked_bedrock");
+    public static final RegistryKey<ConfiguredFeature<?,?>> CRACKED_BEDROCK_KEY = register("cracked_bedrock");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> END_COAL_ORE_KEY = register("end_coal_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> END_IRON_ORE_KEY = register("end_iron_ore");
@@ -41,10 +41,10 @@ public class NetherAndEndConfiguredFeatures {
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest netherReplacables = new TagMatchRuleTest(BlockTags.BASE_STONE_NETHER);
         RuleTest endReplacables = new BlockMatchRuleTest(Blocks.END_STONE);
-//        RuleTest bedrockReplacables = new BlockMatchRuleTest(Blocks.BEDROCK);
+        RuleTest bedrockReplacables = new BlockMatchRuleTest(Blocks.BEDROCK);
 
-        List<OreFeatureConfig.Target> netherCoalOres =
-                List.of(OreFeatureConfig.createTarget(netherReplacables, NetherAndEndBlocks.NETHER_COAL_ORE.getDefaultState()));
+        List<OreFeatureConfig.Target> netherCoalOres = List.of(
+                OreFeatureConfig.createTarget(netherReplacables, NetherAndEndBlocks.NETHER_COAL_ORE.getDefaultState()));
         List<OreFeatureConfig.Target> netherIronOres =
                 List.of(OreFeatureConfig.createTarget(netherReplacables, NetherAndEndBlocks.NETHER_IRON_ORE.getDefaultState()));
         List<OreFeatureConfig.Target> netherCopperOres =
@@ -57,8 +57,8 @@ public class NetherAndEndConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(netherReplacables, NetherAndEndBlocks.NETHER_LAPIS_ORE.getDefaultState()));
         List<OreFeatureConfig.Target> netherDiamondOres =
                 List.of(OreFeatureConfig.createTarget(netherReplacables, NetherAndEndBlocks.NETHER_DIAMOND_ORE.getDefaultState()));
-//        List<OreFeatureConfig.Target> crackedBedrock =
-//                List.of(OreFeatureConfig.createTarget(bedrockReplacables, ModBlocks.CRACKED_BEDROCK.getDefaultState()));
+        List<OreFeatureConfig.Target> crackedBedrock =
+                List.of(OreFeatureConfig.createTarget(bedrockReplacables, NetherAndEndBlocks.CRACKED_BEDROCK.getDefaultState()));
 
         List<OreFeatureConfig.Target> endCoalOres =
                 List.of(OreFeatureConfig.createTarget(endReplacables, NetherAndEndBlocks.END_COAL_ORE.getDefaultState()));
@@ -86,7 +86,7 @@ public class NetherAndEndConfiguredFeatures {
         register(context, NETHER_EMERALD_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherEmeraldOres, 4));
         register(context, NETHER_LAPIS_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherLapisOres, 9));
         register(context, NETHER_DIAMOND_ORE_KEY, Feature.ORE, new OreFeatureConfig(netherDiamondOres, 8));
-//        register(context, CRACKED_BEDROCK_KEY, Feature.ORE, new OreFeatureConfig(crackedBedrock, 15));
+        register(context, CRACKED_BEDROCK_KEY, Feature.ORE, new OreFeatureConfig(crackedBedrock, 15));
 
         register(context, END_COAL_ORE_KEY, Feature.ORE, new OreFeatureConfig(endCoalOres, 19));
         register(context, END_IRON_ORE_KEY, Feature.ORE, new OreFeatureConfig(endIronOres, 10));

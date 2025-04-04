@@ -6,6 +6,9 @@ import net.enderboy500.netherandend.util.NetherAndEndUtils;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.item.Items;
+import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +33,7 @@ public class NetherAndEnd implements ModInitializer {
 
 		NetherAndEndBiomeModifications.loadBiomeModifications();
 
-/*		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.HARDENED_SHULKER_PEARL, NetherAndEndPotions.AVERSION_POTION);
 
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.NETHER_WART, NetherAndEndPotions.MALNOURISHMENT_POTION);
@@ -50,6 +53,6 @@ public class NetherAndEnd implements ModInitializer {
 			builder.registerPotionRecipe(NetherAndEndPotions.STRONG_SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NetherAndEndPotions.INSTANT_CURING_POTION);
 
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT, NetherAndEndPotions.INSTANT_WARPING_POTION);
-		});*/
+		});
 	}
 }

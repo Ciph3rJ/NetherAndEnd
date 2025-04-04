@@ -1,10 +1,10 @@
 package net.enderboy500.netherandend;
 
-import net.enderboy500.netherandend.datagen.generators.NetherAndEndWorldGenerator;
+import net.enderboy500.netherandend.datagen.providers.NetherAndEndRegistryProvider;
 import net.enderboy500.netherandend.datagen.generators.NetherAndEndRecipeGenerator;
 import net.enderboy500.netherandend.datagen.providers.NetherAndEndItemTagProvider;
-import net.enderboy500.netherandend.world.NetherAndEndConfiguredFeatures;
-import net.enderboy500.netherandend.world.NetherAndEndPlacedFeatures;
+import net.enderboy500.netherandend.world.feature.NetherAndEndConfiguredFeatures;
+import net.enderboy500.netherandend.world.feature.NetherAndEndPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.data.DataOutput;
@@ -31,7 +31,7 @@ public class NetherAndEndDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(NetherAndEndItemTagProvider::new);
 
 		pack.addProvider(toFactory(NetherAndEndRecipeGenerator.Provider::new, completableFuture));
-		pack.addProvider(NetherAndEndWorldGenerator::new);
+		pack.addProvider(NetherAndEndRegistryProvider::new);
 	}
 
 	@Override

@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.world;
+package net.enderboy500.netherandend.world.feature;
 
 import net.minecraft.world.gen.placementmodifier.*;
 

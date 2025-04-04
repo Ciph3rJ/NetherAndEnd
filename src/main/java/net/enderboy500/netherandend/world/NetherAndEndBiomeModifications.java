@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.world;
 
+import net.enderboy500.netherandend.world.feature.NetherAndEndPlacedFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.gen.GenerationStep;
@@ -41,5 +42,7 @@ public class NetherAndEndBiomeModifications {
                 GenerationStep.Feature.UNDERGROUND_ORES, NetherAndEndPlacedFeatures.ENDER_PEARL_CLUSTER_PLACED_KEY);
     }
 
-    public static void loadBiomeModifications() {}
+    public static void loadBiomeModifications() {
+        oreGeneration();
+    }
 }
