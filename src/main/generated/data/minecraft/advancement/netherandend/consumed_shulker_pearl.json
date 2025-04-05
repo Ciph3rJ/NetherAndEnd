@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:netherandend/entered_nether",
+  "criteria": {
+    "consumed_shulker_pearl": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:shulker_pearl"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.woah_im_flying.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "netherandend:shulker_pearl"
+    },
+    "title": {
+      "translate": "advancement.netherandend.woah_im_flying.title"
+    }
+  },
+  "requirements": [
+    [
+      "consumed_shulker_pearl"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

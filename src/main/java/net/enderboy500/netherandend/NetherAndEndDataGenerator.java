@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend;
 
+import net.enderboy500.netherandend.datagen.providers.NetherAndEndAdvancementProvider;
 import net.enderboy500.netherandend.datagen.providers.NetherAndEndRegistryProvider;
 import net.enderboy500.netherandend.datagen.generators.NetherAndEndRecipeGenerator;
 import net.enderboy500.netherandend.datagen.providers.NetherAndEndItemTagProvider;
@@ -29,6 +30,7 @@ public class NetherAndEndDataGenerator implements DataGeneratorEntrypoint {
 //		pack.addProvider(NetherAndEndBlockLootTableProvider::new);
 //		pack.addProvider(NetherAndEndBlockTagProvider::new);
 		pack.addProvider(NetherAndEndItemTagProvider::new);
+		pack.addProvider(NetherAndEndAdvancementProvider::new);
 
 		pack.addProvider(toFactory(NetherAndEndRecipeGenerator.Provider::new, completableFuture));
 		pack.addProvider(NetherAndEndRegistryProvider::new);

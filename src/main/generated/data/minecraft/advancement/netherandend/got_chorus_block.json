@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:netherandend/entered_nether",
+  "criteria": {
+    "got_chorus_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherandend:chorus_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.end_compacting.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "netherandend:chorus_block"
+    },
+    "title": {
+      "translate": "advancement.netherandend.end_compacting.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_chorus_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

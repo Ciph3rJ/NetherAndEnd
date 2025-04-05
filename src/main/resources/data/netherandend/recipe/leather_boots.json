@@ -5,9 +5,7 @@
     "# #"
   ],
   "key": {
-    "#": {
-      "item": "netherandend:hoglin_skin"
-    }
+    "#": "netherandend:hoglin_skin"
   },
   "result": {
     "id": "minecraft:leather_boots",

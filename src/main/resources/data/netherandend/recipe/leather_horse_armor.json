@@ -1,14 +1,12 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "  #",
+    "# #",
     "###",
     "# #"
   ],
   "key": {
-    "#": {
-      "item": "netherandend:hoglin_skin"
-    }
+    "#": "netherandend:hoglin_skin"
   },
   "result": {
     "id": "minecraft:leather_horse_armor",

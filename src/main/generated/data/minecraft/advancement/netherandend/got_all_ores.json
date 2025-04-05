@@ -1,0 +1,137 @@
+{
+  "parent": "minecraft:netherandend/got_ender_pearl_cluster",
+  "criteria": {
+    "got_all_ores": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:coal_ore"
+          },
+          {
+            "items": "minecraft:iron_ore"
+          },
+          {
+            "items": "minecraft:copper_ore"
+          },
+          {
+            "items": "minecraft:gold_ore"
+          },
+          {
+            "items": "minecraft:redstone_ore"
+          },
+          {
+            "items": "minecraft:emerald_ore"
+          },
+          {
+            "items": "minecraft:lapis_ore"
+          },
+          {
+            "items": "minecraft:diamond_ore"
+          },
+          {
+            "items": "minecraft:deepslate_coal_ore"
+          },
+          {
+            "items": "minecraft:deepslate_iron_ore"
+          },
+          {
+            "items": "minecraft:deepslate_copper_ore"
+          },
+          {
+            "items": "minecraft:deepslate_gold_ore"
+          },
+          {
+            "items": "minecraft:deepslate_redstone_ore"
+          },
+          {
+            "items": "minecraft:deepslate_emerald_ore"
+          },
+          {
+            "items": "minecraft:deepslate_lapis_ore"
+          },
+          {
+            "items": "minecraft:deepslate_diamond_ore"
+          },
+          {
+            "items": "netherandend:nether_coal_ore"
+          },
+          {
+            "items": "netherandend:nether_iron_ore"
+          },
+          {
+            "items": "netherandend:nether_copper_ore"
+          },
+          {
+            "items": "minecraft:nether_gold_ore"
+          },
+          {
+            "items": "netherandend:nether_redstone_ore"
+          },
+          {
+            "items": "netherandend:nether_emerald_ore"
+          },
+          {
+            "items": "netherandend:nether_lapis_ore"
+          },
+          {
+            "items": "netherandend:nether_diamond_ore"
+          },
+          {
+            "items": "minecraft:nether_quartz_ore"
+          },
+          {
+            "items": "minecraft:ancient_debris"
+          },
+          {
+            "items": "netherandend:end_coal_ore"
+          },
+          {
+            "items": "netherandend:end_iron_ore"
+          },
+          {
+            "items": "netherandend:end_copper_ore"
+          },
+          {
+            "items": "netherandend:end_gold_ore"
+          },
+          {
+            "items": "netherandend:end_redstone_ore"
+          },
+          {
+            "items": "netherandend:end_emerald_ore"
+          },
+          {
+            "items": "netherandend:end_lapis_ore"
+          },
+          {
+            "items": "netherandend:end_diamond_ore"
+          },
+          {
+            "items": "netherandend:ender_pearl_cluster"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.ore_collector.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "netherandend:end_diamond_ore"
+    },
+    "title": {
+      "translate": "advancement.netherandend.ore_collector.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_all_ores"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

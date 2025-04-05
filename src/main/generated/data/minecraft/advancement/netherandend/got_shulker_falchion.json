@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:netherandend/consumed_hardened_shulker_pearl",
+  "criteria": {
+    "got_shulker_falchion": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherandend:shulker_falchion"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.the_final_blade.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "netherandend:shulker_falchion"
+    },
+    "title": {
+      "translate": "advancement.netherandend.the_final_blade.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_shulker_falchion"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

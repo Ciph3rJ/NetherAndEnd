@@ -25,7 +25,7 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .pattern("##")
                 .criterion(hasItem(NetherAndEndBlocks.CHORUS_BLOCK), conditionsFromItem(Items.CHORUS_FRUIT))
                 .offerTo(exporter);
-        this.createShapeless(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlocks.CHORUS_PLANKS)
+        this.createShapeless(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlocks.CHORUS_PLANKS, 4)
                 .input(NetherAndEndBlocks.CHORUS_BLOCK)
                 .criterion(hasItem(NetherAndEndBlocks.CHORUS_PLANKS), conditionsFromItem(NetherAndEndBlocks.CHORUS_BLOCK))
                 .offerTo(exporter);
@@ -119,7 +119,8 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .pattern("/S ")
                 .criterion(hasItem(NetherAndEndItems.SHULKER_FALCHION), conditionsFromItem(NetherAndEndItems.SHULKER_PEARL))
                 .offerTo(exporter);
-        this.createShapeless(RecipeCategory.MISC, NetherAndEndItems.WARPED_WART)
+
+        this.createShapeless(RecipeCategory.MISC, NetherAndEndItems.WARPED_WART, 9)
                 .input(Blocks.WARPED_WART_BLOCK)
                 .criterion(hasItem(NetherAndEndItems.WARPED_WART), conditionsFromItem(Blocks.WARPED_WART_BLOCK))
                 .offerTo(exporter);

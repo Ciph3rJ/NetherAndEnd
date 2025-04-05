@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:netherandend/consumed_shulker_pearl",
+  "criteria": {
+    "consumed_hardened_shulker_pearl": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:hardened_shulker_pearl"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.this_is_crunchy.desc"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "netherandend:hardened_shulker_pearl"
+    },
+    "title": {
+      "translate": "advancement.netherandend.this_is_crunchy.title"
+    }
+  },
+  "requirements": [
+    [
+      "consumed_hardened_shulker_pearl"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
