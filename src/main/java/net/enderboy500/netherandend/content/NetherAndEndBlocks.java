@@ -130,45 +130,5 @@ public class NetherAndEndBlocks {
         }, Settings.copy(base));
     }
 
-/*    private static Block createStairsBlock(Block block) {
-        return new StairsBlock(block.getDefaultState(), Settings.copy(block));
-    }
-    private static Block createSlabBlock(Block block) {
-        return new SlabBlock(Settings.copy(block));
-    }
-    private static Block createFenceBlock(Block block, MapColor mapColor, float hardness, float resistance, BlockSoundGroup soundGroup) {
-        return new FenceBlock(Settings.copy(block)
-                .mapColor(mapColor)
-                .solid()
-                .instrument(NoteBlockInstrument.BASS)
-                .strength(hardness, resistance)
-                .sounds(soundGroup));
-    }
-    private static Block createFenceGateBlock(WoodType woodType, Block block, MapColor mapColor, float hardness, float resistance) {
-        return new FenceGateBlock(woodType, Settings.copy(block)
-                .mapColor(mapColor)
-                .solid()
-                .instrument(NoteBlockInstrument.BASS)
-                .strength(hardness, resistance));
-    }
-    private static Block createButtonBlock(BlockSetType blockSetType, int pressTicks, float strength) {
-        return new ButtonBlock(blockSetType, pressTicks, Settings.create().noCollision().strength(strength).pistonBehavior(PistonBehavior.DESTROY));
-    }
-    private static Block createPressurePlateBlock(BlockSetType blockSetType, MapColor mapColor, float strength) {
-        return new PressurePlateBlock(blockSetType, Settings.create().mapColor(mapColor)
-                .solid()
-                .instrument(NoteBlockInstrument.BASEDRUM)
-                .requiresTool()
-                .noCollision()
-                .strength(0.5f)
-                .pistonBehavior(PistonBehavior.DESTROY));
-    }
-    private static Block createDoorBlock(BlockSetType blockSetType, MapColor mapColor, float strength) {
-        return new DoorBlock(blockSetType, Settings.create().mapColor(mapColor).requiresTool().strength(strength).nonOpaque().pistonBehavior(PistonBehavior.DESTROY));
-    }
-    private static Block createTrapdoorBlock(BlockSetType blockSetType, MapColor mapColor, float strength) {
-        return new TrapdoorBlock(blockSetType, Settings.create().mapColor(mapColor).instrument(NoteBlockInstrument.BASS).strength(strength).nonOpaque().allowsSpawning(Blocks::never));
-    }*/
-
     public static void loadBlocks() {}
 }

@@ -45,6 +45,5 @@ public class NetherAndEndPotions {
         return Registry.registerReference(Registries.POTION, Identifier.ofVanilla(name), potion);
     }
 
-    public static void loadPotions() {
-    }
+    public static void loadPotions() {}
 }

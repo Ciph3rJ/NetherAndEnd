@@ -1,7 +1,6 @@
 package net.enderboy500.netherandend;
 
 import net.enderboy500.netherandend.content.*;
-import net.enderboy500.netherandend.util.NetherAndEndIngredients;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
 import net.fabricmc.api.ModInitializer;
@@ -19,10 +18,11 @@ public class NetherAndEnd implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		LOGGER.info("Initializing Nether & End");
+
 		NetherAndEndItems.loadItems();
 		NetherAndEndItemGroups.loadItemGroups();
 		NetherAndEndPotions.loadPotions();
-		NetherAndEndIngredients.loadIngredients();
 
 		NetherAndEndBlocks.loadBlocks();
 
@@ -54,5 +54,7 @@ public class NetherAndEnd implements ModInitializer {
 
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT, NetherAndEndPotions.INSTANT_WARPING_POTION);
 		});
+
+		LOGGER.info("Initializing Nether & End");
 	}
 }

@@ -13,4 +13,6 @@ public class NetherAndEndWoodTypes {
         VALUES.put(type.name(), type);
         return type;
     }
+
+    public static void loadWoodTypes() {}
 }

@@ -45,21 +45,11 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         enderPearlClusterDrop(NetherAndEndBlocks.ENDER_PEARL_CLUSTER);
     }
 
-    public LootTable.Builder oreDrop(Block withSilkTouch, Item withoutSilkTouch) {
-        RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
-        return this.dropsWithSilkTouch(
-                withSilkTouch,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
-                        withSilkTouch, ItemEntry.builder(withoutSilkTouch).apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
-    }
-
     public LootTable.Builder copperOreDrop(Block drop) {
         RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(
                 drop,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                this.applyExplosionDecay(
                         drop,
                         ItemEntry.builder(Items.RAW_COPPER)
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(2.0F, 5.0F)))
@@ -72,7 +62,7 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(
                 drop,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                this.applyExplosionDecay(
                         drop,
                         ItemEntry.builder(Items.LAPIS_LAZULI)
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4.0F, 9.0F)))
@@ -85,7 +75,7 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(
                 drop,
-                (LootPoolEntry.Builder<?>)this.applyExplosionDecay(
+                this.applyExplosionDecay(
                         drop,
                         ItemEntry.builder(Items.REDSTONE)
                                 .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(4.0F, 5.0F)))

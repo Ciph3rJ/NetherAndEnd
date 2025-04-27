@@ -2,13 +2,13 @@ package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
 import net.enderboy500.netherandend.projectiles.DragonChargeItem;
-import net.enderboy500.netherandend.combat.ShulkerFalchionItem;
+import net.enderboy500.netherandend.item.ShulkerFalchionItem;
 import net.enderboy500.netherandend.util.component.NetherAndEndConsumableComponents;
 import net.enderboy500.netherandend.util.component.NetherAndEndFoodComponents;
-import net.enderboy500.netherandend.combat.NetherAndEndToolMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.item.Items;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -24,8 +24,7 @@ public class NetherAndEndItems {
     public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_SOUP).maxCount(1));
     public static final Item ENDER_FRUIT = register("ender_fruit", Item::new, new Settings().food(NetherAndEndFoodComponents.ENDER_FRUIT));
     public static final Item DRAGON_CHARGE = register("dragon_charge", DragonChargeItem::new, new Settings().useCooldown(1));
-    public static final Item SHULKER_FALCHION = register("shulker_falchion",
-            settings -> new ShulkerFalchionItem(NetherAndEndToolMaterials.SHULKER_FALCHION, -1, -2.8f, settings), new Settings());
+    public static final Item SHULKER_FALCHION = register("shulker_falchion", ShulkerFalchionItem::new, new Settings().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F));
 
     public static final Item WARPED_WART = register("warped_wart");;
     public static final Item WARPED_STEW = register("warped_stew", Item::new, new Settings().food(NetherAndEndFoodComponents.WARPED_STEW).maxCount(1).useRemainder(Items.BOWL));

@@ -13,4 +13,6 @@ public class NetherAndEndBlockSetTypes {
         VALUES.put(blockSetType.name(), blockSetType);
         return blockSetType;
     }
+
+    public static void loadBlockSetTypes() {}
 }

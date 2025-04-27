@@ -14,7 +14,7 @@ public class NetherAndEndItemGroups {
             Identifier.of(NetherAndEnd.MOD_ID, "nether_and_end_group"),
             FabricItemGroup.builder()
                     .displayName(Text.translatable("itemgroup.netherandend"))
-                    .icon(() -> new ItemStack(NetherAndEndBlockItems.END_DIAMOND_ORE))
+                    .icon(NetherAndEndBlockItems.END_DIAMOND_ORE::getDefaultStack)
                     .entries((displayContext, entries) -> {
                         entries.add(NetherAndEndBlockItems.NETHER_COAL_ORE);
                         entries.add(NetherAndEndBlockItems.NETHER_IRON_ORE);

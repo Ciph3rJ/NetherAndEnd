@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 
-public abstract class CrumblingBlock extends Block implements LandingBlock {
+public abstract class CrumblingBlock extends Block implements Falling {
     public CrumblingBlock(Settings settings) {
         super(settings);
     }
@@ -63,9 +63,5 @@ public abstract class CrumblingBlock extends Block implements LandingBlock {
                 ParticleUtil.spawnParticle(world, pos, random, ParticleTypes.LAVA);
             }
         }
-    }
-
-    public int getColor(BlockState state, BlockView world, BlockPos pos) {
-        return -16777216;
     }
 }

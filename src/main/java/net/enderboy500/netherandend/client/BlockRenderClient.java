@@ -10,5 +10,7 @@ public class BlockRenderClient {
         BlockRenderLayerMap.INSTANCE.putBlock(NetherAndEndBlocks.CHORUS_TRAPDOOR, RenderLayer.getCutout());
     }
 
-    public static void loadBlockRenderer() {registerBlockRenderer();}
+    public static void loadBlockRenderer() {
+        registerBlockRenderer();
+    }
 }
