@@ -1,0 +1,12 @@
+// 1.21.6	-999999999-01-01T00:00:00	Nether And End/Tags for minecraft:block
+9fc4f355349fe79fce984c9986e89ce97f565b39 data/minecraft/tags/block/chorus.json
+6f5c457a16038b21185601f4b28bb574f9f577b7 data/minecraft/tags/block/coal_ores.json
+9b5f1d67b2782ca4516270907719e0076c0a3bbf data/minecraft/tags/block/copper_ores.json
+a221242a353558e95f6a68a575dfde9a58d0f191 data/minecraft/tags/block/diamond_ores.json
+b5e6deccb99bee776760ce30adde0da8c81c080d data/minecraft/tags/block/emerald_ores.json
+8e47d86332a6b5150331d4d0a4383a9be406ca15 data/minecraft/tags/block/end_ores.json
+d3f77c62476047fb9090198bd5f5f94adf5c0159 data/minecraft/tags/block/gold_ores.json
+17b2b7b8bbe8dd49414824f9c15596441d0b81ba data/minecraft/tags/block/iron_ores.json
+43244bfc89e7bfef123f220366fb18c87fbff52d data/minecraft/tags/block/lapis_ores.json
+02eab059402e62d16ea1c46dbfa2428b247a27ff data/minecraft/tags/block/nether_ores.json
+dc9e5072a28c7e563f22b52a00106249888ce3ec data/minecraft/tags/block/redstone_ores.json

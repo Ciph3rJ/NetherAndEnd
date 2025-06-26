@@ -8,7 +8,7 @@
     }
   },
   "display": {
-    "background": "netherandend:textures/gui/advancements/backgrounds/nether_and_end.png",
+    "background": "netherandend:gui/advancements/backgrounds/nether_and_end",
     "description": {
       "translate": "advancement.netherandend.nether_and_end.desc"
     },

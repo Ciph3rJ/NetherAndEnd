@@ -1,7 +1,7 @@
 package net.enderboy500.netherandend;
 
-import net.enderboy500.netherandend.datagen.providers.*;
 import net.enderboy500.netherandend.datagen.generators.NetherAndEndRecipeGenerator;
+import net.enderboy500.netherandend.datagen.providers.*;
 import net.enderboy500.netherandend.world.feature.NetherAndEndConfiguredFeatures;
 import net.enderboy500.netherandend.world.feature.NetherAndEndPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -44,4 +44,3 @@ public class NetherAndEndDataGenerator implements DataGeneratorEntrypoint {
 		return output -> (T)baseFactory.apply(output, registriesFuture);
 	}
 }
-

@@ -5,9 +5,12 @@ import net.enderboy500.netherandend.util.NetherAndEndUtils;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
+import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +18,9 @@ public class NetherAndEnd implements ModInitializer {
 	public static final String MOD_ID = "netherandend";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+	public static final GameRules.Key<GameRules.BooleanRule> DISABLE_ELYTRA = GameRuleRegistry.register("disableElytra",
+			GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(false));
 
 	@Override
 	public void onInitialize() {

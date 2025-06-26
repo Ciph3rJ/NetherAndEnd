@@ -117,7 +117,7 @@ public class NetherAndEndBlocks {
     public static final Block CRUMBLING_BASALT = register("crumbling_basalt", CrumblingBasaltBlock::new, Settings.copy(BASALT)
             .breakInstantly().resistance(2.1f));
 
-    public static <B extends Block> B register(String name, Function<Settings, B> factory, AbstractBlock.Settings settings) {
+    public static <B extends Block> B register(String name, Function<Settings, B> factory, Settings settings) {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(NetherAndEnd.MOD_ID, name));
         B block = factory.apply(settings.registryKey(key));
 

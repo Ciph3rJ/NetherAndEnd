@@ -132,7 +132,7 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .offerTo(exporter);
     }
 
-    public static class Provider extends RecipeGenerator.RecipeProvider {
+    public static class Provider extends RecipeProvider {
         public Provider(DataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
             super(dataOutput, completableFuture);
         }

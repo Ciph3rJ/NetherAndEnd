@@ -36,7 +36,7 @@ public class NetherAndEndItems {
     public static final Item COOKED_STRIDER_MEAT = register("cooked_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.COOKED_STRIDER_MEAT));
     public static final Item HARDENED_STRIDER_MEAT = register("hardened_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.HARDENED_STRIDER_MEAT, NetherAndEndConsumableComponents.HARDENED_STRIDER_MEAT).fireproof());
 
-    public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+    public static Item register(String name, Function<Settings, Item> itemFactory, Settings settings) {
         // Create the item key.
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(NetherAndEnd.MOD_ID, name));
 
@@ -50,11 +50,11 @@ public class NetherAndEndItems {
     }
 
     public static Item register(String id, Function<Settings, Item> factory) {
-        return register(id, factory, new Item.Settings());
+        return register(id, factory, new Settings());
     }
 
     public static Item register(String id) {
-        return register(id, Item::new, new Item.Settings());
+        return register(id, Item::new, new Settings());
     }
 
     public static void loadItems() {}

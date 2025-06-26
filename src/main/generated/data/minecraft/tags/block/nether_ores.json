@@ -1,0 +1,13 @@
+{
+  "values": [
+    "netherandend:nether_coal_ore",
+    "netherandend:nether_iron_ore",
+    "netherandend:nether_copper_ore",
+    "minecraft:nether_gold_ore",
+    "netherandend:nether_redstone_ore",
+    "netherandend:nether_emerald_ore",
+    "netherandend:nether_lapis_ore",
+    "netherandend:nether_diamond_ore",
+    "minecraft:nether_quartz_ore"
+  ]
+}

@@ -32,10 +32,6 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
         super(output, registryLookup);
     }
 
-    public static final List<Item> ORES = List.of(
-
-    );
-
     @Override
     public void generateAdvancement(RegistryWrapper.WrapperLookup wrapperLookup, Consumer<AdvancementEntry> consumer) {
         RegistryEntryLookup<Item> itemRegistryEntryLookup = wrapperLookup.getOrThrow(RegistryKeys.ITEM);
@@ -45,7 +41,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         NetherAndEndBlockItems.NETHER_DIAMOND_ORE,
                         Text.translatable("advancement.netherandend.nether_and_end.title"),
                         Text.translatable("advancement.netherandend.nether_and_end.desc"),
-                        Identifier.of(NetherAndEnd.MOD_ID, "textures/gui/advancements/backgrounds/nether_and_end.png"),
+                        Identifier.of(NetherAndEnd.MOD_ID, "gui/advancements/backgrounds/nether_and_end"),
                         AdvancementFrame.TASK,
                         true,
                         true,
