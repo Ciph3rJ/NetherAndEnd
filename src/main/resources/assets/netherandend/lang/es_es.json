@@ -139,5 +139,7 @@
   "advancement.netherandend.thats_more_peaceful.desc": "Esto es Mejor Que un Asesinato",
   "advancement.netherandend.ore_collector.desc": "Esa es la Verdadera Dedicación",
 
+  "gamerule.disableElytra": "Desactivar Élitros",
+
   "itemgroup.netherandend": "Nether & End"
 }
