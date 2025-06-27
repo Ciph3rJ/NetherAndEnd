@@ -76,7 +76,7 @@ public class NetherAndEndBlocks {
     public static final Block END_COAL_ORE = register("end_coal_ore",
             settings -> {
                 return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(NETHER_GOLD_ORE));
+            }, Settings.copy(END_STONE));
 
     public static final Block END_IRON_ORE = register("end_iron_ore",
             Block::new, Settings.copy(END_STONE));
