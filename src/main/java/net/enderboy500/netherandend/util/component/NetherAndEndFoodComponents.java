@@ -18,7 +18,6 @@ public class NetherAndEndFoodComponents {
     public static final FoodComponent ENDER_FRUIT = new FoodComponent.Builder().nutrition(8)
             .saturationModifier(0.5f)
             .build();
-
     public static final FoodComponent WARPED_STEW = new FoodComponent.Builder().nutrition(12)
             .saturationModifier(0.6f)
             .build();

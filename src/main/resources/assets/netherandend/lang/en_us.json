@@ -139,5 +139,7 @@
   "advancement.netherandend.thats_more_peaceful.desc": "This is Better Than Murder",
   "advancement.netherandend.ore_collector.desc": "That's True Dedication",
 
+  "gamerule.disableElytra": "Disable Elytra",
+
   "itemgroup.netherandend": "Nether & End"
 }

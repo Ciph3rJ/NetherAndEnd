@@ -139,5 +139,7 @@
   "advancement.netherandend.thats_more_peaceful.desc": "C'est Mieux Que le Meurtre",
   "advancement.netherandend.ore_collector.desc": "C'est ça le Vrai Dévouement",
 
+  "gamerule.disableElytra": "Désactiver Élytres",
+
   "itemgroup.netherandend": "Nether et End"
 }
