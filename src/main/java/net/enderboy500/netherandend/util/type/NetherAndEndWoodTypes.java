@@ -1,18 +1,21 @@
 package net.enderboy500.netherandend.util.type;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
-import net.minecraft.block.WoodType;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.neoforged.bus.api.IEventBus;
 
 import java.util.Map;
 
 public class NetherAndEndWoodTypes {
-    private static final Map<String, WoodType> VALUES = new Object2ObjectArrayMap();
+    private static final Map<String, WoodType> TYPES = new Object2ObjectArrayMap<>();
+
     public static final WoodType CHORUS = register(new WoodType("chorus", NetherAndEndBlockSetTypes.CHORUS));
 
-    private static WoodType register(WoodType type) {
-        VALUES.put(type.name(), type);
-        return type;
+    public static WoodType register(WoodType woodType) {
+        TYPES.put(woodType.name(), woodType);
+        return woodType;
     }
 
-    public static void loadWoodTypes() {}
+    public static void loadWoodTypes(IEventBus eventBus) {}
 }

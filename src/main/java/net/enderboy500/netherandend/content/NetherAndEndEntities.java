@@ -1,30 +1,27 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
-import net.enderboy500.netherandend.projectiles.DragonChargeProjectileEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SpawnGroup;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.enderboy500.netherandend.projectile.DragonChargeProjectileEntity;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.function.Supplier;
 
 public class NetherAndEndEntities {
-    public static final EntityType<DragonChargeProjectileEntity> DRAGON_CHARGE = register(
-            "dragon_charge",
-            EntityType.Builder.create(DragonChargeProjectileEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.3125F, 0.3125F)
-                    .eyeHeight(0.0F)
-                    .maxTrackingRange(4)
-                    .trackingTickInterval(10));
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.createEntities(NetherAndEnd.MOD_ID);
 
-    public static <T extends Entity> EntityType<T> register(String path, EntityType.Builder<T> entityTypeBuilder) {
-        Identifier id = Identifier.of(NetherAndEnd.MOD_ID, path);
-        RegistryKey<EntityType<?>> key = RegistryKey.of(RegistryKeys.ENTITY_TYPE, id);
-        return Registry.register(Registries.ENTITY_TYPE, key, entityTypeBuilder.build(key));
+    public static ResourceKey<EntityType<?>> DRAGON_CHARGE_KEY = ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.withDefaultNamespace("dragon_charge"));
+
+    public static final Supplier<EntityType<DragonChargeProjectileEntity>> DRAGON_CHARGE = ENTITIES.register("dragon_charge", () -> EntityType.Builder.<DragonChargeProjectileEntity>of(
+            DragonChargeProjectileEntity::new,
+            MobCategory.MISC).sized(0.5f, 1.15f).build(DRAGON_CHARGE_KEY));
+
+    public static void loadEntities(IEventBus eventBus) {
+        ENTITIES.register(eventBus);
     }
-
-    public static void loadEntities(){}
 }

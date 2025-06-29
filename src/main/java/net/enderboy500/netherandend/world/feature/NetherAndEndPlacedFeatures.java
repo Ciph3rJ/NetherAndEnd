@@ -1,103 +1,85 @@
 package net.enderboy500.netherandend.world.feature;
 
 import net.enderboy500.netherandend.NetherAndEnd;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 import java.util.List;
 
 public class NetherAndEndPlacedFeatures {
-    public static final RegistryKey<PlacedFeature> NETHER_COAL_ORE_PLACED_KEY = register("nether_coal_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_IRON_ORE_PLACED_KEY = register("nether_iron_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_COPPER_ORE_PLACED_KEY = register("nether_copper_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_REDSTONE_ORE_PLACED_KEY = register("nether_redstone_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_EMERALD_ORE_PLACED_KEY = register("nether_emerald_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_LAPIS_ORE_PLACED_KEY = register("nether_lapis_ore_placed");
-    public static final RegistryKey<PlacedFeature> NETHER_DIAMOND_ORE_PLACED_KEY = register("nether_diamond_ore_placed");
-    public static final RegistryKey<PlacedFeature> CRACKED_BEDROCK_PLACED_KEY = register("cracked_bedrock_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_COAL_ORE_PLACED_KEY = register("nether_coal_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_IRON_ORE_PLACED_KEY = register("nether_iron_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_COPPER_ORE_PLACED_KEY = register("nether_copper_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_REDSTONE_ORE_PLACED_KEY = register("nether_redstone_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_EMERALD_ORE_PLACED_KEY = register("nether_emerald_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_LAPIS_ORE_PLACED_KEY = register("nether_lapis_ore_placed");
+    public static final ResourceKey<PlacedFeature> NETHER_DIAMOND_ORE_PLACED_KEY = register("nether_diamond_ore_placed");
+    public static final ResourceKey<PlacedFeature> CRACKED_BEDROCK_PLACED_KEY = register("cracked_bedrock_placed");
 
-    public static final RegistryKey<PlacedFeature> END_COAL_ORE_PLACED_KEY = register("end_coal_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_IRON_ORE_PLACED_KEY = register("end_iron_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_COPPER_ORE_PLACED_KEY = register("end_copper_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_GOLD_ORE_PLACED_KEY = register("end_gold_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_REDSTONE_ORE_PLACED_KEY = register("end_redstone_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_EMERALD_ORE_PLACED_KEY = register("end_emerald_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_LAPIS_ORE_PLACED_KEY = register("end_lapis_ore_placed");
-    public static final RegistryKey<PlacedFeature> END_DIAMOND_ORE_PLACED_KEY = register("end_diamond_ore_placed");
-    public static final RegistryKey<PlacedFeature> ENDER_PEARL_CLUSTER_PLACED_KEY = register("ender_pearl_cluster_placed");
+    public static final ResourceKey<PlacedFeature> END_COAL_ORE_PLACED_KEY = register("end_coal_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_IRON_ORE_PLACED_KEY = register("end_iron_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_COPPER_ORE_PLACED_KEY = register("end_copper_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_GOLD_ORE_PLACED_KEY = register("end_gold_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_REDSTONE_ORE_PLACED_KEY = register("end_redstone_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_EMERALD_ORE_PLACED_KEY = register("end_emerald_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_LAPIS_ORE_PLACED_KEY = register("end_lapis_ore_placed");
+    public static final ResourceKey<PlacedFeature> END_DIAMOND_ORE_PLACED_KEY = register("end_diamond_ore_placed");
+    public static final ResourceKey<PlacedFeature> ENDER_PEARL_CLUSTER_PLACED_KEY = register("ender_pearl_cluster_placed");
 
-    public static void boostrap(Registerable<PlacedFeature> context) {
-        RegistryEntryLookup<ConfiguredFeature<?, ?>> configuredFeatureRegistryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, NETHER_COAL_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_COAL_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(4,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-115), YOffset.fixed(130))));
-        register(context, NETHER_IRON_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_IRON_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(8,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-30), YOffset.fixed(100))));
-        register(context, NETHER_COPPER_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_COPPER_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(5,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-30), YOffset.fixed(90))));
-        register(context, NETHER_REDSTONE_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_REDSTONE_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(5,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(100))));
-        register(context, NETHER_EMERALD_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_EMERALD_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(1,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(10))));
-        register(context, NETHER_LAPIS_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_LAPIS_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(6,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(7), YOffset.fixed(60))));
-        register(context, NETHER_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_DIAMOND_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(4,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(0), YOffset.fixed(128))));
-        register(context, CRACKED_BEDROCK_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.CRACKED_BEDROCK_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(2,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(3), YOffset.fixed(130))));
+        register(context, NETHER_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_COAL_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(4, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(-115), VerticalAnchor.absolute(130))));
+        register(context, NETHER_IRON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_IRON_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(8, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(-30), VerticalAnchor.absolute(100))));
+        register(context, NETHER_COPPER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_COPPER_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(-30), VerticalAnchor.absolute(90))));
+        register(context, NETHER_REDSTONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_REDSTONE_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(5, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(100))));
+        register(context, NETHER_EMERALD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_EMERALD_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(1, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(10))));
+        register(context, NETHER_LAPIS_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_LAPIS_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(6, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(7), VerticalAnchor.absolute(60))));
+        register(context, NETHER_DIAMOND_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.NETHER_DIAMOND_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(4, HeightRangePlacement.triangle(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(128))));
+        register(context, CRACKED_BEDROCK_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.CRACKED_BEDROCK_KEY), NetherAndEndOrePlacement.commonOrePlacement(2, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(3), VerticalAnchor.absolute(130))));
 
-        register(context, END_COAL_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_COAL_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(4,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-115), YOffset.fixed(130))));
-        register(context, END_IRON_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_IRON_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(8,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(50), YOffset.fixed(100))));
-        register(context, END_COPPER_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_COPPER_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(5,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-30), YOffset.fixed(90))));
-        register(context, END_GOLD_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_GOLD_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(5,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(10), YOffset.fixed(200))));
-        register(context, END_REDSTONE_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_REDSTONE_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(5,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(100))));
-        register(context, END_EMERALD_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_EMERALD_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(1,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(40))));
-        register(context, END_LAPIS_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_LAPIS_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(6,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(7), YOffset.fixed(60))));
-        register(context, END_DIAMOND_ORE_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.END_DIAMOND_ORE_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(4,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(60))));
-        register(context, ENDER_PEARL_CLUSTER_PLACED_KEY, configuredFeatureRegistryLookup.getOrThrow(NetherAndEndConfiguredFeatures.ENDER_PEARL_CLUSTER_KEY),
-                NetherAndEndPlacementModifiers.modifiersWithCount(7,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(128))));
+        register(context, END_COAL_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_COAL_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(-115), VerticalAnchor.absolute(130))));
+        register(context, END_IRON_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_IRON_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(8, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(50), VerticalAnchor.absolute(100))));
+        register(context, END_COPPER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_COPPER_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(-30), VerticalAnchor.absolute(90))));
+        register(context, END_GOLD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_GOLD_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(10), VerticalAnchor.absolute(200))));
+        register(context, END_REDSTONE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_REDSTONE_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(5, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(100))));
+        register(context, END_EMERALD_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_EMERALD_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(1, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(40))));
+        register(context, END_LAPIS_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_LAPIS_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(6, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(7), VerticalAnchor.absolute(60))));
+        register(context, END_DIAMOND_ORE_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.END_DIAMOND_ORE_KEY), NetherAndEndOrePlacement.commonOrePlacement(4, HeightRangePlacement.uniform(
+                VerticalAnchor.absolute(0), VerticalAnchor.absolute(60))));
+        register(context, ENDER_PEARL_CLUSTER_PLACED_KEY, configuredFeatures.getOrThrow(NetherAndEndConfiguredFeatures.ENDER_PEARL_CLUSTER_KEY), NetherAndEndOrePlacement.commonOrePlacement(7,
+                HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(128))));
     }
 
-    public static RegistryKey<PlacedFeature> register(String id) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(NetherAndEnd.MOD_ID, id));
+    private static ResourceKey<PlacedFeature> register(String name) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
     }
 
-    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configured,
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration,
                                  List<PlacementModifier> modifiers) {
-        context.register(key, new PlacedFeature(configured, List.copyOf(modifiers)));
+        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 }

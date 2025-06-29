@@ -1,35 +1,36 @@
 package net.enderboy500.netherandend.item;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.world.World;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.level.Level;
 
-public class ShulkerFalchionItem extends Item {
-
-
-    public ShulkerFalchionItem(Settings settings) {
-        super(settings);
+public class ShulkerFalchionItem extends SwordItem {
+    public ShulkerFalchionItem(ToolMaterial material, float attackDamage, float attackSpeed, Properties properties) {
+        super(material, attackDamage, attackSpeed, properties);
     }
 
     @Override
-    public float getBonusAttackDamage(Entity target, float baseAttackDamage, DamageSource damageSource) {
-        if (target instanceof LivingEntity living) {
-            living.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 200, 1));
+    public float getAttackDamageBonus(Entity target, float damage, DamageSource damageSource) {
+        if (target instanceof LivingEntity livingEntity) {
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 200, 1));
         }
-        return super.getBonusAttackDamage(target, baseAttackDamage, damageSource);
+
+        return super.getAttackDamageBonus(target, damage, damageSource);
     }
 
     @Override
-    public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 80, 0));
-        user.getItemCooldownManager().set(this.getDefaultStack(), 100);
-        return super.use(world, user, hand);
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 80, 0));
+        player.getCooldowns().addCooldown(new ItemStack(this), 100);
+        return super.use(level, player, hand);
     }
 }

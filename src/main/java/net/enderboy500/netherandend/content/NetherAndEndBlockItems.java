@@ -1,64 +1,48 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-
-import java.util.function.Function;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class NetherAndEndBlockItems {
-    public static final BlockItem CHORUS_BLOCK = register("chorus_block", NetherAndEndBlocks.CHORUS_BLOCK);
-    public static final BlockItem CHORUS_PLANKS = register("chorus_planks", NetherAndEndBlocks.CHORUS_PLANKS);
-    public static final BlockItem CHORUS_STAIRS = register("chorus_stairs", NetherAndEndBlocks.CHORUS_STAIRS);
-    public static final BlockItem CHORUS_SLAB = register("chorus_slab", NetherAndEndBlocks.CHORUS_SLAB);
-    public static final BlockItem CHORUS_FENCE = register("chorus_fence", NetherAndEndBlocks.CHORUS_FENCE);
-    public static final BlockItem CHORUS_FENCE_GATE = register("chorus_fence_gate", NetherAndEndBlocks.CHORUS_FENCE_GATE);
-    public static final BlockItem CHORUS_BUTTON = register("chorus_button", NetherAndEndBlocks.CHORUS_BUTTON);
-    public static final BlockItem CHORUS_PRESSURE_PLATE = register("chorus_pressure_plate", NetherAndEndBlocks.CHORUS_PRESSURE_PLATE);
-    public static final BlockItem CHORUS_DOOR = register("chorus_door", NetherAndEndBlocks.CHORUS_DOOR);
-    public static final BlockItem CHORUS_TRAPDOOR = register("chorus_trapdoor", NetherAndEndBlocks.CHORUS_TRAPDOOR);
+    public static final DeferredRegister.Items BLOCK_ITEMS = DeferredRegister.createItems(NetherAndEnd.MOD_ID);
 
-    public static final BlockItem NETHER_COAL_ORE = register("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE);
-    public static final BlockItem NETHER_IRON_ORE = register("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE);
-    public static final BlockItem NETHER_COPPER_ORE = register("nether_copper_ore", NetherAndEndBlocks.NETHER_COPPER_ORE);
-    public static final BlockItem NETHER_REDSTONE_ORE = register("nether_redstone_ore", NetherAndEndBlocks.NETHER_REDSTONE_ORE);
-    public static final BlockItem NETHER_EMERALD_ORE = register("nether_emerald_ore", NetherAndEndBlocks.NETHER_EMERALD_ORE);
-    public static final BlockItem NETHER_LAPIS_ORE = register("nether_lapis_ore", NetherAndEndBlocks.NETHER_LAPIS_ORE);
-    public static final BlockItem NETHER_DIAMOND_ORE = register("nether_diamond_ore", NetherAndEndBlocks.NETHER_DIAMOND_ORE);
+    public static final DeferredItem<BlockItem> CHORUS_BLOCK = BLOCK_ITEMS.registerSimpleBlockItem("chorus_block", NetherAndEndBlocks.CHORUS_BLOCK, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_PLANKS = BLOCK_ITEMS.registerSimpleBlockItem("chorus_planks", NetherAndEndBlocks.CHORUS_PLANKS, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_STAIRS = BLOCK_ITEMS.registerSimpleBlockItem("chorus_stairs", NetherAndEndBlocks.CHORUS_STAIRS, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_SLAB = BLOCK_ITEMS.registerSimpleBlockItem("chorus_slab", NetherAndEndBlocks.CHORUS_SLAB, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_FENCE = BLOCK_ITEMS.registerSimpleBlockItem("chorus_fence", NetherAndEndBlocks.CHORUS_FENCE, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_FENCE_GATE = BLOCK_ITEMS.registerSimpleBlockItem("chorus_fence_gate", NetherAndEndBlocks.CHORUS_FENCE_GATE, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_BUTTON = BLOCK_ITEMS.registerSimpleBlockItem("chorus_button", NetherAndEndBlocks.CHORUS_BUTTON, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_PRESSURE_PLATE = BLOCK_ITEMS.registerSimpleBlockItem("chorus_pressure_plate", NetherAndEndBlocks.CHORUS_PRESSURE_PLATE, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_DOOR = BLOCK_ITEMS.registerSimpleBlockItem("chorus_door", NetherAndEndBlocks.CHORUS_DOOR, new Item.Properties());
+    public static final DeferredItem<BlockItem> CHORUS_TRAPDOOR = BLOCK_ITEMS.registerSimpleBlockItem("chorus_trapdoor", NetherAndEndBlocks.CHORUS_TRAPDOOR, new Item.Properties());
 
-    public static final BlockItem END_COAL_ORE = register("end_coal_ore", NetherAndEndBlocks.END_COAL_ORE);
-    public static final BlockItem END_IRON_ORE = register("end_iron_ore", NetherAndEndBlocks.END_IRON_ORE);
-    public static final BlockItem END_GOLD_ORE = register("end_gold_ore", NetherAndEndBlocks.END_GOLD_ORE);
-    public static final BlockItem END_COPPER_ORE = register("end_copper_ore", NetherAndEndBlocks.END_COPPER_ORE);
-    public static final BlockItem END_REDSTONE_ORE = register("end_redstone_ore", NetherAndEndBlocks.END_REDSTONE_ORE);
-    public static final BlockItem END_EMERALD_ORE = register("end_emerald_ore", NetherAndEndBlocks.END_EMERALD_ORE);
-    public static final BlockItem END_LAPIS_ORE = register("end_lapis_ore", NetherAndEndBlocks.END_LAPIS_ORE);
-    public static final BlockItem END_DIAMOND_ORE = register("end_diamond_ore", NetherAndEndBlocks.END_DIAMOND_ORE);
-    public static final BlockItem ENDER_PEARL_CLUSTER = register("ender_pearl_cluster", NetherAndEndBlocks.ENDER_PEARL_CLUSTER);
+    public static final DeferredItem<BlockItem> NETHER_COAL_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_IRON_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_COPPER_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_copper_ore", NetherAndEndBlocks.NETHER_COPPER_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_REDSTONE_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_redstone_ore", NetherAndEndBlocks.NETHER_REDSTONE_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_EMERALD_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_emerald_ore", NetherAndEndBlocks.NETHER_EMERALD_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_LAPIS_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_lapis_ore", NetherAndEndBlocks.NETHER_LAPIS_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> NETHER_DIAMOND_ORE = BLOCK_ITEMS.registerSimpleBlockItem("nether_diamond_ore", NetherAndEndBlocks.NETHER_DIAMOND_ORE, new Item.Properties());
 
-    public static final BlockItem CRACKED_BEDROCK = register("cracked_bedrock", NetherAndEndBlocks.CRACKED_BEDROCK);
-    public static final BlockItem CRUMBLING_BASALT = register("crumbling_basalt", NetherAndEndBlocks.CRUMBLING_BASALT);
+    public static final DeferredItem<BlockItem> END_COAL_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_coal_ore", NetherAndEndBlocks.END_COAL_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_IRON_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_iron_ore", NetherAndEndBlocks.END_IRON_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_GOLD_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_gold_ore", NetherAndEndBlocks.END_GOLD_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_COPPER_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_copper_ore", NetherAndEndBlocks.END_COPPER_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_REDSTONE_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_redstone_ore", NetherAndEndBlocks.END_REDSTONE_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_EMERALD_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_emerald_ore", NetherAndEndBlocks.END_EMERALD_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_LAPIS_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_lapis_ore", NetherAndEndBlocks.END_LAPIS_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> END_DIAMOND_ORE = BLOCK_ITEMS.registerSimpleBlockItem("end_diamond_ore", NetherAndEndBlocks.END_DIAMOND_ORE, new Item.Properties());
+    public static final DeferredItem<BlockItem> ENDER_PEARL_CLUSTER = BLOCK_ITEMS.registerSimpleBlockItem("ender_pearl_cluster", NetherAndEndBlocks.ENDER_PEARL_CLUSTER, new Item.Properties());
 
-    public static <I extends Item> I registerItem(String id, Function<Item.Settings, I> factory, Item.Settings settings) {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(NetherAndEnd.MOD_ID, id));
-        I item = factory.apply(settings.registryKey(key));
+    public static final DeferredItem<BlockItem> CRACKED_BEDROCK = BLOCK_ITEMS.registerSimpleBlockItem("cracked_bedrock", NetherAndEndBlocks.CRACKED_BEDROCK, new Item.Properties());
+    public static final DeferredItem<BlockItem> CRUMBLING_BASALT = BLOCK_ITEMS.registerSimpleBlockItem("crumbling_basalt", NetherAndEndBlocks.CRUMBLING_BASALT, new Item.Properties());
 
-        if (item instanceof BlockItem blockItem) {
-            blockItem.appendBlocks(Item.BLOCK_ITEMS, blockItem);
-        }
-
-        return Registry.register(Registries.ITEM, key, item);
+    public static void loadBlockItems(IEventBus eventBus) {
+        BLOCK_ITEMS.register(eventBus);
     }
-
-    public static BlockItem register(String id, Block block) {
-        return registerItem(id, settings -> new BlockItem(block, settings), new Item.Settings().useBlockPrefixedTranslationKey());
-    }
-
-    public static void loadBlockItems() {}
 }

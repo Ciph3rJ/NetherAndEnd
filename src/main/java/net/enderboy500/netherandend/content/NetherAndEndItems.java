@@ -1,61 +1,53 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
-import net.enderboy500.netherandend.projectiles.DragonChargeItem;
 import net.enderboy500.netherandend.item.ShulkerFalchionItem;
-import net.enderboy500.netherandend.util.component.NetherAndEndConsumableComponents;
-import net.enderboy500.netherandend.util.component.NetherAndEndFoodComponents;
-import net.minecraft.item.Item;
-import net.minecraft.item.Item.Settings;
-import net.minecraft.item.Items;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
-
-import java.util.function.Function;
+import net.enderboy500.netherandend.projectile.DragonChargeItem;
+import net.enderboy500.netherandend.util.property.NetherAndEndConsumeEffectProperties;
+import net.enderboy500.netherandend.util.property.NetherAndEndFoodProperties;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class NetherAndEndItems {
-    public static final Item SHULKER_PEARL = register("shulker_pearl", Item::new, new Settings().food(NetherAndEndFoodComponents.SHULKER_PEARL, NetherAndEndConsumableComponents.SHULKER_PEARL).maxCount(16));
-    public static final Item HARDENED_SHULKER_PEARL = register("hardened_shulker_pearl", Item::new, new Settings().food(NetherAndEndFoodComponents.HARDENED_SHULKER_PEARL, NetherAndEndConsumableComponents.HARDENED_SHULKER_PEARL).maxCount(16));
-    public static final Item CHORUS_PIE = register("chorus_pie", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_PIE));
-    public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_SOUP).maxCount(1));
-    public static final Item ENDER_FRUIT = register("ender_fruit", Item::new, new Settings().food(NetherAndEndFoodComponents.ENDER_FRUIT));
-    public static final Item DRAGON_CHARGE = register("dragon_charge", DragonChargeItem::new, new Settings().useCooldown(1));
-    public static final Item SHULKER_FALCHION = register("shulker_falchion", ShulkerFalchionItem::new, new Settings().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F));
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(NetherAndEnd.MOD_ID);
 
-    public static final Item WARPED_WART = register("warped_wart");;
-    public static final Item WARPED_STEW = register("warped_stew", Item::new, new Settings().food(NetherAndEndFoodComponents.WARPED_STEW).maxCount(1).useRemainder(Items.BOWL));
-    public static final Item RAW_HOGCHOP = register("raw_hogchop", Item::new, new Settings().food(NetherAndEndFoodComponents.RAW_HOGCHOP, NetherAndEndConsumableComponents.RAW_HOGCHOP));
-    public static final Item COOKED_HOGCHOP = register("cooked_hogchop", Item::new, new Settings().food(NetherAndEndFoodComponents.COOKED_HOGCHOP));
-    public static final Item HOGLIN_SKIN = register("hoglin_skin");
-    public static final Item RAW_STRIDER_MEAT = register("raw_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.RAW_STRIDER_MEAT, NetherAndEndConsumableComponents.RAW_STRIDER_MEAT));
-    public static final Item SMOKED_STRIDER_MEAT = register("smoked_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.SMOKED_STRIDER_MEAT, NetherAndEndConsumableComponents.SMOKED_STRIDER_MEAT));
-    public static final Item COOKED_STRIDER_MEAT = register("cooked_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.COOKED_STRIDER_MEAT));
-    public static final Item HARDENED_STRIDER_MEAT = register("hardened_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.HARDENED_STRIDER_MEAT, NetherAndEndConsumableComponents.HARDENED_STRIDER_MEAT).fireproof());
+    public static final DeferredItem<Item> SHULKER_PEARL = ITEMS.registerItem("shulker_pearl",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.SHULKER_PEARL, NetherAndEndConsumeEffectProperties.SHULKER_PEARL));
+    public static final DeferredItem<Item> HARDENED_SHULKER_PEARL = ITEMS.registerItem("hardened_shulker_pearl",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.HARDENED_SHULKER_PEARL, NetherAndEndConsumeEffectProperties.HARDENED_SHULKER_PEARL));
+    public static final DeferredItem<Item> CHORUS_PIE = ITEMS.registerItem("chorus_pie",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.CHORUS_PIE));
+    public static final DeferredItem<Item> CHORUS_SOUP = ITEMS.registerItem("chorus_soup",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.CHORUS_SOUP));
+    public static final DeferredItem<Item> ENDER_FRUIT = ITEMS.registerItem("ender_fruit",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.ENDER_FRUIT));
+    public static final DeferredItem<Item> DRAGON_CHARGE = ITEMS.registerItem("dragon_charge", DragonChargeItem::new, new Item.Properties());
+    public static final DeferredItem<Item> SHULKER_FALCHION = ITEMS.registerItem("shulker_falchion",
+            properties -> new ShulkerFalchionItem(ToolMaterial.DIAMOND, 3, -2.4f, properties));
 
-    public static Item register(String name, Function<Settings, Item> itemFactory, Settings settings) {
-        // Create the item key.
-        RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(NetherAndEnd.MOD_ID, name));
 
-        // Create the item instance.
-        Item item = itemFactory.apply(settings.registryKey(itemKey));
+    public static final DeferredItem<Item> WARPED_WART = ITEMS.registerItem("warped_wart", Item::new, new Item.Properties());
+    public static final DeferredItem<Item> WARPED_STEW = ITEMS.registerItem("warped_stew",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.WARPED_STEW));
+    public static final DeferredItem<Item> RAW_HOGCHOP = ITEMS.registerItem("raw_hogchop",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.RAW_HOGCHOP, NetherAndEndConsumeEffectProperties.RAW_HOGCHOP));
+    public static final DeferredItem<Item> COOKED_HOGCHOP = ITEMS.registerItem("cooked_hogchop",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.COOKED_HOGCHOP));
+    public static final DeferredItem<Item> HOGLIN_SKIN = ITEMS.registerItem("hoglin_skin",
+            Item::new, new Item.Properties());
+    public static final DeferredItem<Item> RAW_STRIDER_MEAT = ITEMS.registerItem("raw_strider_meat",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.RAW_STRIDER_MEAT, NetherAndEndConsumeEffectProperties.RAW_STRIDER_MEAT));
+    public static final DeferredItem<Item> SMOKED_STRIDER_MEAT = ITEMS.registerItem("smoked_strider_meat",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.SMOKED_STRIDER_MEAT, NetherAndEndConsumeEffectProperties.SMOKED_STRIDER_MEAT));
+    public static final DeferredItem<Item> COOKED_STRIDER_MEAT = ITEMS.registerItem("cooked_strider_meat",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.COOKED_STRIDER_MEAT));
+    public static final DeferredItem<Item> HARDENED_STRIDER_MEAT = ITEMS.registerItem("hardened_strider_meat",
+            Item::new, new Item.Properties().food(NetherAndEndFoodProperties.HARDENED_STRIDER_MEAT, NetherAndEndConsumeEffectProperties.HARDENED_STRIDER_MEAT));
 
-        // Register the item.
-        Registry.register(Registries.ITEM, itemKey, item);
-
-        return item;
+    public static void loadItems(IEventBus eventBus) {
+        ITEMS.register(eventBus);
     }
-
-    public static Item register(String id, Function<Settings, Item> factory) {
-        return register(id, factory, new Settings());
-    }
-
-    public static Item register(String id) {
-        return register(id, Item::new, new Settings());
-    }
-
-    public static void loadItems() {}
 }

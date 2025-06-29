@@ -2,65 +2,74 @@ package net.enderboy500.netherandend;
 
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
-import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
-import net.fabricmc.api.ModInitializer;
-
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
-import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
-import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.minecraft.item.Items;
-import net.minecraft.potion.Potions;
-import net.minecraft.world.GameRules;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-public class NetherAndEnd implements ModInitializer {
-	public static final String MOD_ID = "netherandend";
+import com.mojang.logging.LogUtils;
 
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-	public static final GameRules.Key<GameRules.BooleanRule> DISABLE_ELYTRA = GameRuleRegistry.register("disableElytra",
-			GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(false));
+@Mod(NetherAndEnd.MOD_ID)
+public class NetherAndEnd {
+    public static final String MOD_ID = "netherandend";
 
-	@Override
-	public void onInitialize() {
-		LOGGER.info("Initializing Nether & End");
+    private static final Logger LOGGER = LogUtils.getLogger();
 
-		NetherAndEndItems.loadItems();
-		NetherAndEndItemGroups.loadItemGroups();
-		NetherAndEndPotions.loadPotions();
+    public NetherAndEnd(IEventBus modEventBus, ModContainer modContainer) {
+        modEventBus.addListener(this::commonSetup);
 
-		NetherAndEndBlocks.loadBlocks();
+        NeoForge.EVENT_BUS.register(this);
 
-		NetherAndEndEffects.loadEffects();
-		NetherAndEndEntities.loadEntities();
+        LOGGER.info("Initializing NetherAndEnd");
 
-		NetherAndEndUtils.loadUtils();
+        NetherAndEndBlocks.loadBlocks(modEventBus);
+        NetherAndEndBlockItems.loadBlockItems(modEventBus);
 
-		NetherAndEndBiomeModifications.loadBiomeModifications();
+        NetherAndEndEntities.loadEntities(modEventBus);
 
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.HARDENED_SHULKER_PEARL, NetherAndEndPotions.AVERSION_POTION);
+        NetherAndEndItems.loadItems(modEventBus);
 
-			builder.registerPotionRecipe(Potions.AWKWARD, Items.NETHER_WART, NetherAndEndPotions.MALNOURISHMENT_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.MALNOURISHMENT_POTION, Items.REDSTONE, NetherAndEndPotions.LONG_MALNOURISHMENT_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.MALNOURISHMENT_POTION, Items.GLOWSTONE_DUST, NetherAndEndPotions.STRONG_MALNOURISHMENT_POTION);
+        NetherAndEndCreativeModeTabs.loadCreativeModeTabs(modEventBus);
 
-			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.WARPED_WART, NetherAndEndPotions.SICKNESS_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.SICKNESS_POTION, Items.REDSTONE, NetherAndEndPotions.LONG_SICKNESS_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.SICKNESS_POTION, Items.GLOWSTONE_DUST, NetherAndEndPotions.STRONG_SICKNESS_POTION);
+        NetherAndEndUtils.loadUtils(modEventBus);
 
-			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.SHULKER_PEARL, NetherAndEndPotions.BUOYANT_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.BUOYANT_POTION, Items.REDSTONE, NetherAndEndPotions.LONG_BUOYANT_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.BUOYANT_POTION, Items.GLOWSTONE_DUST, NetherAndEndPotions.STRONG_BUOYANT_POTION);
+        LOGGER.info("Finished Initializing NetherAndEnd");
 
-			builder.registerPotionRecipe(NetherAndEndPotions.SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NetherAndEndPotions.INSTANT_CURING_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.LONG_SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NetherAndEndPotions.INSTANT_CURING_POTION);
-			builder.registerPotionRecipe(NetherAndEndPotions.STRONG_SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NetherAndEndPotions.INSTANT_CURING_POTION);
+        modEventBus.addListener(this::addCreative);
 
-			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT, NetherAndEndPotions.INSTANT_WARPING_POTION);
-		});
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
 
-		LOGGER.info("Initializing Nether & End");
-	}
+    private void commonSetup(FMLCommonSetupEvent event) {
+
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+    }
+
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+
+    }
+
+    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(NetherAndEndEntities.DRAGON_CHARGE.get(), ThrownItemRenderer::new);
+        }
+    }
 }
