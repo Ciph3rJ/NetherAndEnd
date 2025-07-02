@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:gold_ingot"
+          "name": "minecraft:raw_gold"
         }
       ],
       "rolls": 1.0
