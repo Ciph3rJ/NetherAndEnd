@@ -35,9 +35,9 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         addDrop(NetherAndEndBlocks.NETHER_DIAMOND_ORE, Items.DIAMOND);
 
         addDrop(NetherAndEndBlocks.END_COAL_ORE, Items.COAL);
-        addDrop(NetherAndEndBlocks.END_IRON_ORE, Items.IRON_INGOT);
+        addDrop(NetherAndEndBlocks.END_IRON_ORE, Items.RAW_IRON);
         copperOreDrop(NetherAndEndBlocks.END_COPPER_ORE);
-        addDrop(NetherAndEndBlocks.END_GOLD_ORE, Items.GOLD_INGOT);
+        addDrop(NetherAndEndBlocks.END_GOLD_ORE, Items.RAW_GOLD);
         redstoneOreDrop(NetherAndEndBlocks.END_REDSTONE_ORE);
         addDrop(NetherAndEndBlocks.END_EMERALD_ORE, Items.EMERALD);
         lapisOreDrop(NetherAndEndBlocks.END_LAPIS_ORE);
