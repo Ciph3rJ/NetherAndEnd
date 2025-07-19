@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"LivingEntityMixin",
-		"ItemMixin"
+		"ItemMixin",
+		"FireBallMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

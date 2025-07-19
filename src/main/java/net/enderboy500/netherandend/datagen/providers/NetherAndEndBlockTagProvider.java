@@ -5,6 +5,8 @@ import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.util.NetherAndEndTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.fabricmc.fabric.impl.datagen.loot.ConditionBlockLootTableGenerator;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -34,12 +36,10 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
                 .add(NetherAndEndBlocks.NETHER_COAL_ORE)
                 .add(NetherAndEndBlocks.NETHER_IRON_ORE)
                 .add(NetherAndEndBlocks.NETHER_COPPER_ORE)
-                .add(Blocks.NETHER_GOLD_ORE)
                 .add(NetherAndEndBlocks.NETHER_REDSTONE_ORE)
                 .add(NetherAndEndBlocks.NETHER_EMERALD_ORE)
                 .add(NetherAndEndBlocks.NETHER_LAPIS_ORE)
                 .add(NetherAndEndBlocks.NETHER_DIAMOND_ORE)
-                .add(Blocks.NETHER_QUARTZ_ORE)
         ;
 
         getOrCreateTagBuilder(NetherAndEndTags.END_ORES)
@@ -51,6 +51,26 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
                 .add(NetherAndEndBlocks.END_EMERALD_ORE)
                 .add(NetherAndEndBlocks.END_LAPIS_ORE)
                 .add(NetherAndEndBlocks.END_DIAMOND_ORE)
+                .add(NetherAndEndBlocks.ENDER_PEARL_CLUSTER)
+        ;
+
+        getOrCreateTagBuilder(ConventionalBlockTags.ORES)
+                .add(NetherAndEndBlocks.NETHER_COAL_ORE)
+                .add(NetherAndEndBlocks.NETHER_IRON_ORE)
+                .add(NetherAndEndBlocks.NETHER_COPPER_ORE)
+                .add(NetherAndEndBlocks.NETHER_REDSTONE_ORE)
+                .add(NetherAndEndBlocks.NETHER_EMERALD_ORE)
+                .add(NetherAndEndBlocks.NETHER_LAPIS_ORE)
+                .add(NetherAndEndBlocks.NETHER_DIAMOND_ORE)
+                .add(NetherAndEndBlocks.END_COAL_ORE)
+                .add(NetherAndEndBlocks.END_IRON_ORE)
+                .add(NetherAndEndBlocks.END_COPPER_ORE)
+                .add(NetherAndEndBlocks.END_GOLD_ORE)
+                .add(NetherAndEndBlocks.END_REDSTONE_ORE)
+                .add(NetherAndEndBlocks.END_EMERALD_ORE)
+                .add(NetherAndEndBlocks.END_LAPIS_ORE)
+                .add(NetherAndEndBlocks.END_DIAMOND_ORE)
+                .add(NetherAndEndBlocks.ENDER_PEARL_CLUSTER)
         ;
     }
 }

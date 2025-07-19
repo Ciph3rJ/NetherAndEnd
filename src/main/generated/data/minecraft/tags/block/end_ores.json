@@ -1,0 +1,13 @@
+{
+  "values": [
+    "netherandend:end_coal_ore",
+    "netherandend:end_iron_ore",
+    "netherandend:end_copper_ore",
+    "netherandend:end_gold_ore",
+    "netherandend:end_redstone_ore",
+    "netherandend:end_emerald_ore",
+    "netherandend:end_lapis_ore",
+    "netherandend:end_diamond_ore",
+    "netherandend:ender_pearl_cluster"
+  ]
+}
