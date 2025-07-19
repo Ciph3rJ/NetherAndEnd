@@ -45,7 +45,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         NetherAndEndBlockItems.NETHER_DIAMOND_ORE,
                         Text.translatable("advancement.netherandend.nether_and_end.title"),
                         Text.translatable("advancement.netherandend.nether_and_end.desc"),
-                        Identifier.of(NetherAndEnd.MOD_ID, "textures/gui/advancements/backgrounds/nether_and_end.png"),
+                        Identifier.of(NetherAndEnd.MOD_ID, "gui/advancements/backgrounds/nether_and_end"),
                         AdvancementFrame.TASK,
                         true,
                         true,
