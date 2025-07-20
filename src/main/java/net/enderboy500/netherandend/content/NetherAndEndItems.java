@@ -14,6 +14,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 
 import java.util.function.Function;
 
@@ -23,8 +24,8 @@ public class NetherAndEndItems {
     public static final Item CHORUS_PIE = register("chorus_pie", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_PIE));
     public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_SOUP).maxCount(1));
     public static final Item ENDER_FRUIT = register("ender_fruit", Item::new, new Settings().food(NetherAndEndFoodComponents.ENDER_FRUIT));
-    public static final Item DRAGON_CHARGE = register("dragon_charge", DragonChargeItem::new, new Settings().useCooldown(1));
-    public static final Item SHULKER_FALCHION = register("shulker_falchion", ShulkerFalchionItem::new, new Settings().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F));
+    public static final Item DRAGON_CHARGE = register("dragon_charge", DragonChargeItem::new, new Settings().useCooldown(1).rarity(Rarity.UNCOMMON));
+    public static final Item SHULKER_FALCHION = register("shulker_falchion", ShulkerFalchionItem::new, new Settings().sword(ToolMaterial.DIAMOND, 3.0F, -2.4F).rarity(Rarity.UNCOMMON));
 
     public static final Item WARPED_WART = register("warped_wart");;
     public static final Item WARPED_STEW = register("warped_stew", Item::new, new Settings().food(NetherAndEndFoodComponents.WARPED_STEW).maxCount(1).useRemainder(Items.BOWL));

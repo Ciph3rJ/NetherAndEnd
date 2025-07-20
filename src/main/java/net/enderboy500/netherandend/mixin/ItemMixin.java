@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Item.class)
 public class ItemMixin {
-
     @Inject(method = "inventoryTick", at = @At("HEAD"))
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, EquipmentSlot slot, CallbackInfo ci) {
         if (stack.isOf(Items.ELYTRA)) {
@@ -24,9 +23,6 @@ public class ItemMixin {
             } else {
                 stack.set(DataComponentTypes.MAX_DAMAGE, 432);
             }
-
         }
-
     }
-
 }
