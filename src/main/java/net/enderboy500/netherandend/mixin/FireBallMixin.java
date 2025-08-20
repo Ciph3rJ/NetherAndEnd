@@ -30,19 +30,16 @@ public abstract class FireBallMixin extends Item {
 
     @Override
     public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        Item item = this;
-
-            ItemStack stack = user.getStackInHand(hand);
-            if (!world.isClient()) {
-                world.syncWorldEvent(null, 1018, user.getBlockPos(), 0);
-                Vec3d vec3d = user.getRotationVec(1.0F).normalize().multiply(2);
-                SmallFireballEntity smallFireballEntity = new SmallFireballEntity(world, user.getX(),user.getY(),user.getZ(), vec3d);
-                smallFireballEntity.setPosition(smallFireballEntity.getX(), user.getEyeY(), smallFireballEntity.getZ());
-                world.spawnEntity(smallFireballEntity);
-                stack.decrementUnlessCreative(1, user);
-                user.getItemCooldownManager().set(this.getDefaultStack(), 40);
-            }
-            return ActionResult.SUCCESS;
-
+        ItemStack stack = user.getStackInHand(hand);
+        if (!world.isClient()) {
+            world.syncWorldEvent(null, 1018, user.getBlockPos(), 0);
+            Vec3d vec3d = user.getRotationVec(1.0F).normalize().multiply(2);
+            SmallFireballEntity smallFireballEntity = new SmallFireballEntity(world, user.getX(),user.getY(),user.getZ(), vec3d);
+            smallFireballEntity.setPosition(smallFireballEntity.getX(), user.getEyeY(), smallFireballEntity.getZ());
+            world.spawnEntity(smallFireballEntity);
+            stack.decrementUnlessCreative(1, user);
+            user.getItemCooldownManager().set(this.getDefaultStack(), 40);
+        }
+        return ActionResult.SUCCESS;
     }
 }

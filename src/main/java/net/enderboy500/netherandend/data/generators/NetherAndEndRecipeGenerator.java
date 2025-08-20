@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.generators;
+package net.enderboy500.netherandend.data.generators;
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndItems;

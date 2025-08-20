@@ -8,6 +8,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.world.GameRules;
@@ -38,6 +39,8 @@ public class NetherAndEnd implements ModInitializer {
 		NetherAndEndUtils.loadUtils();
 
 		NetherAndEndBiomeModifications.loadBiomeModifications();
+
+		DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE);
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.HARDENED_SHULKER_PEARL, NetherAndEndPotions.AVERSION_POTION);

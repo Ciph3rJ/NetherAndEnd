@@ -1,10 +1,12 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
+import net.enderboy500.netherandend.projectiles.AbstractDragonChargeEntity;
 import net.enderboy500.netherandend.projectiles.DragonChargeProjectileEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.projectile.AbstractFireballEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -12,7 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class NetherAndEndEntities {
-    public static final EntityType<DragonChargeProjectileEntity> DRAGON_CHARGE = register(
+    public static final EntityType<? extends AbstractDragonChargeEntity> DRAGON_CHARGE = register(
             "dragon_charge",
             EntityType.Builder.create(DragonChargeProjectileEntity::new, SpawnGroup.MISC)
                     .dimensions(0.3125F, 0.3125F)

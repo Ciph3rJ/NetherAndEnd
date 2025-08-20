@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.providers;
+package net.enderboy500.netherandend.data.providers;
 
 import net.enderboy500.netherandend.NetherAndEnd;
 import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
@@ -6,7 +6,6 @@ import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
-import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementFrame;
 import net.minecraft.advancement.criterion.ChangedDimensionCriterion;
@@ -14,7 +13,6 @@ import net.minecraft.advancement.criterion.ConsumeItemCriterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -25,7 +23,6 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
 
 public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
     public NetherAndEndAdvancementProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {

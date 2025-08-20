@@ -1,33 +1,35 @@
 package net.enderboy500.netherandend.projectiles;
 
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
-import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.projectile.AbstractFireballEntity;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.EntityTrackerEntry;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 
 import java.util.List;
 
-public class DragonChargeProjectileEntity extends ThrownItemEntity {
-    public DragonChargeProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class DragonChargeProjectileEntity extends AbstractDragonChargeEntity {
+    public DragonChargeProjectileEntity(EntityType<? extends AbstractDragonChargeEntity> entityType, World world) {
         super(entityType, world);
     }
-    protected DragonChargeProjectileEntity(World world, LivingEntity owner, ItemStack stack) {
-        super(NetherAndEndEntities.DRAGON_CHARGE, owner, world, stack);
+    protected DragonChargeProjectileEntity(World world, LivingEntity owner, Vec3d velocity) {
+        super(NetherAndEndEntities.DRAGON_CHARGE, owner, velocity, world);
+    }
+
+    protected DragonChargeProjectileEntity(World world, double x, double y, double z, Vec3d velocity) {
+        super(NetherAndEndEntities.DRAGON_CHARGE, x, y, z, velocity, world);
     }
 
     @Override
@@ -107,9 +109,10 @@ public class DragonChargeProjectileEntity extends ThrownItemEntity {
     }
 
     @Override
-    protected Item getDefaultItem() {
-        return NetherAndEndItems.DRAGON_CHARGE;
+    public boolean doesRenderOnFire() {
+        return false;
     }
+
 }
 
 
