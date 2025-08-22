@@ -34,7 +34,6 @@ public abstract class FireChargeItemMixin extends Item {
             stack.decrementUnlessCreative(1, user);
             user.getItemCooldownManager().set(this.getDefaultStack(), 40);
         }
-
         return ActionResult.SUCCESS;
     }
 }
