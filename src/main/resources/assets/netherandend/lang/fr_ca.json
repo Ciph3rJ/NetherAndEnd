@@ -10,6 +10,7 @@
   "item.netherandend.raw_hogchop": "Hogchop Cru",
   "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
+  "item.netherandend.hoglin_bundle": "Sac Hoglin",
   "item.netherandend.raw_strider_meat": "Viande d'arpenteur Cru",
   "item.netherandend.smoked_strider_meat": "Viande d'arpenteur Fumé",
   "item.netherandend.cooked_strider_meat": "Viande d'arpenteur Cuit",
@@ -104,6 +105,7 @@
   "block.netherandend.chorus_trapdoor": "Trappe en Chorus",
   "block.netherandend.chorus_button": "Bouton en Chorus",
   "block.netherandend.chorus_pressure_plate": "Plaque de Pression en Chorus",
+  "block.netherandend.chorus_shelf": "Étagère en Chorus",
   "block.netherandend.ender_pearl_cluster": "Druse de Perle de l'Ender",
 
   "effect.netherandend.instant_warping": "Déformation Instantané",

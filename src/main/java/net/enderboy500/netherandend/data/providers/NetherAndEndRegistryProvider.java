@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.providers;
+package net.enderboy500.netherandend.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;

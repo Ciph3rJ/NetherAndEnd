@@ -1,4 +1,4 @@
-// 1.21.6	-999999999-01-01T00:00:00	Nether And End/Block Loot Tables
+// 1.21.9	-999999999-01-01T00:00:00	Nether And End/Block Loot Tables
 2dc448a685685623283c379d55196187d77b4bd1 data/netherandend/loot_table/blocks/end_coal_ore.json
 d5e580e33cb3676aa1894ed5e8d61f648e8b3707 data/netherandend/loot_table/blocks/end_diamond_ore.json
 d60e744062f5aad35ef5632e84026b9557990d13 data/netherandend/loot_table/blocks/end_emerald_ore.json

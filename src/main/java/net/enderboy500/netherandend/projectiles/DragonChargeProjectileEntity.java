@@ -1,6 +1,7 @@
 package net.enderboy500.netherandend.projectiles;
 
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
+import net.minecraft.client.particle.DragonBreathParticle;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -10,6 +11,8 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.AbstractFireballEntity;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
+import net.minecraft.particle.DragonBreathParticleEffect;
+import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.EntityTrackerEntry;
 import net.minecraft.util.hit.BlockHitResult;
@@ -39,19 +42,19 @@ public class DragonChargeProjectileEntity extends AbstractDragonChargeEntity {
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
-        if (!this.getWorld().isClient()) {
-            List<LivingEntity> livingEntities = this.getWorld().getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(4, 2, 4));
-            AreaEffectCloudEntity areaEffectCloud = new AreaEffectCloudEntity(this.getWorld(), this.getX(), this.getY(), this.getZ());
+        if (!this.getEntityWorld().isClient()) {
+            List<LivingEntity> livingEntities = this.getEntityWorld().getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(4, 2, 4));
+            AreaEffectCloudEntity areaEffectCloud = new AreaEffectCloudEntity(this.getEntityWorld(), this.getX(), this.getY(), this.getZ());
             Entity entity = this.getOwner();
 
             if (entity instanceof LivingEntity) {
                 areaEffectCloud.setOwner((LivingEntity) entity);
             }
 
-            areaEffectCloud.setParticleType(ParticleTypes.DRAGON_BREATH);
-            areaEffectCloud.setRadius(3);
+            areaEffectCloud.setParticleType(DragonBreathParticleEffect.of(ParticleTypes.DRAGON_BREATH, 1));
+            areaEffectCloud.setRadius(1);
             areaEffectCloud.setDuration(600);
-            areaEffectCloud.setRadiusGrowth((7 - areaEffectCloud.getRadius()) / (float) areaEffectCloud.getDuration());
+            areaEffectCloud.setRadiusGrowth((4 - areaEffectCloud.getRadius()) / (float) areaEffectCloud.getDuration());
             areaEffectCloud.addEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1));
 
             if (!livingEntities.isEmpty()) {
@@ -63,8 +66,8 @@ public class DragonChargeProjectileEntity extends AbstractDragonChargeEntity {
                 }
             }
 
-            this.getWorld().syncWorldEvent(WorldEvents.DRAGON_BREATH_CLOUD_SPAWNS, this.getBlockPos(), this.isSilent() ? -1 : 1);
-            this.getWorld().spawnEntity(areaEffectCloud);
+            this.getEntityWorld().syncWorldEvent(WorldEvents.DRAGON_BREATH_CLOUD_SPAWNS, this.getBlockPos(), this.isSilent() ? -1 : 1);
+            this.getEntityWorld().spawnEntity(areaEffectCloud);
             this.discard();
         }
 
@@ -74,19 +77,19 @@ public class DragonChargeProjectileEntity extends AbstractDragonChargeEntity {
 
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
-        if (!this.getWorld().isClient()) {
-            List<LivingEntity> livingEntities = this.getWorld().getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(4, 2, 4));
-            AreaEffectCloudEntity areaEffectCloud = new AreaEffectCloudEntity(this.getWorld(), this.getX(), this.getY(), this.getZ());
+        if (!this.getEntityWorld().isClient()) {
+            List<LivingEntity> livingEntities = this.getEntityWorld().getNonSpectatingEntities(LivingEntity.class, this.getBoundingBox().expand(4, 2, 4));
+            AreaEffectCloudEntity areaEffectCloud = new AreaEffectCloudEntity(this.getEntityWorld(), this.getX(), this.getY(), this.getZ());
             Entity entity = this.getOwner();
 
             if (entity instanceof LivingEntity) {
                 areaEffectCloud.setOwner((LivingEntity) entity);
             }
 
-            areaEffectCloud.setParticleType(ParticleTypes.DRAGON_BREATH);
-            areaEffectCloud.setRadius(3);
+            areaEffectCloud.setParticleType(DragonBreathParticleEffect.of(ParticleTypes.DRAGON_BREATH, 1));
+            areaEffectCloud.setRadius(1);
             areaEffectCloud.setDuration(600);
-            areaEffectCloud.setRadiusGrowth((7 - areaEffectCloud.getRadius()) / (float) areaEffectCloud.getDuration());
+            areaEffectCloud.setRadiusGrowth((4 - areaEffectCloud.getRadius()) / (float) areaEffectCloud.getDuration());
             areaEffectCloud.addEffect(new StatusEffectInstance(StatusEffects.INSTANT_DAMAGE, 1, 1));
 
             if (!livingEntities.isEmpty()) {
@@ -98,8 +101,8 @@ public class DragonChargeProjectileEntity extends AbstractDragonChargeEntity {
                 }
             }
 
-            this.getWorld().syncWorldEvent(WorldEvents.DRAGON_BREATH_CLOUD_SPAWNS, this.getBlockPos(), this.isSilent() ? -1 : 1);
-            this.getWorld().spawnEntity(areaEffectCloud);
+            this.getEntityWorld().syncWorldEvent(WorldEvents.DRAGON_BREATH_CLOUD_SPAWNS, this.getBlockPos(), this.isSilent() ? -1 : 1);
+            this.getEntityWorld().spawnEntity(areaEffectCloud);
             this.discard();
         }
 

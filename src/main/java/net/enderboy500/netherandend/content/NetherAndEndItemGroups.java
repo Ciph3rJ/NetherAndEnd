@@ -30,6 +30,7 @@ public class NetherAndEndItemGroups {
                         entries.add(NetherAndEndItems.RAW_HOGCHOP);
                         entries.add(NetherAndEndItems.COOKED_HOGCHOP);
                         entries.add(NetherAndEndItems.HOGLIN_SKIN);
+                        entries.add(NetherAndEndItems.HOGLIN_BUNDLE);
                         entries.add(NetherAndEndItems.RAW_STRIDER_MEAT);
                         entries.add(NetherAndEndItems.SMOKED_STRIDER_MEAT);
                         entries.add(NetherAndEndItems.COOKED_STRIDER_MEAT);
@@ -53,6 +54,7 @@ public class NetherAndEndItemGroups {
                         entries.add(NetherAndEndBlockItems.CHORUS_TRAPDOOR);
                         entries.add(NetherAndEndBlockItems.CHORUS_PRESSURE_PLATE);
                         entries.add(NetherAndEndBlockItems.CHORUS_BUTTON);
+                        entries.add(NetherAndEndBlockItems.CHORUS_SHELF);
                         entries.add(NetherAndEndItems.ENDER_FRUIT);
                         entries.add(NetherAndEndItems.CHORUS_SOUP);
                         entries.add(NetherAndEndItems.CHORUS_PIE);

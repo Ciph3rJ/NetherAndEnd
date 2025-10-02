@@ -23,6 +23,7 @@ public class NetherAndEndBlockItems {
     public static final BlockItem CHORUS_PRESSURE_PLATE = register("chorus_pressure_plate", NetherAndEndBlocks.CHORUS_PRESSURE_PLATE);
     public static final BlockItem CHORUS_DOOR = register("chorus_door", NetherAndEndBlocks.CHORUS_DOOR);
     public static final BlockItem CHORUS_TRAPDOOR = register("chorus_trapdoor", NetherAndEndBlocks.CHORUS_TRAPDOOR);
+    public static final BlockItem CHORUS_SHELF = register("chorus_shelf", NetherAndEndBlocks.CHORUS_SHELF);
 
     public static final BlockItem NETHER_COAL_ORE = register("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE);
     public static final BlockItem NETHER_IRON_ORE = register("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE);

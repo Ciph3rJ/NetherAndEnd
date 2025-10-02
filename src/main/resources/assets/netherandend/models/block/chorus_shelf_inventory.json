@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_shelf_inventory",
+  "textures": {
+    "all": "netherandend:block/chorus_shelf",
+    "particle": "netherandend:block/chorus_planks"
+  }
+}

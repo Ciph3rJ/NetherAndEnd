@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.providers;
+package net.enderboy500.netherandend.data.providers;
 
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
@@ -30,6 +30,7 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
                 .add(NetherAndEndBlocks.CHORUS_PRESSURE_PLATE)
                 .add(NetherAndEndBlocks.CHORUS_DOOR)
                 .add(NetherAndEndBlocks.CHORUS_TRAPDOOR)
+                .add(NetherAndEndBlocks.CHORUS_SHELF)
         ;
 
         valueLookupBuilder(NetherAndEndTags.NETHER_ORES)
@@ -89,6 +90,10 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
 
         valueLookupBuilder(ConventionalBlockTags.ORES)
                 .add(NetherAndEndBlocks.ENDER_PEARL_CLUSTER)
+        ;
+
+        valueLookupBuilder(BlockTags.WOODEN_SHELVES)
+                .add(NetherAndEndBlocks.CHORUS_SHELF)
         ;
     }
 }

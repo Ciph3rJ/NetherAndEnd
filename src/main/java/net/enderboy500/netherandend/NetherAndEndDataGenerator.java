@@ -1,7 +1,7 @@
 package net.enderboy500.netherandend;
 
-import net.enderboy500.netherandend.datagen.generators.NetherAndEndRecipeGenerator;
-import net.enderboy500.netherandend.datagen.providers.*;
+import net.enderboy500.netherandend.data.generators.NetherAndEndRecipeGenerator;
+import net.enderboy500.netherandend.data.providers.*;
 import net.enderboy500.netherandend.world.feature.NetherAndEndConfiguredFeatures;
 import net.enderboy500.netherandend.world.feature.NetherAndEndPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;

@@ -9,11 +9,18 @@ import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.ShelfBlockEntity;
+import net.minecraft.item.BundleItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
 import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Collection;
+import java.util.Collections;
 
 public class NetherAndEnd implements ModInitializer {
 	public static final String MOD_ID = "netherandend";
@@ -32,6 +39,9 @@ public class NetherAndEnd implements ModInitializer {
 		NetherAndEndPotions.loadPotions();
 
 		NetherAndEndBlocks.loadBlocks();
+		NetherAndEndBlockItems.loadBlockItems();
+
+		BlockEntityType.SHELF.addSupportedBlock(NetherAndEndBlocks.CHORUS_SHELF);
 
 		NetherAndEndEffects.loadEffects();
 		NetherAndEndEntities.loadEntities();
@@ -64,6 +74,6 @@ public class NetherAndEnd implements ModInitializer {
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT, NetherAndEndPotions.INSTANT_WARPING_POTION);
 		});
 
-		LOGGER.info("Initializing Nether & End");
+		LOGGER.info("Finished Initializing Nether & End");
 	}
 }

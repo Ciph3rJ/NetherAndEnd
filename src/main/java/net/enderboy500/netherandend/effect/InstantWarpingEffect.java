@@ -25,21 +25,21 @@ public class InstantWarpingEffect extends InstantStatusEffect {
 
     @Override
     public void onApplied(LivingEntity entity, int amplifier) {
-        World world = entity.getWorld();
-        if (!world.isClient) {
+        World world = entity.getEntityWorld();
+        if (!world.isClient()) {
             for (int i = 0; i < 16; i++) {
                 double d = entity.getX() + (entity.getRandom().nextDouble() - 0.5) * 16.0;
                 double e = MathHelper.clamp(
                         entity.getY() + (double)(entity.getRandom().nextInt(16) - 8),
-                        (double)world.getBottomY(),
-                        (double)(world.getBottomY() + ((ServerWorld)world).getLogicalHeight() - 1)
+                        world.getBottomY(),
+                        world.getBottomY() + ((ServerWorld)world).getLogicalHeight() - 1
                 );
                 double f = entity.getZ() + (entity.getRandom().nextDouble() - 0.5) * 16.0;
                 if (entity.hasVehicle()) {
                     entity.stopRiding();
                 }
 
-                Vec3d vec3d = entity.getPos();
+                Vec3d vec3d = entity.getEntityPos();
                 if (entity.teleport(d, e, f, true)) {
                     world.emitGameEvent(GameEvent.TELEPORT, vec3d, GameEvent.Emitter.of(entity));
                     SoundCategory soundCategory;

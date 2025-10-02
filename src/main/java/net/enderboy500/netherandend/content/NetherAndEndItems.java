@@ -5,6 +5,9 @@ import net.enderboy500.netherandend.projectiles.DragonChargeItem;
 import net.enderboy500.netherandend.item.ShulkerFalchionItem;
 import net.enderboy500.netherandend.util.component.NetherAndEndConsumableComponents;
 import net.enderboy500.netherandend.util.component.NetherAndEndFoodComponents;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.BundleContentsComponent;
+import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Settings;
 import net.minecraft.item.Items;
@@ -32,6 +35,7 @@ public class NetherAndEndItems {
     public static final Item RAW_HOGCHOP = register("raw_hogchop", Item::new, new Settings().food(NetherAndEndFoodComponents.RAW_HOGCHOP, NetherAndEndConsumableComponents.RAW_HOGCHOP));
     public static final Item COOKED_HOGCHOP = register("cooked_hogchop", Item::new, new Settings().food(NetherAndEndFoodComponents.COOKED_HOGCHOP));
     public static final Item HOGLIN_SKIN = register("hoglin_skin");
+    public static final Item HOGLIN_BUNDLE = register("hoglin_bundle", BundleItem::new, new Settings().fireproof().maxCount(1).component(DataComponentTypes.BUNDLE_CONTENTS, BundleContentsComponent.DEFAULT));
     public static final Item RAW_STRIDER_MEAT = register("raw_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.RAW_STRIDER_MEAT, NetherAndEndConsumableComponents.RAW_STRIDER_MEAT));
     public static final Item SMOKED_STRIDER_MEAT = register("smoked_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.SMOKED_STRIDER_MEAT, NetherAndEndConsumableComponents.SMOKED_STRIDER_MEAT));
     public static final Item COOKED_STRIDER_MEAT = register("cooked_strider_meat", Item::new, new Settings().food(NetherAndEndFoodComponents.COOKED_STRIDER_MEAT));

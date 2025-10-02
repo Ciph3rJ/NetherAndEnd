@@ -26,26 +26,21 @@ public class NetherAndEndBlocks {
     public static final Block CHORUS_STAIRS = registerStairsBlock("chorus_stairs", CHORUS_PLANKS);
     public static final Block CHORUS_SLAB = register("chorus_slab", SlabBlock::new, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
     public static final Block CHORUS_FENCE = register("chorus_fence", FenceBlock::new, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD));
-    public static final Block CHORUS_FENCE_GATE = register("chorus_fence_gate", (settings) -> {
-        return new FenceGateBlock(NetherAndEndWoodTypes.CHORUS, settings);
-    }, Settings.create().mapColor(CRIMSON_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F));
-    public static final Block CHORUS_BUTTON = register("chorus_button", (settings) -> {
-        return new ButtonBlock(NetherAndEndBlockSetTypes.CHORUS, 20, settings);
-    }, createButtonSettings());
-    public static final Block CHORUS_PRESSURE_PLATE = register("chorus_pressure_plate", (settings) -> {
-        return new PressurePlateBlock(NetherAndEndBlockSetTypes.CHORUS, settings);
-    }, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASEDRUM).noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY));
-    public static final Block CHORUS_DOOR = register("chorus_door", (settings) -> {
-        return new DoorBlock(NetherAndEndBlockSetTypes.CHORUS, settings);
-    }, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY));
-    public static final Block CHORUS_TRAPDOOR = register("chorus_trapdoor", (settings) -> {
-        return new TrapdoorBlock(NetherAndEndBlockSetTypes.CHORUS, settings);
-    }, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never));
+    public static final Block CHORUS_FENCE_GATE = register("chorus_fence_gate", settings -> new FenceGateBlock(NetherAndEndWoodTypes.CHORUS, settings),
+            Settings.create().mapColor(CRIMSON_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F));
+    public static final Block CHORUS_BUTTON = register("chorus_button", settings ->
+         new ButtonBlock(NetherAndEndBlockSetTypes.CHORUS, 20, settings), createButtonSettings());
+    public static final Block CHORUS_PRESSURE_PLATE = register("chorus_pressure_plate", settings -> new PressurePlateBlock(NetherAndEndBlockSetTypes.CHORUS, settings),
+        Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASEDRUM).noCollision().strength(0.5F).pistonBehavior(PistonBehavior.DESTROY));
+    public static final Block CHORUS_DOOR = register("chorus_door", settings -> new DoorBlock(NetherAndEndBlockSetTypes.CHORUS, settings),
+        Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY));
+    public static final Block CHORUS_TRAPDOOR = register("chorus_trapdoor", settings -> new TrapdoorBlock(NetherAndEndBlockSetTypes.CHORUS, settings),
+        Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never));
+    public static final Block CHORUS_SHELF = register("chorus_shelf", ShelfBlock::new,
+            Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never));
 
     public static final Block NETHER_COAL_ORE = register("nether_coal_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(NETHER_GOLD_ORE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(NETHER_GOLD_ORE));
 
     public static final Block NETHER_IRON_ORE = register("nether_iron_ore",
             Block::new, Settings.copy(NETHER_GOLD_ORE));
@@ -59,24 +54,16 @@ public class NetherAndEndBlocks {
             }, Settings.copy(NETHER_GOLD_ORE));
 
     public static final Block NETHER_EMERALD_ORE = register("nether_emerald_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(NETHER_GOLD_ORE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(NETHER_GOLD_ORE));
 
     public static final Block NETHER_LAPIS_ORE = register("nether_lapis_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(NETHER_GOLD_ORE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(NETHER_GOLD_ORE));
 
     public static final Block NETHER_DIAMOND_ORE = register("nether_diamond_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(NETHER_GOLD_ORE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(NETHER_GOLD_ORE));
 
     public static final Block END_COAL_ORE = register("end_coal_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(END_STONE));
 
     public static final Block END_IRON_ORE = register("end_iron_ore",
             Block::new, Settings.copy(END_STONE));
@@ -88,29 +75,19 @@ public class NetherAndEndBlocks {
             Block::new, Settings.copy(END_STONE));
 
     public static final Block END_REDSTONE_ORE = register("end_redstone_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(END_STONE));
 
     public static final Block END_EMERALD_ORE = register("end_emerald_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(END_STONE));
 
     public static final Block END_LAPIS_ORE = register("end_lapis_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(END_STONE));
 
     public static final Block END_DIAMOND_ORE = register("end_diamond_ore",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(0, 2), settings), Settings.copy(END_STONE));
 
     public static final Block ENDER_PEARL_CLUSTER = register("ender_pearl_cluster",
-            settings -> {
-                return new ExperienceDroppingBlock(UniformIntProvider.create(3, 5), settings);
-            }, Settings.copy(END_STONE));
+            settings -> new ExperienceDroppingBlock(UniformIntProvider.create(3, 5), settings), Settings.copy(END_STONE));
 
     public static final Block CRACKED_BEDROCK = register("cracked_bedrock", Block::new, Settings.copy(BEDROCK)
             .strength(75, -1));
