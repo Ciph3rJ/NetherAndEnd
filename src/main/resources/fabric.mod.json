@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "netherandend",
-	"version": "1.4.6",
+	"version": "${version}",
 	"name": "Nether And End",
 	"description": "Aims at making the nether and end more habitable",
 	"authors": [

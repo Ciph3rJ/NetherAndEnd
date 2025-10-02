@@ -41,5 +41,9 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
                 .add(NetherAndEndItems.SHULKER_FALCHION);
         getOrCreateTagBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
+
+        getOrCreateTagBuilder(ItemTags.BUNDLES)
+                .add(NetherAndEndItems.HOGLIN_BUNDLE)
+        ;
     }
 }

@@ -130,6 +130,11 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .input(Items.BOWL)
                 .criterion(hasItem(NetherAndEndItems.WARPED_STEW), conditionsFromItem(Blocks.WARPED_FUNGUS))
                 .offerTo(exporter);
+        this.createShapeless(RecipeCategory.MISC, NetherAndEndItems.HOGLIN_BUNDLE)
+                .input(NetherAndEndItems.HOGLIN_SKIN)
+                .input(Items.STRING)
+                .criterion(hasItem(NetherAndEndItems.HOGLIN_BUNDLE), conditionsFromItem(Items.STRING))
+                .offerTo(exporter);
     }
 
     public static class Provider extends RecipeGenerator.RecipeProvider {

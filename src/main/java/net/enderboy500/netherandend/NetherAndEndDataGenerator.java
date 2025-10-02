@@ -25,7 +25,7 @@ public class NetherAndEndDataGenerator implements DataGeneratorEntrypoint {
 				BuiltinRegistries::createWrapperLookup, Util.getMainWorkerExecutor()
 		);
 
-		pack.addProvider(NetherAndEndBlockLootTableProvider::new);
+//		pack.addProvider(NetherAndEndBlockLootTableProvider::new);
 		pack.addProvider(NetherAndEndBlockTagProvider::new);
 		pack.addProvider(NetherAndEndItemTagProvider::new);
 		pack.addProvider(NetherAndEndAdvancementProvider::new);
