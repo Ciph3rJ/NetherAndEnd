@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.providers;
+package net.enderboy500.netherandend.data.providers;
 
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;

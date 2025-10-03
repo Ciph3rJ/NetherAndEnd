@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.providers;
+package net.enderboy500.netherandend.data.providers;
 
 import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.enderboy500.netherandend.util.NetherAndEndTags;
@@ -28,6 +28,8 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
                 .add(NetherAndEndItems.RAW_STRIDER_MEAT)
                 .add(NetherAndEndItems.COOKED_STRIDER_MEAT)
                 .add(NetherAndEndItems.SMOKED_STRIDER_MEAT);
+        valueLookupBuilder(NetherAndEndTags.REPAIRS_SHULKER_FALCHION)
+                .add(NetherAndEndItems.SHULKER_PEARL);
 
         valueLookupBuilder(ItemTags.MEAT)
                 .addTag(NetherAndEndTags.HOGCHOP)
@@ -41,5 +43,8 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
                 .add(NetherAndEndItems.SHULKER_FALCHION);
         valueLookupBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
+
+        valueLookupBuilder(ItemTags.BUNDLES)
+                .add(NetherAndEndItems.HOGLIN_BUNDLE);
     }
 }

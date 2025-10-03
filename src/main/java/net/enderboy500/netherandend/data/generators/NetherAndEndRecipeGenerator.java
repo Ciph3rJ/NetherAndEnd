@@ -1,4 +1,4 @@
-package net.enderboy500.netherandend.datagen.generators;
+package net.enderboy500.netherandend.data.generators;
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
@@ -129,6 +129,11 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .input(NetherAndEndItems.WARPED_WART)
                 .input(Items.BOWL)
                 .criterion(hasItem(NetherAndEndItems.WARPED_STEW), conditionsFromItem(Blocks.WARPED_FUNGUS))
+                .offerTo(exporter);
+        this.createShapeless(RecipeCategory.MISC, NetherAndEndItems.HOGLIN_BUNDLE)
+                .input(Items.STRING)
+                .input(NetherAndEndItems.HOGLIN_SKIN)
+                .criterion(hasItem(NetherAndEndItems.HOGLIN_BUNDLE), conditionsFromItem(NetherAndEndItems.HOGLIN_SKIN))
                 .offerTo(exporter);
     }
 

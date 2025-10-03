@@ -30,6 +30,7 @@ public class NetherAndEndItemGroups {
                         entries.add(NetherAndEndItems.RAW_HOGCHOP);
                         entries.add(NetherAndEndItems.COOKED_HOGCHOP);
                         entries.add(NetherAndEndItems.HOGLIN_SKIN);
+                        entries.add(NetherAndEndItems.HOGLIN_BUNDLE);
                         entries.add(NetherAndEndItems.RAW_STRIDER_MEAT);
                         entries.add(NetherAndEndItems.SMOKED_STRIDER_MEAT);
                         entries.add(NetherAndEndItems.COOKED_STRIDER_MEAT);
