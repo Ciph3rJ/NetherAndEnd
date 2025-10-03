@@ -22,14 +22,10 @@ public class ShulkerFalchionItem extends Item {
     public float getBonusAttackDamage(Entity target, float baseAttackDamage, DamageSource damageSource) {
         if (target instanceof LivingEntity living) {
             living.addStatusEffect(new StatusEffectInstance(StatusEffects.LEVITATION, 200, 1));
+            if (living.getAttacker() != null) {
+                living.getAttacker().addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 200, 0));
+            }
         }
         return super.getBonusAttackDamage(target, baseAttackDamage, damageSource);
-    }
-
-    @Override
-    public ActionResult use(World world, PlayerEntity user, Hand hand) {
-        user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 80, 0));
-        user.getItemCooldownManager().set(this.getDefaultStack(), 100);
-        return super.use(world, user, hand);
     }
 }

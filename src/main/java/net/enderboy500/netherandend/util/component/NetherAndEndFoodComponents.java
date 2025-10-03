@@ -27,17 +27,17 @@ public class NetherAndEndFoodComponents {
     public static final FoodComponent COOKED_HOGCHOP = new FoodComponent.Builder().nutrition(4)
             .saturationModifier(0.5f)
             .build();
-    public static final FoodComponent RAW_STRIDER_MEAT = new FoodComponent.Builder().nutrition(6)
-            .saturationModifier(1.4f)
+    public static final FoodComponent RAW_STRIDER_MEAT = new FoodComponent.Builder().nutrition(2)
+            .saturationModifier(0.75f)
             .build();
-    public static final FoodComponent COOKED_STRIDER_MEAT = new FoodComponent.Builder().nutrition(3)
-            .saturationModifier(0.5f)
+    public static final FoodComponent COOKED_STRIDER_MEAT = new FoodComponent.Builder().nutrition(5)
+            .saturationModifier(1.5f)
             .build();
-    public static final FoodComponent SMOKED_STRIDER_MEAT = new FoodComponent.Builder().nutrition(4)
+    public static final FoodComponent SMOKED_STRIDER_MEAT = new FoodComponent.Builder().nutrition(3 )
             .saturationModifier(1f)
             .build();
     public static final FoodComponent HARDENED_STRIDER_MEAT = new FoodComponent.Builder().nutrition(1)
-            .saturationModifier(0.3f)
+            .saturationModifier(0.5f)
             .build();
 
     public static void loadFoodComponents() {}
