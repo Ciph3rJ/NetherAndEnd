@@ -29,6 +29,9 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
                 .add(NetherAndEndItems.COOKED_STRIDER_MEAT)
                 .add(NetherAndEndItems.SMOKED_STRIDER_MEAT);
 
+        getOrCreateTagBuilder(NetherAndEndTags.REPAIRS_SHULKER_FALCHION)
+                .add(NetherAndEndItems.SHULKER_PEARL);
+
         getOrCreateTagBuilder(ItemTags.MEAT)
                 .addTag(NetherAndEndTags.HOGCHOP)
                 .addTag(NetherAndEndTags.STRIDER_MEAT);
