@@ -2,6 +2,8 @@ package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
 import net.enderboy500.netherandend.block.CrumblingBasaltBlock;
+import net.enderboy500.netherandend.block.WarpedCakeBlock;
+import net.enderboy500.netherandend.block.WarpedCandleCakeBlock;
 import net.enderboy500.netherandend.util.type.NetherAndEndBlockSetTypes;
 import net.enderboy500.netherandend.util.type.NetherAndEndWoodTypes;
 import net.minecraft.block.*;
@@ -41,6 +43,25 @@ public class NetherAndEndBlocks {
     public static final Block CHORUS_TRAPDOOR = register("chorus_trapdoor", (settings) -> {
         return new TrapdoorBlock(NetherAndEndBlockSetTypes.CHORUS, settings);
     }, Settings.create().mapColor(CHORUS_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never));
+
+    public static final Block WARPED_CAKE = register("warped_cake", WarpedCakeBlock::new, AbstractBlock.Settings.copy(CAKE));
+    public static final Block WARPED_CANDLE_CAKE = register("warped_candle_cake", settings -> new WarpedCandleCakeBlock(CANDLE, settings), AbstractBlock.Settings.copyShallow(WARPED_CAKE).luminance(Blocks.createLightLevelFromLitBlockState(3)));
+    public static final Block WARPED_WHITE_CANDLE_CAKE = register("white_warped_candle_cake", settings -> new WarpedCandleCakeBlock(WHITE_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIGHT_GRAY_CANDLE_CAKE = register("light_gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(LIGHT_GRAY_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_GRAY_CANDLE_CAKE = register("gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(GRAY_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BLACK_CANDLE_CAKE = register("black_warped_candle_cake", settings -> new WarpedCandleCakeBlock(BLACK_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BROWN_CANDLE_CAKE = register("brown_warped_candle_cake", settings -> new WarpedCandleCakeBlock(BROWN_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_RED_CANDLE_CAKE = register("red_warped_candle_cake", settings -> new WarpedCandleCakeBlock(RED_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_ORANGE_CANDLE_CAKE = register("orange_warped_candle_cake", settings -> new WarpedCandleCakeBlock(ORANGE_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_YELLOW_CANDLE_CAKE = register("yellow_warped_candle_cake", settings -> new WarpedCandleCakeBlock(YELLOW_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIME_CANDLE_CAKE = register("lime_warped_candle_cake", settings -> new WarpedCandleCakeBlock(LIME_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_GREEN_CANDLE_CAKE = register("green_warped_candle_cake", settings -> new WarpedCandleCakeBlock(GREEN_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_CYAN_CANDLE_CAKE = register("cyan_warped_candle_cake", settings -> new WarpedCandleCakeBlock(CYAN_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIGHT_BLUE_CANDLE_CAKE = register("light_blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(LIGHT_BLUE_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BLUE_CANDLE_CAKE = register("blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(BLUE_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_PURPLE_CANDLE_CAKE = register("purple_warped_candle_cake", settings -> new WarpedCandleCakeBlock(PURPLE_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_MAGENTA_CANDLE_CAKE = register("magenta_warped_candle_cake", settings -> new WarpedCandleCakeBlock(MAGENTA_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_PINK_CANDLE_CAKE = register("pink_warped_candle_cake", settings -> new WarpedCandleCakeBlock(PINK_CANDLE, settings), AbstractBlock.Settings.copy(WARPED_CANDLE_CAKE));
 
     public static final Block NETHER_COAL_ORE = register("nether_coal_ore",
             settings -> {

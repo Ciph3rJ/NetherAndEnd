@@ -1,12 +1,12 @@
 {
   "item.netherandend.chorus_soup": "Soupe de Chorus",
-  "item.netherandend.warped_wart": "Verrues du Biscornu",
+  "item.netherandend.warped_wart": "Verrues du Tordues",
   "item.netherandend.shulker_pearl": "Perle de Shulker",
   "item.netherandend.hardened_shulker_pearl": "Perle de Shulker Durcie",
   "item.netherandend.ender_fruit": "Fruits de l'ender",
   "item.netherandend.shulker_falchion": "Épée de Shulker",
   "item.netherandend.chorus_pie": "Tarte à le Chorus",
-  "item.netherandend.warped_stew": "Ragoût de Biscornu",
+  "item.netherandend.warped_stew": "Ragoût de Tordu",
   "item.netherandend.raw_hogchop": "Hogchop Cru",
   "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
@@ -86,6 +86,7 @@
   "block.netherandend.nether_diamond_ore": "Minerai de Diamant du Nether",
   "block.netherandend.cracked_bedrock": "Bedrock Craquelée",
   "block.netherandend.crumbling_basalt": "Basalte Effondrement",
+  "block.netherandend.warped_cake": "Gâteau de Tordu",
 
   "block.netherandend.end_coal_ore": "Minerai de Charbon de l'End",
   "block.netherandend.end_iron_ore": "Minerai de Fer de l'End",
