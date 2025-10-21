@@ -25,6 +25,8 @@ public class NetherAndEndBlockItems {
     public static final BlockItem CHORUS_TRAPDOOR = register("chorus_trapdoor", NetherAndEndBlocks.CHORUS_TRAPDOOR);
     public static final BlockItem CHORUS_SHELF = register("chorus_shelf", NetherAndEndBlocks.CHORUS_SHELF);
 
+    public static final BlockItem WARPED_CAKE = register("warped_cake", NetherAndEndBlocks.WARPED_CAKE);
+
     public static final BlockItem NETHER_COAL_ORE = register("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE);
     public static final BlockItem NETHER_IRON_ORE = register("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE);
     public static final BlockItem NETHER_COPPER_ORE = register("nether_copper_ore", NetherAndEndBlocks.NETHER_COPPER_ORE);

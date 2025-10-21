@@ -40,5 +40,7 @@ public class NetherAndEndFoodComponents {
             .saturationModifier(0.5f)
             .build();
 
+    public static final FoodComponent WARPED_CAKE_SLICE = new FoodComponent.Builder().nutrition(2).saturationModifier(0.1F).build();
+
     public static void loadFoodComponents() {}
 }

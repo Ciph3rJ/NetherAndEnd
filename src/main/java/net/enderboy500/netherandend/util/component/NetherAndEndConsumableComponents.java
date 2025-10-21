@@ -24,5 +24,8 @@ public class NetherAndEndConsumableComponents {
             .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 180, 0), 100))
             .build();
 
+    public static final ConsumableComponent WARPED_CAKE_SLICE = ConsumableComponents.food()
+            .consumeEffect(new ApplyEffectsConsumeEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 0), 100)).build();
+
     public static void loadConsumableComponents() {}
 }

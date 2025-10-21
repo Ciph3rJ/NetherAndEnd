@@ -7,6 +7,8 @@
   "item.netherandend.shulker_falchion": "Shulker Falchion",
   "item.netherandend.chorus_pie": "Chorus Pie",
   "item.netherandend.warped_stew": "Warped Stew",
+  "item.netherandend.warped_cake": "Warped Cake",
+  "item.netherandend.warped_cake_slice": "Slice of Warped Cake",
   "item.netherandend.raw_hogchop": "Raw Hogchop",
   "item.netherandend.cooked_hogchop": "Cooked Hogchop",
   "item.netherandend.hoglin_skin": "Hoglin Skin",
@@ -86,6 +88,7 @@
   "block.netherandend.nether_diamond_ore": "Nether Diamond Ore",
   "block.netherandend.cracked_bedrock": "Cracked Bedrock",
   "block.netherandend.crumbling_basalt": "Crumbling Basalt",
+  "block.netherandend.warped_cake": "Warped Cake",
 
   "block.netherandend.end_coal_ore": "End Coal Ore",
   "block.netherandend.end_iron_ore": "End Iron Ore",

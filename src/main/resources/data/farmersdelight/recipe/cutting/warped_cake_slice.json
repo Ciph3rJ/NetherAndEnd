@@ -1,0 +1,15 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    "netherandend:warped_cake"
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 7,
+        "id": "netherandend:warped_cake_slice"
+      }
+    }
+  ],
+  "tool": "#c:tools/knife"
+}

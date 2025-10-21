@@ -1,7 +1,9 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
+import net.enderboy500.netherandend.compat.NEFDCompat;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -27,6 +29,8 @@ public class NetherAndEndItemGroups {
                         entries.add(NetherAndEndBlockItems.CRUMBLING_BASALT);
                         entries.add(NetherAndEndItems.WARPED_WART);
                         entries.add(NetherAndEndItems.WARPED_STEW);
+                        entries.add(NetherAndEndBlockItems.WARPED_CAKE);
+                        if (FabricLoader.getInstance().isModLoaded("farmersdelight")) entries.add(NEFDCompat.WARPED_CAKE_SLICE);
                         entries.add(NetherAndEndItems.RAW_HOGCHOP);
                         entries.add(NetherAndEndItems.COOKED_HOGCHOP);
                         entries.add(NetherAndEndItems.HOGLIN_SKIN);
