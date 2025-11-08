@@ -26,7 +26,7 @@ public class NetherAndEndItems {
     public static final Item SHULKER_PEARL = register("shulker_pearl", Item::new, new Settings().food(NetherAndEndFoodComponents.SHULKER_PEARL, NetherAndEndConsumableComponents.SHULKER_PEARL).maxCount(16));
     public static final Item HARDENED_SHULKER_PEARL = register("hardened_shulker_pearl", Item::new, new Settings().food(NetherAndEndFoodComponents.HARDENED_SHULKER_PEARL, NetherAndEndConsumableComponents.HARDENED_SHULKER_PEARL).maxCount(16));
     public static final Item CHORUS_PIE = register("chorus_pie", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_PIE));
-    public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_SOUP).maxCount(1));
+    public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Settings().food(NetherAndEndFoodComponents.CHORUS_SOUP).maxCount(1).useRemainder(Items.BOWL));
     public static final Item ENDER_FRUIT = register("ender_fruit", Item::new, new Settings().food(NetherAndEndFoodComponents.ENDER_FRUIT));
     public static final Item DRAGON_CHARGE = register("dragon_charge", DragonChargeItem::new, new Settings().useCooldown(3).rarity(Rarity.UNCOMMON));
     public static final Item SHULKER_FALCHION = register("shulker_falchion", ShulkerFalchionItem::new, new Settings().sword(NetherAndEndToolMaterials.SHULKER_FALCHION, 3.0F, -2.4F).rarity(Rarity.UNCOMMON));
