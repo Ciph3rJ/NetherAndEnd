@@ -7,6 +7,7 @@
   "item.netherandend.shulker_falchion": "Espada de Shulker",
   "item.netherandend.chorus_pie": "Tarta de Chorus",
   "item.netherandend.warped_stew": "Estafado de Distorsionado",
+  "item.netherandend.warped_cake_slice": "Porción de Torta de Distorsionado",
   "item.netherandend.raw_hogchop": "Hogchop Crudo",
   "item.netherandend.cooked_hogchop": "Hogchop Asado",
   "item.netherandend.hoglin_skin": "Piel de Hoglin",
@@ -86,6 +87,7 @@
   "block.netherandend.nether_diamond_ore": "Mena de Diamante del Nether",
   "block.netherandend.cracked_bedrock": "Piedra Base Agrietados",
   "block.netherandend.crumbling_basalt": "Basalto Desmenuzado",
+  "block.netherandend.warped_cake": "Torta de Distorsionado",
 
   "block.netherandend.end_coal_ore": "Mena de Carbón del End",
   "block.netherandend.end_iron_ore": "Mena de Hierro del End",
@@ -105,6 +107,7 @@
   "block.netherandend.chorus_trapdoor": "Trampilla de Chorus",
   "block.netherandend.chorus_button": "Botón de Chorus",
   "block.netherandend.chorus_pressure_plate": "Placa de Presión de Chorus",
+  "block.netherandend.chorus_shelf": "Estante de Chorus",
   "block.netherandend.ender_pearl_cluster": "Brotador de Perla de Ender",
 
   "effect.netherandend.instant_warping": "Deformación Instantáneo",

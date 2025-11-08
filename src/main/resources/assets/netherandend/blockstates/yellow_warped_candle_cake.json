@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "netherandend:block/yellow_warped_candle_cake"
+    },
+    "lit=true": {
+      "model": "netherandend:block/yellow_warped_candle_cake_lit"
+    }
+  }
+}

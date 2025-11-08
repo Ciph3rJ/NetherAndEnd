@@ -1,0 +1,5 @@
+accessWidener v2 named
+
+accessible method net/minecraft/block/CandleCakeBlock isHittingCandle (Lnet/minecraft/util/hit/BlockHitResult;)Z
+accessible field net/minecraft/block/CandleCakeBlock candle Lnet/minecraft/block/CandleBlock;
+accessible method net/minecraft/block/AbstractCandleBlock setLit (Lnet/minecraft/world/WorldAccess;Lnet/minecraft/block/BlockState;Lnet/minecraft/util/math/BlockPos;Z)V

@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "netherandend:font/ne_icon_trophies.png",
+      "ascent": 8,
+      "height" : 16,
+      "chars": ["\uE001"]
+    }
+  ]
+}

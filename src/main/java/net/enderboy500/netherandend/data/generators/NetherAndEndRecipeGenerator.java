@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.data.generators;
 
+import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.block.Blocks;
@@ -9,6 +10,7 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -130,14 +132,24 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .input(Items.BOWL)
                 .criterion(hasItem(NetherAndEndItems.WARPED_STEW), conditionsFromItem(Blocks.WARPED_FUNGUS))
                 .offerTo(exporter);
+        this.createShaped(RecipeCategory.FOOD, NetherAndEndBlockItems.WARPED_CAKE)
+                .input('L', Items.LAVA_BUCKET)
+                .input('W', NetherAndEndItems.WARPED_WART)
+                .input('F', Items.WARPED_FUNGUS)
+                .input('E', ItemTags.EGGS)
+                .pattern("LLL")
+                .pattern("WEW")
+                .pattern("FFF")
+                .criterion(hasItem(NetherAndEndBlockItems.WARPED_CAKE), conditionsFromItem(Items.WARPED_FUNGUS))
+                .offerTo(exporter);
         this.createShapeless(RecipeCategory.MISC, NetherAndEndItems.HOGLIN_BUNDLE)
-                .input(NetherAndEndItems.HOGLIN_SKIN)
                 .input(Items.STRING)
-                .criterion(hasItem(NetherAndEndItems.HOGLIN_BUNDLE), conditionsFromItem(Items.STRING))
+                .input(NetherAndEndItems.HOGLIN_SKIN)
+                .criterion(hasItem(NetherAndEndItems.HOGLIN_BUNDLE), conditionsFromItem(NetherAndEndItems.HOGLIN_SKIN))
                 .offerTo(exporter);
     }
 
-    public static class Provider extends RecipeGenerator.RecipeProvider {
+    public static class Provider extends RecipeProvider {
         public Provider(DataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
             super(dataOutput, completableFuture);
         }

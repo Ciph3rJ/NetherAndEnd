@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend;
 
+import net.enderboy500.netherandend.compat.NEFDCompat;
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
@@ -8,6 +9,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
@@ -37,6 +39,8 @@ public class NetherAndEnd implements ModInitializer {
 		NetherAndEndEntities.loadEntities();
 
 		NetherAndEndUtils.loadUtils();
+
+		if (FabricLoader.getInstance().isModLoaded("farmersdelight")) NEFDCompat.loadNEFDCompat();
 
 		NetherAndEndBiomeModifications.loadBiomeModifications();
 

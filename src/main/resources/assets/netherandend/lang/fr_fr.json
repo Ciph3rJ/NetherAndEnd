@@ -7,6 +7,7 @@
   "item.netherandend.shulker_falchion": "Épée de Shulker",
   "item.netherandend.chorus_pie": "Tarte à le Chorus",
   "item.netherandend.warped_stew": "Ragoût de Biscornu",
+  "item.netherandend.warped_cake_slice": "Part de Gâteau de Biscornu",
   "item.netherandend.raw_hogchop": "Hogchop Cru",
   "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
@@ -16,7 +17,6 @@
   "item.netherandend.cooked_strider_meat": "Viande d'arpenteur Cuit",
   "item.netherandend.hardened_strider_meat": "Viande d'arpenteur Durcie",
   "item.netherandend.dragon_charge": "Charge de Dragon",
-
 
   "item.minecraft.potion.effect.aversion": "Potion de Résistance",
   "item.minecraft.splash_potion.effect.aversion": "Potion de Résistance Jetable",
@@ -86,6 +86,7 @@
   "block.netherandend.nether_diamond_ore": "Minerai de Diamant du Nether",
   "block.netherandend.cracked_bedrock": "Bedrock Craquelée",
   "block.netherandend.crumbling_basalt": "Basalte Effondrement",
+  "block.netherandend.warped_cake": "Gâteau de Biscornu",
 
   "block.netherandend.end_coal_ore": "Minerai de Charbon de l'End",
   "block.netherandend.end_iron_ore": "Minerai de Fer de l'End",
@@ -105,6 +106,7 @@
   "block.netherandend.chorus_trapdoor": "Trappe en Chorus",
   "block.netherandend.chorus_button": "Bouton en Chorus",
   "block.netherandend.chorus_pressure_plate": "Plaque de Pression en Chorus",
+  "block.netherandend.chorus_shelf": "Étagère en Chorus",
   "block.netherandend.ender_pearl_cluster": "Druse de Perle de l'Ender",
 
   "effect.netherandend.instant_warping": "Déformation Instantané",
