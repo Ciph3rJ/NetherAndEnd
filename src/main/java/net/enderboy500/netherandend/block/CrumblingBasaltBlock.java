@@ -1,33 +1,35 @@
 package net.enderboy500.netherandend.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class CrumblingBasaltBlock extends CrumblingBlock{
-    public CrumblingBasaltBlock(Settings settings) {
+    public CrumblingBasaltBlock(BlockBehaviour.Properties settings) {
         super(settings);
     }
 
     @Override
-    protected MapCodec<? extends CrumblingBlock> getCodec() {
+    protected MapCodec<? extends CrumblingBlock> codec() {
         return null;
     }
 
     @Override
-    public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-        if (entity instanceof PlayerEntity player && world.getBlockState(pos.up()).isOf(Blocks.AIR) && player.getEquippedStack(EquipmentSlot.FEET).isEmpty() && !player.isSneaking()) {
-            if (!player.hasStatusEffect(StatusEffects.FIRE_RESISTANCE)) {
-                entity.serverDamage(world.getDamageSources().hotFloor(), 1.0F);
+    public void stepOn(Level world, BlockPos pos, BlockState state, Entity entity) {
+        if (entity instanceof Player player && world.getBlockState(pos.above()).is(Blocks.AIR) && player.getItemBySlot(EquipmentSlot.FEET).isEmpty() && !player.isShiftKeyDown()) {
+            if (!player.hasEffect(MobEffects.FIRE_RESISTANCE) && world instanceof ServerLevel serverLevel) {
+                entity.hurtServer(serverLevel, world.damageSources().hotFloor(), 1.0F);
             }
         }
 
-        super.onSteppedOn(world, pos, state, entity);
+        super.stepOn(world, pos, state, entity);
     }
 }

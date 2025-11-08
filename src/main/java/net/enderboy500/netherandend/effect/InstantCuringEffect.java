@@ -1,39 +1,40 @@
 package net.enderboy500.netherandend.effect;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.*;
-import net.minecraft.server.world.ServerWorld;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.effect.InstantenousMobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.LivingEntity;
 
-public class InstantCuringEffect extends InstantStatusEffect {
-    public InstantCuringEffect(StatusEffectCategory category, int color) {
+public class InstantCuringEffect extends InstantenousMobEffect {
+    public InstantCuringEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
-
     @Override
-    public boolean isInstant() {
+    public boolean isInstantenous() {
         return false;
     }
 
     @Override
-    public void onApplied(LivingEntity entity, int amplifier) {
+    public void onEffectStarted(LivingEntity entity, int amplifier) {
         removeHarmfulEffects(entity);
-        super.onApplied(entity, amplifier);
+        super.onEffectStarted(entity, amplifier);
     }
 
     public void removeHarmfulEffects(LivingEntity entity){
-        entity.removeStatusEffect(StatusEffects.NAUSEA);
-        entity.removeStatusEffect(StatusEffects.POISON);
-        entity.removeStatusEffect(StatusEffects.HUNGER);
+        entity.removeEffect(MobEffects.NAUSEA);
+        entity.removeEffect(MobEffects.POISON);
+        entity.removeEffect(MobEffects.HUNGER);
     }
 
     @Override
-    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
-        return super.applyUpdateEffect(world, entity, amplifier);
+    public boolean applyEffectTick(ServerLevel world, LivingEntity entity, int amplifier) {
+        return super.applyEffectTick(world, entity, amplifier);
     }
 
     @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

@@ -1,7 +1,7 @@
 package net.enderboy500.netherandend.util.type;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
-import net.minecraft.block.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 import java.util.Map;
 

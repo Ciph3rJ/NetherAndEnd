@@ -6,19 +6,19 @@ import net.enderboy500.netherandend.util.NetherAndEndTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
-import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
 public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public NetherAndEndBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public NetherAndEndBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void addTags(HolderLookup.Provider provider) {
         valueLookupBuilder(NetherAndEndTags.CHORUS)
                 .add(NetherAndEndBlocks.CHORUS_BLOCK)
                 .add(NetherAndEndBlocks.CHORUS_PLANKS)

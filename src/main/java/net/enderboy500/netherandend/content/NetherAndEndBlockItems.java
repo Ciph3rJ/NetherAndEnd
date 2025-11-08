@@ -1,14 +1,14 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 
 import java.util.function.Function;
 
@@ -48,19 +48,19 @@ public class NetherAndEndBlockItems {
     public static final BlockItem CRACKED_BEDROCK = register("cracked_bedrock", NetherAndEndBlocks.CRACKED_BEDROCK);
     public static final BlockItem CRUMBLING_BASALT = register("crumbling_basalt", NetherAndEndBlocks.CRUMBLING_BASALT);
 
-    public static <I extends Item> I registerItem(String id, Function<Item.Settings, I> factory, Item.Settings settings) {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(NetherAndEnd.MOD_ID, id));
-        I item = factory.apply(settings.registryKey(key));
+    public static <I extends Item> I registerItem(String id, Function<Item.Properties, I> factory, Item.Properties settings) {
+        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));
+        I item = factory.apply(settings.setId(key));
 
         if (item instanceof BlockItem blockItem) {
-            blockItem.appendBlocks(Item.BLOCK_ITEMS, blockItem);
+            blockItem.registerBlocks(Item.BY_BLOCK, blockItem);
         }
 
-        return Registry.register(Registries.ITEM, key, item);
+        return Registry.register(BuiltInRegistries.ITEM, key, item);
     }
 
     public static BlockItem register(String id, Block block) {
-        return registerItem(id, settings -> new BlockItem(block, settings), new Item.Settings().useBlockPrefixedTranslationKey());
+        return registerItem(id, settings -> new BlockItem(block, settings), new Item.Properties().useBlockDescriptionPrefix());
     }
 
     public static void loadBlockItems() {}

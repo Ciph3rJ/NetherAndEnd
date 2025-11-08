@@ -1,72 +1,72 @@
 package net.enderboy500.netherandend.effect;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.InstantStatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.Mth;
+import net.minecraft.world.effect.InstantenousMobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.Vec3;
 
-public class InstantWarpingEffect extends InstantStatusEffect {
-    public InstantWarpingEffect(StatusEffectCategory category, int color) {
+public class InstantWarpingEffect extends InstantenousMobEffect {
+    public InstantWarpingEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
     @Override
-    public boolean isInstant() {
+    public boolean isInstantenous() {
         return false;
     }
 
     @Override
-    public void onApplied(LivingEntity entity, int amplifier) {
-        World world = entity.getEntityWorld();
-        if (!world.isClient()) {
+    public void onEffectAdded(LivingEntity entity, int amplifier) {
+        Level world = entity.level();
+        if (!world.isClientSide()) {
             for (int i = 0; i < 16; i++) {
                 double d = entity.getX() + (entity.getRandom().nextDouble() - 0.5) * 16.0;
-                double e = MathHelper.clamp(
+                double e = Mth.clamp(
                         entity.getY() + (double)(entity.getRandom().nextInt(16) - 8),
-                        world.getBottomY(),
-                        world.getBottomY() + ((ServerWorld)world).getLogicalHeight() - 1
+                        world.getMinY(),
+                        world.getMinY() + ((ServerLevel)world).getLogicalHeight() - 1
                 );
                 double f = entity.getZ() + (entity.getRandom().nextDouble() - 0.5) * 16.0;
-                if (entity.hasVehicle()) {
+                if (entity.isPassenger()) {
                     entity.stopRiding();
                 }
 
-                Vec3d vec3d = entity.getEntityPos();
-                if (entity.teleport(d, e, f, true)) {
-                    world.emitGameEvent(GameEvent.TELEPORT, vec3d, GameEvent.Emitter.of(entity));
-                    SoundCategory soundCategory;
+                Vec3 vec3d = entity.position();
+                if (entity.randomTeleport(d, e, f, true)) {
+                    world.gameEvent(GameEvent.TELEPORT, vec3d, GameEvent.Context.of(entity));
+                    SoundSource soundCategory;
                     SoundEvent soundEvent;
-                        soundEvent = SoundEvents.ENTITY_ENDERMAN_TELEPORT;
-                        soundCategory = SoundCategory.PLAYERS;
+                        soundEvent = SoundEvents.ENDERMAN_TELEPORT;
+                        soundCategory = SoundSource.PLAYERS;
 
                     world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), soundEvent, soundCategory);
-                    entity.onLanding();
+                    entity.resetFallDistance();
                     break;
                 }
             }
 
-            if (entity instanceof PlayerEntity playerEntity) {
-                playerEntity.clearCurrentExplosion();
+            if (entity instanceof Player playerEntity) {
+                playerEntity.resetCurrentImpulseContext();
             }
         }
-        super.onApplied(entity, amplifier);
+        super.onEffectAdded(entity, amplifier);
     }
 
     @Override
-    public boolean applyUpdateEffect(ServerWorld world, LivingEntity entity, int amplifier) {
-        return super.applyUpdateEffect(world, entity, amplifier);
+    public boolean applyEffectTick(ServerLevel world, LivingEntity entity, int amplifier) {
+        return super.applyEffectTick(world, entity, amplifier);
     }
 
     @Override
-    public boolean canApplyUpdateEffect(int duration, int amplifier) {
+    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
         return true;
     }
 }

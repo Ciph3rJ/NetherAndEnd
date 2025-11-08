@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": "#minecraft:eggs",
+    "F": "minecraft:warped_fungus",
+    "L": "minecraft:lava_bucket",
+    "W": "netherandend:warped_wart"
+  },
+  "pattern": [
+    "LLL",
+    "WEW",
+    "FFF"
+  ],
+  "result": {
+    "count": 1,
+    "id": "netherandend:warped_cake"
+  }
+}

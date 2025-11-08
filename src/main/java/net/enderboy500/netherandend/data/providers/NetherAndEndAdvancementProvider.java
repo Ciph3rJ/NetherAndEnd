@@ -5,234 +5,234 @@ import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
-import net.minecraft.advancement.Advancement;
-import net.minecraft.advancement.AdvancementEntry;
-import net.minecraft.advancement.AdvancementFrame;
-import net.minecraft.advancement.criterion.ChangedDimensionCriterion;
-import net.minecraft.advancement.criterion.ConsumeItemCriterion;
-import net.minecraft.advancement.criterion.InventoryChangedCriterion;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryEntryLookup;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementType;
+import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
+import net.minecraft.advancements.critereon.ConsumeItemTrigger;
+import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
 public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
-    public NetherAndEndAdvancementProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+    public NetherAndEndAdvancementProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
     }
 
     @Override
-    public void generateAdvancement(RegistryWrapper.WrapperLookup wrapperLookup, Consumer<AdvancementEntry> consumer) {
-        RegistryEntryLookup<Item> itemRegistryEntryLookup = wrapperLookup.getOrThrow(RegistryKeys.ITEM);
+    public void generateAdvancement(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer) {
+        HolderGetter<Item> itemRegistryEntryLookup = provider.lookupOrThrow(Registries.ITEM);
 
-        AdvancementEntry netherAndEnd = Advancement.Builder.create()
+        AdvancementHolder netherAndEnd = Advancement.Builder.advancement()
                 .display(
                         NetherAndEndBlockItems.NETHER_DIAMOND_ORE,
-                        Text.translatable("advancement.netherandend.nether_and_end.title"),
-                        Text.translatable("advancement.netherandend.nether_and_end.desc"),
-                        Identifier.of(NetherAndEnd.MOD_ID, "gui/advancements/backgrounds/nether_and_end"),
-                        AdvancementFrame.TASK,
+                        Component.translatable("advancement.netherandend.nether_and_end.title"),
+                        Component.translatable("advancement.netherandend.nether_and_end.desc"),
+                        ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "gui/advancements/backgrounds/nether_and_end"),
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("entered_nether", ChangedDimensionCriterion.Conditions.to(World.NETHER))
-                .build(consumer, NetherAndEnd.MOD_ID + "/entered_nether");
+                .addCriterion("entered_nether", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.NETHER))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/entered_nether"));
 
-        AdvancementEntry doubleWart = Advancement.Builder.create()
+        AdvancementHolder doubleWart = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.WARPED_WART,
-                        Text.translatable("advancement.netherandend.double_wart.title"),
-                        Text.translatable("advancement.netherandend.double_wart.desc"),
+                        Component.translatable("advancement.netherandend.double_wart.title"),
+                        Component.translatable("advancement.netherandend.double_wart.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_nether_wart", InventoryChangedCriterion.Conditions.items(Items.NETHER_WART))
-                .criterion("got_warped_wart", InventoryChangedCriterion.Conditions.items(NetherAndEndItems.WARPED_WART))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_warts");
-        AdvancementEntry whyIsThisSoComplicated = Advancement.Builder.create()
+                .addCriterion("got_nether_wart", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHER_WART))
+                .addCriterion("got_warped_wart", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.WARPED_WART))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_warts"));
+        AdvancementHolder whyIsThisSoComplicated = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.RAW_STRIDER_MEAT,
-                        Text.translatable("advancement.netherandend.why_is_this_so_complicated.title"),
-                        Text.translatable("advancement.netherandend.why_is_this_so_complicated.desc"),
+                        Component.translatable("advancement.netherandend.why_is_this_so_complicated.title"),
+                        Component.translatable("advancement.netherandend.why_is_this_so_complicated.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_raw_strider_meat", InventoryChangedCriterion.Conditions.items(NetherAndEndItems.RAW_STRIDER_MEAT))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_raw_strider_meat");
-        AdvancementEntry whyWasThisSoHard = Advancement.Builder.create()
+                .addCriterion("got_raw_strider_meat", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.RAW_STRIDER_MEAT))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_raw_strider_meat"));
+        AdvancementHolder whyWasThisSoHard = Advancement.Builder.advancement()
                 .parent(whyIsThisSoComplicated)
                 .display(
                         NetherAndEndItems.HARDENED_STRIDER_MEAT,
-                        Text.translatable("advancement.netherandend.why_was_this_so_hard.title"),
-                        Text.translatable("advancement.netherandend.why_was_this_so_hard.desc"),
+                        Component.translatable("advancement.netherandend.why_was_this_so_hard.title"),
+                        Component.translatable("advancement.netherandend.why_was_this_so_hard.desc"),
                         null,
-                        AdvancementFrame.CHALLENGE,
+                        AdvancementType.CHALLENGE,
                         true,
                         true,
                         true
                 )
-                .criterion("got_raw_strider_meat", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.RAW_STRIDER_MEAT))
-                .criterion("got_smoked_strider_meat", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.SMOKED_STRIDER_MEAT))
-                .criterion("got_cooked_strider_meat", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.COOKED_STRIDER_MEAT))
-                .criterion("got_hardened_strider_meat", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_STRIDER_MEAT))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_all_strider_meat");
-        AdvancementEntry whatsTheDifference = Advancement.Builder.create()
+                .addCriterion("got_raw_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.RAW_STRIDER_MEAT))
+                .addCriterion("got_smoked_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.SMOKED_STRIDER_MEAT))
+                .addCriterion("got_cooked_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.COOKED_STRIDER_MEAT))
+                .addCriterion("got_hardened_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_STRIDER_MEAT))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_all_strider_meat"));
+        AdvancementHolder whatsTheDifference = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.RAW_HOGCHOP,
-                        Text.translatable("advancement.netherandend.whats_the_difference.title"),
-                        Text.translatable("advancement.netherandend.whats_the_difference.desc"),
+                        Component.translatable("advancement.netherandend.whats_the_difference.title"),
+                        Component.translatable("advancement.netherandend.whats_the_difference.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_raw_hogchop", InventoryChangedCriterion.Conditions.items(NetherAndEndItems.RAW_HOGCHOP))
-                .criterion("got_raw_porkchop", InventoryChangedCriterion.Conditions.items(Items.PORKCHOP))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_chops");
-        AdvancementEntry wellThatsUnique = Advancement.Builder.create()
+                .addCriterion("got_raw_hogchop", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.RAW_HOGCHOP))
+                .addCriterion("got_raw_porkchop", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PORKCHOP))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_chops"));
+        AdvancementHolder wellThatsUnique = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndBlockItems.CRUMBLING_BASALT,
-                        Text.translatable("advancement.netherandend.well_thats_unique.title"),
-                        Text.translatable("advancement.netherandend.well_thats_unique.desc"),
+                        Component.translatable("advancement.netherandend.well_thats_unique.title"),
+                        Component.translatable("advancement.netherandend.well_thats_unique.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_crumbling_basalt", InventoryChangedCriterion.Conditions.items(NetherAndEndBlockItems.CRUMBLING_BASALT))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_crumbling_basalt");
+                .addCriterion("got_crumbling_basalt", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.CRUMBLING_BASALT))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_crumbling_basalt"));
 
-        AdvancementEntry endCompacting = Advancement.Builder.create()
+        AdvancementHolder endCompacting = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndBlockItems.CHORUS_BLOCK,
-                        Text.translatable("advancement.netherandend.end_compacting.title"),
-                        Text.translatable("advancement.netherandend.end_compacting.desc"),
+                        Component.translatable("advancement.netherandend.end_compacting.title"),
+                        Component.translatable("advancement.netherandend.end_compacting.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_chorus_block", InventoryChangedCriterion.Conditions.items(NetherAndEndBlockItems.CHORUS_BLOCK))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_chorus_block");
-        AdvancementEntry fruitful = Advancement.Builder.create()
+                .addCriterion("got_chorus_block", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.CHORUS_BLOCK))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_chorus_block"));
+        AdvancementHolder fruitful = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.ENDER_FRUIT,
-                        Text.translatable("advancement.netherandend.fruitful.title"),
-                        Text.translatable("advancement.netherandend.fruitful.desc"),
+                        Component.translatable("advancement.netherandend.fruitful.title"),
+                        Component.translatable("advancement.netherandend.fruitful.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("got_ender_fruit", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.ENDER_FRUIT))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_ender_fruit");
-        AdvancementEntry thePowerIsNowMine = Advancement.Builder.create()
+                .addCriterion("got_ender_fruit", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.ENDER_FRUIT))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_ender_fruit"));
+        AdvancementHolder thePowerIsNowMine = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.DRAGON_CHARGE,
-                        Text.translatable("advancement.netherandend.the_power_is_now_mine.title"),
-                        Text.translatable("advancement.netherandend.the_power_is_now_mine.desc"),
+                        Component.translatable("advancement.netherandend.the_power_is_now_mine.title"),
+                        Component.translatable("advancement.netherandend.the_power_is_now_mine.desc"),
                         null,
-                        AdvancementFrame.GOAL,
+                        AdvancementType.GOAL,
                         true,
                         true,
                         false
                 )
-                .criterion("got_dragon_charge", InventoryChangedCriterion.Conditions.items(NetherAndEndItems.DRAGON_CHARGE))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_dragon_charge");
-        AdvancementEntry woahImFlying = Advancement.Builder.create()
+                .addCriterion("got_dragon_charge", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.DRAGON_CHARGE))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_dragon_charge"));
+        AdvancementHolder woahImFlying = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndItems.SHULKER_PEARL,
-                        Text.translatable("advancement.netherandend.woah_im_flying.title"),
-                        Text.translatable("advancement.netherandend.woah_im_flying.desc"),
+                        Component.translatable("advancement.netherandend.woah_im_flying.title"),
+                        Component.translatable("advancement.netherandend.woah_im_flying.desc"),
                         null,
-                        AdvancementFrame.TASK,
+                        AdvancementType.TASK,
                         true,
                         true,
                         false
                 )
-                .criterion("consumed_shulker_pearl", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.SHULKER_PEARL))
-                .build(consumer, NetherAndEnd.MOD_ID + "/consumed_shulker_pearl");
-        AdvancementEntry thisIsCrunchy = Advancement.Builder.create()
+                .addCriterion("consumed_shulker_pearl", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.SHULKER_PEARL))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/consumed_shulker_pearl"));
+        AdvancementHolder thisIsCrunchy = Advancement.Builder.advancement()
                 .parent(woahImFlying)
                 .display(
                         NetherAndEndItems.HARDENED_SHULKER_PEARL,
-                        Text.translatable("advancement.netherandend.this_is_crunchy.title"),
-                        Text.translatable("advancement.netherandend.this_is_crunchy.desc"),
+                        Component.translatable("advancement.netherandend.this_is_crunchy.title"),
+                        Component.translatable("advancement.netherandend.this_is_crunchy.desc"),
                         null,
-                        AdvancementFrame.GOAL,
+                        AdvancementType.GOAL,
                         true,
                         true,
                         false
                 )
-                .criterion("consumed_hardened_shulker_pearl", ConsumeItemCriterion.Conditions.item(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_SHULKER_PEARL))
-                .build(consumer, NetherAndEnd.MOD_ID + "/consumed_hardened_shulker_pearl");
-        AdvancementEntry theFinalBlade = Advancement.Builder.create()
+                .addCriterion("consumed_hardened_shulker_pearl", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_SHULKER_PEARL))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/consumed_hardened_shulker_pearl"));
+        AdvancementHolder theFinalBlade = Advancement.Builder.advancement()
                 .parent(thisIsCrunchy)
                 .display(
                         NetherAndEndItems.SHULKER_FALCHION,
-                        Text.translatable("advancement.netherandend.the_final_blade.title"),
-                        Text.translatable("advancement.netherandend.the_final_blade.desc"),
+                        Component.translatable("advancement.netherandend.the_final_blade.title"),
+                        Component.translatable("advancement.netherandend.the_final_blade.desc"),
                         null,
-                        AdvancementFrame.CHALLENGE,
+                        AdvancementType.CHALLENGE,
                         true,
                         true,
                         true
                 )
-                .criterion("got_shulker_falchion", InventoryChangedCriterion.Conditions.items(NetherAndEndItems.SHULKER_FALCHION))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_shulker_falchion");
-        AdvancementEntry thatsMorePeaceful = Advancement.Builder.create()
+                .addCriterion("got_shulker_falchion", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.SHULKER_FALCHION))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_shulker_falchion"));
+        AdvancementHolder thatsMorePeaceful = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
                         NetherAndEndBlockItems.ENDER_PEARL_CLUSTER,
-                        Text.translatable("advancement.netherandend.thats_more_peaceful.title"),
-                        Text.translatable("advancement.netherandend.thats_more_peaceful.desc"),
+                        Component.translatable("advancement.netherandend.thats_more_peaceful.title"),
+                        Component.translatable("advancement.netherandend.thats_more_peaceful.desc"),
                         null,
-                        AdvancementFrame.GOAL,
+                        AdvancementType.GOAL,
                         true,
                         true,
                         false
                 )
-                .criterion("got_ender_pearl_cluster", InventoryChangedCriterion.Conditions.items(NetherAndEndBlockItems.ENDER_PEARL_CLUSTER))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_ender_pearl_cluster");
-        AdvancementEntry oreCollector = Advancement.Builder.create()
+                .addCriterion("got_ender_pearl_cluster", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.ENDER_PEARL_CLUSTER))
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_ender_pearl_cluster"));
+        AdvancementHolder oreCollector = Advancement.Builder.advancement()
                 .parent(thatsMorePeaceful)
                 .display(
                         NetherAndEndBlockItems.END_DIAMOND_ORE,
-                        Text.translatable("advancement.netherandend.ore_collector.title"),
-                        Text.translatable("advancement.netherandend.ore_collector.desc"),
+                        Component.translatable("advancement.netherandend.ore_collector.title"),
+                        Component.translatable("advancement.netherandend.ore_collector.desc"),
                         null,
-                        AdvancementFrame.CHALLENGE,
+                        AdvancementType.CHALLENGE,
                         true,
                         true,
                         true
                 )
-                .criterion("got_all_ores", InventoryChangedCriterion.Conditions.items(Items.COAL_ORE,
+                .addCriterion("got_all_ores", InventoryChangeTrigger.TriggerInstance.hasItems(Items.COAL_ORE,
                         Items.IRON_ORE,
                         Items.COPPER_ORE,
                         Items.GOLD_ORE,
@@ -270,6 +270,6 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         NetherAndEndBlockItems.END_LAPIS_ORE,
                         NetherAndEndBlockItems.END_DIAMOND_ORE,
                         NetherAndEndBlockItems.ENDER_PEARL_CLUSTER))
-                .build(consumer, NetherAndEnd.MOD_ID + "/got_all_ores");
+                .build(ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_all_ores"));
     }
 }

@@ -2,24 +2,24 @@ package net.enderboy500.netherandend.data.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 
 import java.util.concurrent.CompletableFuture;
 
 public class NetherAndEndRegistryProvider extends FabricDynamicRegistryProvider {
-    public NetherAndEndRegistryProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+    public NetherAndEndRegistryProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
-    }
-
-    @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup, Entries entries) {
-        entries.addAll(wrapperLookup.getOrThrow(RegistryKeys.CONFIGURED_FEATURE));
-        entries.addAll(wrapperLookup.getOrThrow(RegistryKeys.PLACED_FEATURE));
     }
 
     @Override
     public String getName() {
         return "Nether & End Registry Provider";
+    }
+
+    @Override
+    protected void configure(HolderLookup.Provider provider, Entries entries) {
+        entries.addAll(provider.lookupOrThrow(Registries.CONFIGURED_FEATURE));
+        entries.addAll(provider.lookupOrThrow(Registries.PLACED_FEATURE));
     }
 }
