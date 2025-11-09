@@ -26,7 +26,7 @@ public abstract class PlayerEntityMixin extends LivingEntity{
     @Inject(method = "getDisplayName", at = @At("HEAD"),cancellable = true)
     public void name(CallbackInfoReturnable<Text> cir) {
         Calendar calendar = Calendar.getInstance();
-        if ((calendar.get(Calendar.MONTH) == Calendar.NOVEMBER && calendar.get(Calendar.DATE) >= 19) || (calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DATE) <= 19)) {
+        if ((calendar.get(Calendar.MONTH) == Calendar.NOVEMBER && calendar.get(Calendar.DATE) >= 9) || (calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DATE) <= 19)) {
             MutableText mutableText = Team.decorateName(this.getScoreboardTeam(), this.getName());
             cir.setReturnValue(this.addTellClickEvent(mutableText).append(Text.literal( " " + String.valueOf('\uE001'))));
         }
