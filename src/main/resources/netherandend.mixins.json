@@ -6,7 +6,8 @@
 		"ExampleMixin",
 		"LivingEntityMixin",
 		"ItemMixin",
-		"FireChargeItemMixin"
+		"FireChargeItemMixin",
+		"PlayerEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

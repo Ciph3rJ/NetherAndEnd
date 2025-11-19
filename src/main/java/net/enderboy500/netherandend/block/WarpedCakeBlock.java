@@ -1,6 +1,16 @@
 package net.enderboy500.netherandend.block;
 
 import com.mojang.serialization.MapCodec;
+import net.enderboy500.netherandend.NetherAndEnd;
+import net.enderboy500.netherandend.compat.NEFDCompat;
+import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
+import net.enderboy500.netherandend.content.NetherAndEndBlocks;
+import net.enderboy500.netherandend.content.NetherAndEndItems;
+import net.enderboy500.netherandend.data.providers.NetherAndEndAdvancementProvider;
+import net.enderboy500.netherandend.mixin.PlayerEntityMixin;
+import net.enderboy500.netherandend.util.PlayerNameAdditions;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.advancement.*;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.pathing.NavigationType;
@@ -8,8 +18,10 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -17,8 +29,10 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -30,6 +44,9 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.event.GameEvent;
 import net.minecraft.world.tick.ScheduledTickView;
+import vectorwing.farmersdelight.common.registry.ModItems;
+import vectorwing.farmersdelight.common.tag.ModTags;
+import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class WarpedCakeBlock extends Block {
     public static final MapCodec<WarpedCakeBlock> CODEC = createCodec(WarpedCakeBlock::new);
@@ -69,8 +86,20 @@ public class WarpedCakeBlock extends Block {
         return ActionResult.PASS_TO_DEFAULT_BLOCK_ACTION;
     }
 
+    public boolean isDelighted(ItemStack stack) {
+        if (FabricLoader.getInstance().isModLoaded("farmersdelight")) {
+            if (stack.isIn(ModTags.KNIVES)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (world.isClient) {
+        if (world.isClient && !isDelighted(player.getMainHandStack())) {
             if (tryEat(world, pos, state, player).isAccepted()) {
                 return ActionResult.SUCCESS;
             }
@@ -78,9 +107,53 @@ public class WarpedCakeBlock extends Block {
             if (player.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
                 return ActionResult.CONSUME;
             }
+        } else if (isDelighted(player.getMainHandStack())) {
+            onCakeInteraction(player, world, player.getActiveHand(), hit);
+            int i = state.get(BITES);
+            if (i < 6) {
+                world.setBlockState(pos, state.with(BITES, i + 1), 3);
+            } else {
+                world.removeBlock(pos, false);
+                world.emitGameEvent(player, GameEvent.BLOCK_DESTROY, pos);
+            }
         }
 
         return tryEat(world, pos, state, player);
+    }
+
+    public static ActionResult onCakeInteraction(PlayerEntity player, World level, Hand hand, BlockHitResult hitResult) {
+        if (player.isSpectator()) {
+            return ActionResult.PASS;
+        } else {
+            ItemStack toolStack = player.getStackInHand(hand);
+            if (!toolStack.isIn(ModTags.KNIVES)) {
+                return ActionResult.PASS;
+            } else {
+                BlockPos pos = hitResult.getBlockPos();
+                BlockState state = level.getBlockState(pos);
+                Block block = state.getBlock();
+                if (state.getBlock() instanceof WarpedCakeBlock || state.getBlock() instanceof WarpedCandleCakeBlock) {
+                    level.setBlockState(pos, (BlockState)Blocks.CAKE.getDefaultState().with(BITES, 1), 3);
+                    Block.dropStacks(state, level, pos);
+                    ItemUtils.spawnItemEntity(level, new ItemStack(NEFDCompat.WARPED_CAKE_SLICE), (double)pos.getX(), (double)pos.getY() + 0.2, (double)pos.getZ() + (double)0.5F, -0.05, (double)0.0F, (double)0.0F);
+                    level.playSound((Entity)null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                    return ActionResult.SUCCESS;
+                } else if (block == NetherAndEndBlocks.WARPED_CAKE) {
+                    int bites = (Integer)state.get(BITES);
+                    if (bites < 6) {
+                        level.setBlockState(pos, (BlockState)state.with(BITES, bites + 1), 3);
+                    } else {
+                        level.removeBlock(pos, false);
+                    }
+
+                    ItemUtils.spawnItemEntity(level, new ItemStack((ItemConvertible)ModItems.CAKE_SLICE.get()), (double)pos.getX() + (double)bites * 0.1, (double)pos.getY() + 0.2, (double)pos.getZ() + (double)0.5F, -0.05, (double)0.0F, (double)0.0F);
+                    level.playSound((Entity)null, pos, SoundEvents.BLOCK_WOOL_BREAK, SoundCategory.PLAYERS, 0.8F, 0.8F);
+                    return level.isClient ? ActionResult.SUCCESS : ActionResult.CONSUME;
+                } else {
+                    return ActionResult.PASS;
+                }
+            }
+        }
     }
 
     protected static ActionResult tryEat(WorldAccess world, BlockPos pos, BlockState state, PlayerEntity player) {

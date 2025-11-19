@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "netherandend:item/warped_cake.png",
+      "ascent": 8,
+      "height" : 8,
+      "chars": ["\uE001"]
+    }
+  ]
+}
