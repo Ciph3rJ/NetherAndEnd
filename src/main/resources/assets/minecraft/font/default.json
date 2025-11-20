@@ -2,9 +2,9 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "netherandend:item/warped_cake.png",
+      "file": "netherandend:font/ne_icon_trophies.png",
       "ascent": 8,
-      "height" : 8,
+      "height" : 16,
       "chars": ["\uE001"]
     }
   ]

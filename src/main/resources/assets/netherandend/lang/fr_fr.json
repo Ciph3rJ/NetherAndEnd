@@ -7,6 +7,7 @@
   "item.netherandend.shulker_falchion": "Épée de Shulker",
   "item.netherandend.chorus_pie": "Tarte à le Chorus",
   "item.netherandend.warped_stew": "Ragoût de Biscornu",
+  "item.netherandend.warped_cake_slice": "Part de Gâteau de Biscornu",
   "item.netherandend.raw_hogchop": "Hogchop Cru",
   "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
@@ -105,6 +106,7 @@
   "block.netherandend.chorus_trapdoor": "Trappe en Chorus",
   "block.netherandend.chorus_button": "Bouton en Chorus",
   "block.netherandend.chorus_pressure_plate": "Plaque de Pression en Chorus",
+  "block.netherandend.chorus_shelf": "Étagère en Chorus",
   "block.netherandend.ender_pearl_cluster": "Druse de Perle de l'Ender",
 
   "effect.netherandend.instant_warping": "Déformation Instantané",

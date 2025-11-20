@@ -7,6 +7,8 @@
   "item.netherandend.shulker_falchion": "Shulker Falchion",
   "item.netherandend.chorus_pie": "Chorus Pie",
   "item.netherandend.warped_stew": "Warped Stew",
+  "item.netherandend.warped_cake": "Warped Cake",
+  "item.netherandend.warped_cake_slice": "Slice of Warped Cake",
   "item.netherandend.raw_hogchop": "Raw Hogchop",
   "item.netherandend.cooked_hogchop": "Cooked Hogchop",
   "item.netherandend.hoglin_skin": "Hoglin Skin",
@@ -106,6 +108,7 @@
   "block.netherandend.chorus_trapdoor": "Chorus Trapdoor",
   "block.netherandend.chorus_button": "Chorus Button",
   "block.netherandend.chorus_pressure_plate": "Chorus Pressure Plate",
+  "block.netherandend.chorus_shelf": "Chorus Shelf",
   "block.netherandend.ender_pearl_cluster": "Ender Pearl Cluster",
 
   "effect.netherandend.instant_warping": "Instant Warping",
