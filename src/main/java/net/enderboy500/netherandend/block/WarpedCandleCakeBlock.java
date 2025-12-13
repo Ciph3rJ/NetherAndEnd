@@ -3,7 +3,9 @@ package net.enderboy500.netherandend.block;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
+import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -14,6 +16,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
@@ -36,6 +39,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.swing.text.html.BlockView;
 import java.util.List;
 import java.util.Map;
+
+import static net.enderboy500.netherandend.block.WarpedCakeBlock.BITES;
 
 public class WarpedCandleCakeBlock extends AbstractCandleBlock {
     public static final MapCodec<WarpedCandleCakeBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("candle").forGetter((block) -> block.candle), propertiesCodec()).apply(instance, WarpedCandleCakeBlock::new));
@@ -65,29 +70,30 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
         return PARTICLE_OFFSETS;
     }
 
-    protected VoxelShape getShape(BlockState state, BlockView world, BlockPos pos, CollisionContext context) {
+    @Override
+    protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
         return SHAPE;
     }
 
-    protected InteractionResult onUsesetValueItem(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!stack.is(Items.FLINT_AND_STEEL) && !stack.is(Items.FIRE_CHARGE) && isLit(state)) {
             if (isHittingCandle(hit) && stack.isEmpty() && state.getValue(LIT)) {
                 extinguish(player, state, world, pos);
                 return InteractionResult.SUCCESS;
             } else {
-                return onUsesetValueItem(stack, state, world, pos, player, hand, hit);
+                return useItemOn(stack, state, world, pos, player, hand, hit);
             }
         } else if (stack.is(Items.FLINT_AND_STEEL) || stack.is(Items.FIRE_CHARGE) && !isHittingCandle(hit)) {
             setLit(world, state, pos, true);
             return InteractionResult.SUCCESS;
         } else if (!isLit(state)){
-            InteractionResult InteractionResult = WarpedCakeBlock.tryEat(world, pos, NetherAndEndBlocks.WARPED_CAKE.defaultBlockState(), player);
+            InteractionResult InteractionResult = WarpedCakeBlock.eat(world, pos, NetherAndEndBlocks.WARPED_CAKE.defaultBlockState(), player);
             if (InteractionResult.consumesAction()) {
                 dropResources(state, world, pos);
             }
             return InteractionResult;
         }
-        return onUsesetValueItem(stack, state, world, pos, player, hand, hit);
+        return useItemOn(stack, state, world, pos, player, hand, hit);
     }
 
     public static boolean isHittingCandle(BlockHitResult hitResult) {
@@ -99,8 +105,9 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
         builder.add(LIT);
     }
 
-    protected ItemStack getPickStack(LevelReader world, BlockPos pos, BlockState state, boolean includeData) {
-        return new ItemStack(NetherAndEndBlocks.WARPED_CAKE);
+    @Override
+    protected ItemStack getCloneItemStack(LevelReader levelReader, BlockPos blockPos, BlockState blockState, boolean bl) {
+        return new ItemStack(NetherAndEndBlockItems.WARPED_CAKE);
     }
 
     protected BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
@@ -111,17 +118,19 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
         return world.getBlockState(pos.below()).isSolid();
     }
 
-    protected int getComparatorOutput(BlockState state, Level world, BlockPos pos) {
-        return WarpedCakeBlock.DEFAULT_COMPARATOR_OUTPUT;
+    @Override
+    protected boolean isPathfindable(BlockState blockState, PathComputationType pathComputationType) {
+        return false;
     }
 
-    protected boolean hasComparatorOutput(BlockState state) {
+    protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos, Direction direction) {
+        return WarpedCakeBlock.FULL_CAKE_SIGNAL;
+    }
+
+    protected boolean hasAnalogOutputSignal(BlockState blockState) {
         return true;
     }
 
-    protected boolean canPathfindThrough(BlockState state, PathComputationType type) {
-        return false;
-    }
 
     public static BlockState getCandleCakeFromCandle(CandleBlock candle) {
         return (CANDLES_TO_CANDLE_CAKES.get(candle)).defaultBlockState();
