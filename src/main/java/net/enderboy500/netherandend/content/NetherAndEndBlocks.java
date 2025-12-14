@@ -10,7 +10,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.*;
@@ -117,7 +117,7 @@ public class NetherAndEndBlocks {
             .instabreak().explosionResistance(2.1f));
 
     public static <B extends Block> B register(String name, Function<Properties, B> factory, Properties settings) {
-        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
+        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
         B block = factory.apply(settings.setId(key));
 
         return Registry.register(BuiltInRegistries.BLOCK, key, block);

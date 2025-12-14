@@ -7,7 +7,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.SlotAccess;
-import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -15,7 +14,7 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
 
-public abstract class AbstractDragonChargeEntity extends AbstractHurtingProjectile implements ItemSupplier {
+public abstract class AbstractDragonChargeEntity extends net.minecraft.world.entity.projectile.hurtingprojectile.AbstractHurtingProjectile implements ItemSupplier {
     private static final float MAX_RENDER_DISTANCE_WHEN_NEWLY_SPAWNED = 12.25F;
     private static final EntityDataAccessor<ItemStack> ITEM = SynchedEntityData.defineId(AbstractDragonChargeEntity.class, EntityDataSerializers.ITEM_STACK);
 

@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -49,7 +49,7 @@ public class NetherAndEndBlockItems {
     public static final BlockItem CRUMBLING_BASALT = register("crumbling_basalt", NetherAndEndBlocks.CRUMBLING_BASALT);
 
     public static <I extends Item> I registerItem(String id, Function<Item.Properties, I> factory, Item.Properties settings) {
-        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));
+        ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));
         I item = factory.apply(settings.setId(key));
 
         if (item instanceof BlockItem blockItem) {

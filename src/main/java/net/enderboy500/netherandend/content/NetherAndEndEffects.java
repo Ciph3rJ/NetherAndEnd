@@ -6,7 +6,7 @@ import net.enderboy500.netherandend.effect.InstantWarpingEffect;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 
@@ -17,7 +17,7 @@ public class NetherAndEndEffects {
             new InstantCuringEffect(MobEffectCategory.NEUTRAL, 3532652));
 
     private static Holder<MobEffect> register(String id, MobEffect effect) {
-        return Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id), effect);
+        return Registry.registerForHolder(BuiltInRegistries.MOB_EFFECT, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id), effect);
     }
 
     public static void loadEffects() {}

@@ -3,7 +3,7 @@ package net.enderboy500.netherandend.mixin;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.SmallFireball;
+import net.minecraft.world.entity.projectile.hurtingprojectile.SmallFireball;
 import net.minecraft.world.item.FireChargeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

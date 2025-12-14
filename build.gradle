@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version "${loom_version}"
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -25,6 +25,8 @@ fabricApi {
 		client = true
 	}
 }
+
+
 
 dependencies {
 	// To change the versions see the gradle.properties file

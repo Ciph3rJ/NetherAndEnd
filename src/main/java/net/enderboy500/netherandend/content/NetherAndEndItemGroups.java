@@ -7,12 +7,12 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.CreativeModeTab;
 
 public class NetherAndEndItemGroups {
     public static final CreativeModeTab NETHER_AND_END_GROUP = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
-            ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "nether_and_end_group"),
+            Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "nether_and_end_group"),
             FabricItemGroup.builder()
                     .title(Component.translatable("itemgroup.netherandend"))
                     .icon(NetherAndEndBlockItems.END_DIAMOND_ORE::getDefaultInstance)

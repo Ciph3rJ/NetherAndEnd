@@ -4,7 +4,7 @@ package net.enderboy500.netherandend.content;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.alchemy.Potion;
@@ -43,7 +43,7 @@ public class NetherAndEndPotions {
             new Potion("instant_curing", new MobEffectInstance(NetherAndEndEffects.INSTANT_CURING, 100, 0)));
 
     private static Holder<Potion> register(String name, Potion potion) {
-        return Registry.registerForHolder(BuiltInRegistries.POTION, ResourceLocation.withDefaultNamespace(name), potion);
+        return Registry.registerForHolder(BuiltInRegistries.POTION, Identifier.withDefaultNamespace(name), potion);
     }
 
     public static void loadPotions() {}
