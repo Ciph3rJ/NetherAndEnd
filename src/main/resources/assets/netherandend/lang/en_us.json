@@ -16,7 +16,7 @@
   "item.netherandend.raw_strider_meat": "Raw Strider Meat",
   "item.netherandend.smoked_strider_meat": "Smoked Strider Meat",
   "item.netherandend.cooked_strider_meat": "Cooked Strider Meat",
-  "item.netherandend.hardened_strider_meat": "Hardened Strider Meat",
+  "item.netherandend.hardened_strider_meat": "Burnt Strider Meat",
   "item.netherandend.dragon_charge": "Dragon Charge",
 
 
@@ -89,6 +89,19 @@
   "block.netherandend.cracked_bedrock": "Cracked Bedrock",
   "block.netherandend.crumbling_basalt": "Crumbling Basalt",
   "block.netherandend.warped_cake": "Warped Cake",
+  "block.netherandend.nether_brick_fence_gate": "Nether Brick Fence Gate",
+  "block.netherandend.cracked_red_nether_bricks": "Cracked Red Nether Bricks",
+  "block.netherandend.red_nether_brick_fence": "Red Nether Brick Fence",
+  "block.netherandend.red_nether_brick_fence_gate": "Red Nether Brick Fence Gate",
+  "block.netherandend.chiseled_red_nether_bricks": "Chiseled Red Nether Bricks",
+  "block.netherandend.cyan_nether_bricks": "Cyan Nether Bricks",
+  "block.netherandend.cracked_cyan_nether_bricks": "Cracked Cyan Nether Bricks",
+  "block.netherandend.cyan_nether_brick_stairs": "Cyan Nether Brick Stairs",
+  "block.netherandend.cyan_nether_brick_slab": "Cyan Nether Brick Slab",
+  "block.netherandend.cyan_nether_brick_wall": "Cyan Nether Brick Wall",
+  "block.netherandend.cyan_nether_brick_fence": "Cyan Nether Brick Fence",
+  "block.netherandend.cyan_nether_brick_fence_gate": "Cyan Nether Brick Fence Gate",
+  "block.netherandend.chiseled_cyan_nether_bricks": "Chiseled Cyan Nether Bricks",
 
   "block.netherandend.end_coal_ore": "End Coal Ore",
   "block.netherandend.end_iron_ore": "End Iron Ore",

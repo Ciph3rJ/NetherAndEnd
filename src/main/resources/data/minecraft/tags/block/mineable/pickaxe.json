@@ -20,6 +20,20 @@
 
     "netherandend:cracked_bedrock",
     "netherandend:crumbling_basalt",
-    "netherandend:ender_pearl_cluster"
+    "netherandend:ender_pearl_cluster",
+
+    "netherandend:nether_brick_fence_gate",
+    "netherandend:cracked_red_nether_bricks",
+    "netherandend:red_nether_brick_fence",
+    "netherandend:red_nether_brick_fence_gate",
+    "netherandend:chiseled_red_nether_bricks",
+    "netherandend:cyan_nether_bricks",
+    "netherandend:cracked_cyan_nether_bricks",
+    "netherandend:cyan_nether_brick_stairs",
+    "netherandend:cyan_nether_brick_slab",
+    "netherandend:cyan_nether_brick_wall",
+    "netherandend:cyan_nether_brick_fence",
+    "netherandend:cyan_nether_brick_fence_gate",
+    "netherandend:chiseled_cyan_nether_bricks"
   ]
 }

@@ -147,6 +147,38 @@ public class NetherAndEndRecipeGenerator extends RecipeGenerator {
                 .input(NetherAndEndItems.HOGLIN_SKIN)
                 .criterion(hasItem(NetherAndEndItems.HOGLIN_BUNDLE), conditionsFromItem(NetherAndEndItems.HOGLIN_SKIN))
                 .offerTo(exporter);
+
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.NETHER_BRICK_FENCE_GATE).input('#', Items.NETHER_BRICKS)
+                .input('/', Items.NETHER_BRICK).pattern("/#/").pattern("/#/")
+                .criterion(hasItem(NetherAndEndBlockItems.NETHER_BRICK_FENCE_GATE), conditionsFromItem(Items.NETHER_BRICKS)).offerTo(exporter);
+        offerChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS, Items.RED_NETHER_BRICK_SLAB);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE, 3).input('#', Items.RED_NETHER_BRICKS)
+                .input('/', Items.NETHER_BRICK).pattern("#/#").pattern("#/#")
+                .criterion(hasItem(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE), conditionsFromItem(Items.RED_NETHER_BRICKS)).offerTo(exporter);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE_GATE).input('#', Items.RED_NETHER_BRICKS)
+                .input('/', Items.NETHER_BRICK).pattern("/#/").pattern("/#/")
+                .criterion(hasItem(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE), conditionsFromItem(Items.RED_NETHER_BRICKS)).offerTo(exporter);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS).input('#', Items.NETHER_BRICK).input('W', NetherAndEndItems.WARPED_WART)
+                .pattern("#W").pattern("W#").criterion(hasItem(NetherAndEndBlockItems.CYAN_NETHER_BRICKS), conditionsFromItem(NetherAndEndItems.WARPED_WART))
+                .offerTo(exporter);
+        offerChiseledBlockRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS, 4).input('#', NetherAndEndBlockItems.CYAN_NETHER_BRICKS)
+                .pattern("#  ").pattern("## ").pattern("###")
+                .criterion(hasItem(NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS), conditionsFromItem(NetherAndEndBlockItems.CYAN_NETHER_BRICKS)).offerTo(exporter);
+        offerSlabRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+        offerWallRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE, 3).input('#', NetherAndEndBlockItems.CYAN_NETHER_BRICKS)
+                .input('/', Items.NETHER_BRICK).pattern("#/#").pattern("#/#")
+                .criterion(hasItem(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE), conditionsFromItem(NetherAndEndBlockItems.CYAN_NETHER_BRICKS)).offerTo(exporter);
+        this.createShaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE).input('#', NetherAndEndBlockItems.CYAN_NETHER_BRICKS)
+                .input('/', Items.NETHER_BRICK).pattern("/#/").pattern("/#/")
+                .criterion(hasItem(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE), conditionsFromItem(NetherAndEndBlockItems.CYAN_NETHER_BRICKS)).offerTo(exporter);
+
+        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS, Items.RED_NETHER_BRICKS);
+        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB, NetherAndEndBlockItems.CYAN_NETHER_BRICKS, 2);
+        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+        offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
     }
 
     public static class Provider extends RecipeProvider {

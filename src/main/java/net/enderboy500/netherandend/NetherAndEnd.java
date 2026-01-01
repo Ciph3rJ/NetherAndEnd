@@ -40,8 +40,10 @@ public class NetherAndEnd implements ModInitializer {
 		NetherAndEndItems.loadItems();
 		NetherAndEndItemGroups.loadItemGroups();
 		NetherAndEndPotions.loadPotions();
+		NetherAndEndItemGroupModifiers.loadItemGroupModifiers();
 
 		NetherAndEndBlocks.loadBlocks();
+		NetherAndEndBlockItems.loadBlockItems();
 
 		NetherAndEndEffects.loadEffects();
 		NetherAndEndEntities.loadEntities();
@@ -76,6 +78,6 @@ public class NetherAndEnd implements ModInitializer {
 			builder.registerPotionRecipe(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT, NetherAndEndPotions.INSTANT_WARPING_POTION);
 		});
 
-		LOGGER.info("Initializing Nether & End");
+		LOGGER.info("Finished Initializing Nether & End");
 	}
 }

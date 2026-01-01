@@ -1,0 +1,6 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "netherandend:block/cyan_nether_bricks"
+  }
+}
