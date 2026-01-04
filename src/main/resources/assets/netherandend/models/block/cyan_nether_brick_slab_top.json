@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "netherandend:block/cyan_nether_bricks",
+    "side": "netherandend:block/cyan_nether_bricks",
+    "top": "netherandend:block/cyan_nether_bricks"
+  }
+}

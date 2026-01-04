@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "block",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": "netherandend:cyan_nether_bricks",
+  "result": {
+    "id": "netherandend:cracked_cyan_nether_bricks"
+  }
+}

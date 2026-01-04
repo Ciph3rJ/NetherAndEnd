@@ -1,6 +1,7 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
+import net.enderboy500.netherandend.block.BrickFenceGateBlock;
 import net.enderboy500.netherandend.block.CrumblingBasaltBlock;
 import net.enderboy500.netherandend.block.WarpedCakeBlock;
 import net.enderboy500.netherandend.block.WarpedCandleCakeBlock;
@@ -60,6 +61,20 @@ public class NetherAndEndBlocks {
     public static final Block WARPED_MAGENTA_CANDLE_CAKE = register("magenta_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.MAGENTA_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
     public static final Block WARPED_PINK_CANDLE_CAKE = register("pink_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.PINK_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
 
+    public static final Block NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(Blocks.NETHER_BRICKS));
+    public static final Block CRACKED_RED_NETHER_BRICKS = register("cracked_red_nether_bricks", Block::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS));
+    public static final Block RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", FenceBlock::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS));
+    public static final Block RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS));
+    public static final Block CHISELED_RED_NETHER_BRICKS = register("chiseled_red_nether_bricks", Block::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICKS = register("cyan_nether_bricks", Block::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS).mapColor(MapColor.TERRACOTTA_GREEN));
+    public static final Block CRACKED_CYAN_NETHER_BRICKS = register("cracked_cyan_nether_bricks", Block::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICK_STAIRS = register("cyan_nether_brick_stairs", properties -> new StairBlock(CYAN_NETHER_BRICKS.defaultBlockState(), properties),
+            Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICK_SLAB = register("cyan_nether_brick_slab", SlabBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICK_WALL = register("cyan_nether_brick_wall", WallBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICK_FENCE = register("cyan_nether_brick_fence", FenceBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CYAN_NETHER_BRICK_FENCE_GATE = register("cyan_nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block CHISELED_CYAN_NETHER_BRICKS = register("chiseled_cyan_nether_bricks", Block::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
 
     public static final Block NETHER_COAL_ORE = register("nether_coal_ore",
             settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));

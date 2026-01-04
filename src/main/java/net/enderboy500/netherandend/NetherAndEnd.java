@@ -32,7 +32,8 @@ public class NetherAndEnd implements ModInitializer {
 		LOGGER.info("Initializing Nether & End");
 
 		NetherAndEndItems.loadItems();
-		NetherAndEndItemGroups.loadItemGroups();
+		NetherAndEndCreativeModeTabs.loadItemGroups();
+		NetherAndEndCreativeModeTabModifiers.loadCreativeModeTabModifiers();
 		NetherAndEndPotions.loadPotions();
 
 		NetherAndEndBlocks.loadBlocks();

@@ -6,9 +6,13 @@ e3fba6563b98d6c37bb186c25cf91aa0d9f9e799 data/minecraft/tags/block/chorus.json
 a221242a353558e95f6a68a575dfde9a58d0f191 data/minecraft/tags/block/diamond_ores.json
 b5e6deccb99bee776760ce30adde0da8c81c080d data/minecraft/tags/block/emerald_ores.json
 8e47d86332a6b5150331d4d0a4383a9be406ca15 data/minecraft/tags/block/end_ores.json
+e6fabe7acb5bd7f8c990739c12648519ef5de11d data/minecraft/tags/block/fence_gates.json
+cc172d5cb547b6eb46357780f4d4b3ddd1528b36 data/minecraft/tags/block/fences.json
 d3f77c62476047fb9090198bd5f5f94adf5c0159 data/minecraft/tags/block/gold_ores.json
 17b2b7b8bbe8dd49414824f9c15596441d0b81ba data/minecraft/tags/block/iron_ores.json
 43244bfc89e7bfef123f220366fb18c87fbff52d data/minecraft/tags/block/lapis_ores.json
 02eab059402e62d16ea1c46dbfa2428b247a27ff data/minecraft/tags/block/nether_ores.json
 dc9e5072a28c7e563f22b52a00106249888ce3ec data/minecraft/tags/block/redstone_ores.json
+0ced7eedae30d1a8e2fb00184355f12f53954d13 data/minecraft/tags/block/walls.json
+dfedbb1423c74e1cdff16897a8e033151d1f243e data/minecraft/tags/block/wooden_fences.json
 6ac547908163eb7bb216e1c90f752de5116a8504 data/minecraft/tags/block/wooden_shelves.json
