@@ -95,5 +95,22 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
         valueLookupBuilder(BlockTags.WOODEN_SHELVES)
                 .add(NetherAndEndBlocks.CHORUS_SHELF)
         ;
+
+        valueLookupBuilder(BlockTags.WOODEN_FENCES)
+                .add(NetherAndEndBlocks.CHORUS_FENCE)
+        ;
+        valueLookupBuilder(BlockTags.FENCES)
+                .add(NetherAndEndBlocks.RED_NETHER_BRICK_FENCE)
+                .add(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE)
+        ;
+        valueLookupBuilder(BlockTags.FENCE_GATES)
+                .add(NetherAndEndBlocks.CHORUS_FENCE_GATE)
+                .add(NetherAndEndBlocks.NETHER_BRICK_FENCE_GATE)
+                .add(NetherAndEndBlocks.RED_NETHER_BRICK_FENCE_GATE)
+                .add(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE)
+        ;
+        valueLookupBuilder(BlockTags.WALLS)
+                .add(NetherAndEndBlocks.CYAN_NETHER_BRICK_WALL)
+        ;
     }
 }

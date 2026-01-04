@@ -4,9 +4,11 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin",
-		"LivingEntityMixin",
+		"FenceBlockMixin",
 		"FireChargeItemMixin",
-		"PlayerEntityMixin"
+		"LivingEntityMixin",
+		"PlayerEntityMixin",
+		"WallBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

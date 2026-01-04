@@ -27,6 +27,21 @@ public class NetherAndEndBlockItems {
 
     public static final BlockItem WARPED_CAKE = register("warped_cake", NetherAndEndBlocks.WARPED_CAKE);
 
+    public static final BlockItem NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", NetherAndEndBlocks.NETHER_BRICK_FENCE_GATE);
+    public static final BlockItem CRACKED_RED_NETHER_BRICKS = register("cracked_red_nether_bricks", NetherAndEndBlocks.CRACKED_RED_NETHER_BRICKS);
+    public static final BlockItem RED_NETHER_BRICK_FENCE = register("red_nether_brick_fence", NetherAndEndBlocks.RED_NETHER_BRICK_FENCE);
+    public static final BlockItem RED_NETHER_BRICK_FENCE_GATE = register("red_nether_brick_fence_gate", NetherAndEndBlocks.RED_NETHER_BRICK_FENCE_GATE);
+    public static final BlockItem CHISELED_RED_NETHER_BRICKS = register("chiseled_red_nether_bricks", NetherAndEndBlocks.CHISELED_RED_NETHER_BRICKS);
+    public static final BlockItem CYAN_NETHER_BRICKS = register("cyan_nether_bricks", NetherAndEndBlocks.CYAN_NETHER_BRICKS);
+    public static final BlockItem CRACKED_CYAN_NETHER_BRICKS = register("cracked_cyan_nether_bricks", NetherAndEndBlocks.CRACKED_CYAN_NETHER_BRICKS);
+    public static final BlockItem CYAN_NETHER_BRICK_STAIRS = register("cyan_nether_brick_stairs", NetherAndEndBlocks.CYAN_NETHER_BRICK_STAIRS);
+    public static final BlockItem CYAN_NETHER_BRICK_SLAB = register("cyan_nether_brick_slab", NetherAndEndBlocks.CYAN_NETHER_BRICK_SLAB);
+    public static final BlockItem CYAN_NETHER_BRICK_WALL = register("cyan_nether_brick_wall", NetherAndEndBlocks.CYAN_NETHER_BRICK_WALL);
+    public static final BlockItem CYAN_NETHER_BRICK_FENCE = register("cyan_nether_brick_fence", NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE);
+    public static final BlockItem CYAN_NETHER_BRICK_FENCE_GATE = register("cyan_nether_brick_fence_gate", NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE);
+    public static final BlockItem CHISELED_CYAN_NETHER_BRICKS = register("chiseled_cyan_nether_bricks", NetherAndEndBlocks.CHISELED_CYAN_NETHER_BRICKS);
+
+
     public static final BlockItem NETHER_COAL_ORE = register("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE);
     public static final BlockItem NETHER_IRON_ORE = register("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE);
     public static final BlockItem NETHER_COPPER_ORE = register("nether_copper_ore", NetherAndEndBlocks.NETHER_COPPER_ORE);

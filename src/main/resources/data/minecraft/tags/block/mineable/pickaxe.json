@@ -1,13 +1,13 @@
 {
   "replace": false,
   "values": [
-      "netherandend:nether_coal_ore",
-      "netherandend:nether_iron_ore",
-      "netherandend:nether_copper_ore",
-      "netherandend:nether_lapis_ore",
-      "netherandend:nether_emerald_ore",
-      "netherandend:nether_diamond_ore",
-      "netherandend:nether_redstone_ore",
+    "netherandend:nether_coal_ore",
+    "netherandend:nether_iron_ore",
+    "netherandend:nether_copper_ore",
+    "netherandend:nether_lapis_ore",
+    "netherandend:nether_emerald_ore",
+    "netherandend:nether_diamond_ore",
+    "netherandend:nether_redstone_ore",
 
     "netherandend:end_coal_ore",
     "netherandend:end_iron_ore",
@@ -20,6 +20,20 @@
 
     "netherandend:cracked_bedrock",
     "netherandend:crumbling_basalt",
-    "netherandend:ender_pearl_cluster"
+    "netherandend:ender_pearl_cluster",
+
+    "netherandend:nether_brick_fence_gate",
+    "netherandend:cracked_red_nether_bricks",
+    "netherandend:red_nether_brick_fence",
+    "netherandend:red_nether_brick_fence_gate",
+    "netherandend:chiseled_red_nether_bricks",
+    "netherandend:cyan_nether_bricks",
+    "netherandend:cracked_cyan_nether_bricks",
+    "netherandend:cyan_nether_brick_stairs",
+    "netherandend:cyan_nether_brick_slab",
+    "netherandend:cyan_nether_brick_wall",
+    "netherandend:cyan_nether_brick_fence",
+    "netherandend:cyan_nether_brick_fence_gate",
+    "netherandend:chiseled_cyan_nether_bricks"
   ]
 }

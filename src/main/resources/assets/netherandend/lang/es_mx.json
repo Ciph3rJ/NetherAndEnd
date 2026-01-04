@@ -15,7 +15,7 @@
   "item.netherandend.raw_strider_meat": "Carne de Strider Crudo",
   "item.netherandend.smoked_strider_meat": "Carne de Strider Ahumado",
   "item.netherandend.cooked_strider_meat": "Carne de Strider Asado",
-  "item.netherandend.hardened_strider_meat": "Carne de Strider Endurecido",
+  "item.netherandend.hardened_strider_meat": "Carne de Strider Quemado",
   "item.netherandend.dragon_charge": "Carga de Dragon",
 
 
@@ -88,6 +88,19 @@
   "block.netherandend.cracked_bedrock": "Piedra Base Agrietados",
   "block.netherandend.crumbling_basalt": "Basalto Desmenuzado",
   "block.netherandend.warped_cake": "Pastel de Distorsionado",
+  "block.netherandend.nether_brick_fence_gate": "Puerta de Valla de Ladrillos del Nether",
+  "block.netherandend.cracked_red_nether_bricks": "Ladrillos del Nether Rojos Rotos",
+  "block.netherandend.red_nether_brick_fence": "Valla de Ladrillos del Nether Rojos",
+  "block.netherandend.red_nether_brick_fence_gate": "Puerta de Valla de Ladrillos del Nether Rojos",
+  "block.netherandend.chiseled_red_nether_bricks": "Ladrillos del Nether Rojos Grabados",
+  "block.netherandend.cyan_nether_bricks": "Ladrillos del Nether Cian",
+  "block.netherandend.cracked_cyan_nether_bricks": "Ladrillos del Nether Cian Rotos",
+  "block.netherandend.cyan_nether_brick_stairs": "Escaleras de Ladrillos del Nether Cian",
+  "block.netherandend.cyan_nether_brick_slab": "Losa de Ladrillos del Nether Cian",
+  "block.netherandend.cyan_nether_brick_wall": "Pared de Ladrillos del Nether Cian",
+  "block.netherandend.cyan_nether_brick_fence": "Valla de Ladrillos del Nether Cian",
+  "block.netherandend.cyan_nether_brick_fence_gate": "Puerta de Valla de Ladrillos del Nether Cian",
+  "block.netherandend.chiseled_cyan_nether_bricks": "Ladrillos del Nether Cian Grabados",
 
   "block.netherandend.end_coal_ore": "Mena de Carbón del End",
   "block.netherandend.end_iron_ore": "Mena de Hierro del End",
