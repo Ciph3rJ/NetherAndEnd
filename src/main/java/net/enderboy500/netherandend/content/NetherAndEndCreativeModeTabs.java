@@ -2,7 +2,7 @@ package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.NetherAndEnd;
 import net.enderboy500.netherandend.compat.NEFDCompat;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -13,7 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 public class NetherAndEndCreativeModeTabs {
     public static final CreativeModeTab NETHER_AND_END_GROUP = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "nether_and_end_group"),
-            FabricItemGroup.builder()
+            FabricCreativeModeTab.builder()
                     .title(Component.translatable("itemgroup.netherandend"))
                     .icon(NetherAndEndBlockItems.END_DIAMOND_ORE::getDefaultInstance)
                     .displayItems((displayContext, entries) -> {
@@ -24,12 +24,21 @@ public class NetherAndEndCreativeModeTabs {
                         entries.accept(NetherAndEndBlockItems.NETHER_EMERALD_ORE);
                         entries.accept(NetherAndEndBlockItems.NETHER_LAPIS_ORE);
                         entries.accept(NetherAndEndBlockItems.NETHER_DIAMOND_ORE);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+                        entries.accept(NetherAndEndBlockItems.CRACKED_CYAN_NETHER_BRICKS);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE);
+                        entries.accept(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE);
+                        entries.accept(NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS);
                         entries.accept(NetherAndEndBlockItems.CRACKED_BEDROCK);
                         entries.accept(NetherAndEndBlockItems.CRUMBLING_BASALT);
                         entries.accept(NetherAndEndItems.WARPED_WART);
                         entries.accept(NetherAndEndItems.WARPED_STEW);
                         entries.accept(NetherAndEndBlockItems.WARPED_CAKE);
                         if (FabricLoader.getInstance().isModLoaded("farmersdelight")) entries.accept(NEFDCompat.WARPED_CAKE_SLICE);
+                        entries.accept(NetherAndEndItems.CRIMSON_PIE);
                         entries.accept(NetherAndEndItems.RAW_HOGCHOP);
                         entries.accept(NetherAndEndItems.COOKED_HOGCHOP);
                         entries.accept(NetherAndEndItems.HOGLIN_SKIN);
@@ -38,6 +47,9 @@ public class NetherAndEndCreativeModeTabs {
                         entries.accept(NetherAndEndItems.SMOKED_STRIDER_MEAT);
                         entries.accept(NetherAndEndItems.COOKED_STRIDER_MEAT);
                         entries.accept(NetherAndEndItems.HARDENED_STRIDER_MEAT);
+                        entries.accept(NetherAndEndItems.WITHERED_BONE);
+                        entries.accept(NetherAndEndItems.WITHERED_BONE_MEAL);
+                        entries.accept(NetherAndEndBlockItems.WITHERED_BONE_BLOCK);
 
                         entries.accept(NetherAndEndBlockItems.END_COAL_ORE);
                         entries.accept(NetherAndEndBlockItems.END_IRON_ORE);

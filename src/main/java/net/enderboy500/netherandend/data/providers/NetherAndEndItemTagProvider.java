@@ -2,15 +2,16 @@ package net.enderboy500.netherandend.data.providers;
 
 import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.enderboy500.netherandend.util.NetherAndEndTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public NetherAndEndItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
+public class NetherAndEndItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
+    public NetherAndEndItemTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
         super(output, completableFuture);
     }
 
@@ -35,6 +36,12 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
         valueLookupBuilder(ItemTags.MEAT)
                 .addTag(NetherAndEndTags.HOGCHOP)
                 .addTag(NetherAndEndTags.STRIDER_MEAT);
+        valueLookupBuilder(ItemTags.BUNDLES)
+                .add(NetherAndEndItems.HOGLIN_BUNDLE)
+        ;
+        valueLookupBuilder(ConventionalItemTags.BONES)
+                .add(NetherAndEndItems.WITHERED_BONE)
+        ;
 
         valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
@@ -45,8 +52,5 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
         valueLookupBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
 
-        valueLookupBuilder(ItemTags.BUNDLES)
-                .add(NetherAndEndItems.HOGLIN_BUNDLE)
-        ;
     }
 }

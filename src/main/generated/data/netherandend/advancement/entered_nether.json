@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "entered_nether": {
+      "conditions": {
+        "to": "minecraft:the_nether"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "background": "netherandend:gui/advancements/backgrounds/nether_and_end",
+    "description": {
+      "translate": "advancement.netherandend.nether_and_end.desc"
+    },
+    "icon": {
+      "id": "netherandend:nether_diamond_ore"
+    },
+    "title": {
+      "translate": "advancement.netherandend.nether_and_end.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_nether"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -3,8 +3,8 @@ package net.enderboy500.netherandend.data.providers;
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.util.NetherAndEndTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
@@ -12,8 +12,8 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-    public NetherAndEndBlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class NetherAndEndBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
+    public NetherAndEndBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
@@ -90,6 +90,9 @@ public class NetherAndEndBlockTagProvider extends FabricTagProvider.BlockTagProv
 
         valueLookupBuilder(ConventionalBlockTags.ORES)
                 .add(NetherAndEndBlocks.ENDER_PEARL_CLUSTER)
+        ;
+        valueLookupBuilder(ConventionalBlockTags.STORAGE_BLOCKS_BONE_MEAL)
+                .add(NetherAndEndBlocks.WIHERED_BONE_BLOCK)
         ;
 
         valueLookupBuilder(BlockTags.WOODEN_SHELVES)

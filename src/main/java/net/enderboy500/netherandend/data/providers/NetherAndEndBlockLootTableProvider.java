@@ -1,8 +1,8 @@
 package net.enderboy500.netherandend.data.providers;
 
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Items;
@@ -17,8 +17,8 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.concurrent.CompletableFuture;
 
-public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProvider {
-    public NetherAndEndBlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+public class NetherAndEndBlockLootTableProvider extends FabricBlockLootSubProvider {
+    public NetherAndEndBlockLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
@@ -32,6 +32,8 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         lapisOreDrop(NetherAndEndBlocks.NETHER_LAPIS_ORE);
         dropOther(NetherAndEndBlocks.NETHER_DIAMOND_ORE, Items.DIAMOND);
 
+        dropSelf(NetherAndEndBlocks.WIHERED_BONE_BLOCK);
+
         dropSelf(NetherAndEndBlocks.NETHER_BRICK_FENCE_GATE);
         dropSelf(NetherAndEndBlocks.CRACKED_RED_NETHER_BRICKS);
         dropSelf(NetherAndEndBlocks.RED_NETHER_BRICK_FENCE);
@@ -44,6 +46,7 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         dropSelf(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE);
         dropSelf(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE);
         dropSelf(NetherAndEndBlocks.CHISELED_CYAN_NETHER_BRICKS);
+        dropSelf(NetherAndEndBlocks.WIHERED_BONE_BLOCK);
 
         dropOther(NetherAndEndBlocks.END_COAL_ORE, Items.COAL);
         dropOther(NetherAndEndBlocks.END_IRON_ORE, Items.RAW_IRON);

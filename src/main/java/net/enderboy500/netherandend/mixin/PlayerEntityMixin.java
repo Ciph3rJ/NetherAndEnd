@@ -1,5 +1,7 @@
 package net.enderboy500.netherandend.mixin;
 
+import net.enderboy500.netherandend.util.icon.Icon;
+import net.enderboy500.netherandend.util.icon.IconUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;
@@ -14,8 +16,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.Calendar;
-
 @Mixin(Player.class)
 public abstract class PlayerEntityMixin extends Entity {
     @Shadow protected abstract MutableComponent decorateDisplayNameComponent(MutableComponent mutableComponent);
@@ -26,10 +26,12 @@ public abstract class PlayerEntityMixin extends Entity {
 
     @Inject(method = "getDisplayName", at = @At("HEAD"),cancellable = true)
     public void name(CallbackInfoReturnable<Component> cir) {
-        Calendar calendar = Calendar.getInstance();
-        if ((calendar.get(Calendar.MONTH) == Calendar.NOVEMBER && calendar.get(Calendar.DATE) >= 9) || (calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DATE) <= 19)) {
+        if (IconUtil.checkEverything(Icon.WARPED)) {
             MutableComponent mutableText = PlayerTeam.formatNameForTeam(this.getTeam(), this.getName());
             cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + '\uE001')));
+        } else if (IconUtil.checkEverything(Icon.CRIMSON)) {
+            MutableComponent mutableText = PlayerTeam.formatNameForTeam(this.getTeam(), this.getName());
+            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + '\uE002')));
         }
     }
 }

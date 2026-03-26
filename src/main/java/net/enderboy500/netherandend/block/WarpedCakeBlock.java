@@ -21,12 +21,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
@@ -47,23 +45,23 @@ public class WarpedCakeBlock extends Block {
         return CODEC;
     }
 
-    public WarpedCakeBlock(BlockBehaviour.Properties properties) {
+    public WarpedCakeBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(BITES, 0));
+        this.registerDefaultState((this.stateDefinition.any()).setValue(BITES, 0));
     }
 
     protected VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        return SHAPES[(Integer)blockState.getValue(BITES)];
+        return SHAPES[blockState.getValue(BITES)];
     }
 
     protected InteractionResult useItemOn(ItemStack itemStack, BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
         Item item = itemStack.getItem();
-        if (itemStack.is(ItemTags.CANDLES) && (Integer)blockState.getValue(BITES) == 0) {
+        if (itemStack.is(ItemTags.CANDLES) && blockState.getValue(BITES) == 0) {
             Block var10 = Block.byItem(item);
             if (var10 instanceof CandleBlock) {
                 CandleBlock candleBlock = (CandleBlock)var10;
                 itemStack.consume(1, player);
-                level.playSound((Entity)null, blockPos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
+                level.playSound(null, blockPos, SoundEvents.CAKE_ADD_CANDLE, SoundSource.BLOCKS, 1.0F, 1.0F);
                 level.setBlockAndUpdate(blockPos, WarpedCandleCakeBlock.getCandleCakeFromCandle(candleBlock));
                 level.gameEvent(player, GameEvent.BLOCK_CHANGE, blockPos);
                 player.awardStat(Stats.ITEM_USED.get(item));
@@ -98,21 +96,21 @@ public class WarpedCakeBlock extends Block {
                 BlockState state = level.getBlockState(pos);
                 Block block = state.getBlock();
                 if (state.getBlock() instanceof WarpedCakeBlock || state.getBlock() instanceof WarpedCandleCakeBlock) {
-                    level.setBlock(pos, (BlockState)Blocks.CAKE.getStateDefinition().any().setValue(BITES, 1), 3);
+                    level.setBlock(pos, Blocks.CAKE.getStateDefinition().any().setValue(BITES, 1), 3);
                     Block.dropResources(state, level, pos);
                     ItemUtils.spawnItemEntity(level, new ItemStack(NEFDCompat.WARPED_CAKE_SLICE), (double)pos.getX(), (double)pos.getY() + 0.2, (double)pos.getZ() + (double)0.5F, -0.05, (double)0.0F, (double)0.0F);
-                    level.playSound((Entity)null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+                    level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
                     return InteractionResult.SUCCESS;
                 } else if (block == NetherAndEndBlocks.WARPED_CAKE) {
-                    int bites = (Integer)state.getValue(BITES);
+                    int bites = state.getValue(BITES);
                     if (bites < 6) {
-                        level.setBlock(pos, (BlockState)state.setValue(BITES, bites + 1), 3);
+                        level.setBlock(pos, state.setValue(BITES, bites + 1), 3);
                     } else {
                         level.removeBlock(pos, false);
                     }
 
-                    ItemUtils.spawnItemEntity(level, new ItemStack( ModItems.CAKE_SLICE.get()), (double)pos.getX() + (double)bites * 0.1, (double)pos.getY() + 0.2, (double)pos.getZ() + (double)0.5F, -0.05, (double)0.0F, (double)0.0F);
-                    level.playSound((Entity)null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
+                    ItemUtils.spawnItemEntity(level, new ItemStack(ModItems.CAKE_SLICE.get()), (double)pos.getX() + (double)bites * 0.1, (double)pos.getY() + 0.2, (double)pos.getZ() + (double)0.5F, -0.05, (double)0.0F, (double)0.0F);
+                    level.playSound(null, pos, SoundEvents.WOOL_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
                     return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
                 } else {
                     return InteractionResult.PASS;
@@ -145,19 +143,18 @@ public class WarpedCakeBlock extends Block {
     }
 
     protected static InteractionResult eat(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, Player player) {
-            player.awardStat(Stats.EAT_CAKE_SLICE);
-            player.getFoodData().eat(2, 0.1F);
-            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
-            int i = (Integer)blockState.getValue(BITES);
-            levelAccessor.gameEvent(player, GameEvent.EAT, blockPos);
-            if (i < 6) {
-                levelAccessor.setBlock(blockPos, (BlockState)blockState.setValue(BITES, i + 1), 3);
-            } else {
-                levelAccessor.removeBlock(blockPos, false);
-                levelAccessor.gameEvent(player, GameEvent.BLOCK_DESTROY, blockPos);
-            }
-
-            return InteractionResult.SUCCESS;
+        player.awardStat(Stats.EAT_CAKE_SLICE);
+        player.getFoodData().eat(2, 0.1F);
+        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
+        int i = blockState.getValue(BITES);
+        levelAccessor.gameEvent(player, GameEvent.EAT, blockPos);
+        if (i < 6) {
+            levelAccessor.setBlock(blockPos, blockState.setValue(BITES, i + 1), 3);
+        } else {
+            levelAccessor.removeBlock(blockPos, false);
+            levelAccessor.gameEvent(player, GameEvent.BLOCK_DESTROY, blockPos);
+        }
+        return InteractionResult.SUCCESS;
     }
 
     protected BlockState updateShape(BlockState blockState, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos blockPos, Direction direction, BlockPos blockPos2, BlockState blockState2, RandomSource randomSource) {
@@ -169,11 +166,11 @@ public class WarpedCakeBlock extends Block {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(new Property[]{BITES});
+        builder.add(BITES);
     }
 
     protected int getAnalogOutputSignal(BlockState blockState, Level level, BlockPos blockPos, Direction direction) {
-        return getOutputSignal((Integer)blockState.getValue(BITES));
+        return getOutputSignal(blockState.getValue(BITES));
     }
 
     public static int getOutputSignal(int i) {

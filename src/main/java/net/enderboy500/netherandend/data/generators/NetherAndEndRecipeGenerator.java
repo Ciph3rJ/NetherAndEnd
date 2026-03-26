@@ -1,6 +1,7 @@
 package net.enderboy500.netherandend.data.generators;
 
 import net.enderboy500.netherandend.content.NetherAndEndBlockItems;
+import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -22,6 +23,12 @@ public class NetherAndEndRecipeGenerator extends RecipeProvider {
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB, NetherAndEndBlockItems.CYAN_NETHER_BRICKS, 2);
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
         stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+
+        this.nineBlockStorageRecipes(RecipeCategory.MISC, NetherAndEndItems.WITHERED_BONE_MEAL, RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlockItems.WITHERED_BONE_BLOCK);
+        this.shapeless(RecipeCategory.MISC, NetherAndEndItems.WITHERED_BONE_MEAL, 3)
+                .requires(NetherAndEndItems.WITHERED_BONE)
+                .unlockedBy(getHasName(NetherAndEndItems.WITHERED_BONE_MEAL), has(NetherAndEndItems.WITHERED_BONE))
+                .save(output);
     }
 
     public static class Provider extends Runner {

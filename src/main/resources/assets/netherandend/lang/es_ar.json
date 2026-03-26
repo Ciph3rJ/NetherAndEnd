@@ -1,13 +1,14 @@
 {
-  "item.netherandend.chorus_soup": "Estafado de Chorus",
+  "item.netherandend.chorus_soup": "Guiso de Chorus",
   "item.netherandend.warped_wart": "Verruga Distorsionado",
   "item.netherandend.shulker_pearl": "Perla de Shulker",
   "item.netherandend.hardened_shulker_pearl": "Perla de Shulker Endurecido",
   "item.netherandend.ender_fruit": "Fruta Ender",
   "item.netherandend.shulker_falchion": "Espada de Shulker",
   "item.netherandend.chorus_pie": "Tarta de Chorus",
-  "item.netherandend.warped_stew": "Estafado de Distorsionado",
-  "item.netherandend.warped_cake_slice": "Rebanada de Torta de Distorsionado",
+  "item.netherandend.warped_stew": "Guiso Distorsionado",
+  "item.netherandend.warped_cake_slice": "Rebanada de Torta Distorsionado",
+  "item.netherandend.crimson_pie": "Tarta Carmesí",
   "item.netherandend.raw_hogchop": "Hogchop Crudo",
   "item.netherandend.cooked_hogchop": "Hogchop Asado",
   "item.netherandend.hoglin_skin": "Piel de Hoglin",
@@ -17,7 +18,8 @@
   "item.netherandend.cooked_strider_meat": "Carne de Strider Asado",
   "item.netherandend.hardened_strider_meat": "Carne de Strider Quemado",
   "item.netherandend.dragon_charge": "Carga de Dragon",
-
+  "item.netherandend.withered_bone": "Hueso Marchito",
+  "item.netherandend.withered_bone_meal": "Hueso Molido Marchito",
 
   "item.minecraft.potion.effect.aversion": "Poción de Aversión",
   "item.minecraft.splash_potion.effect.aversion": "Poción de Aversión Arrojadiza",
@@ -67,6 +69,19 @@
   "item.minecraft.lingering_potion.effect.strong_sickness": "Poción de Enfermedad Persistente",
   "item.minecraft.tipped_arrow.effect.strong_sickness": "Flecha de Enfermedad",
 
+  "item.minecraft.potion.effect.decay": "Poción de Descomposición",
+  "item.minecraft.splash_potion.effect.decay": "Poción de Descomposición Arrojadiza",
+  "item.minecraft.lingering_potion.effect.decay": "Poción de Descomposición Persistente",
+  "item.minecraft.tipped_arrow.effect.decay": "Flecha de Descomposición",
+  "item.minecraft.potion.effect.long_decay": "Poción de Descomposición",
+  "item.minecraft.splash_potion.effect.long_decay": "Poción de Descomposición Arrojadiza",
+  "item.minecraft.lingering_potion.effect.long_decay": "Poción de Descomposición Persistente",
+  "item.minecraft.tipped_arrow.effect.long_decay": "Flecha de Descomposición",
+  "item.minecraft.potion.effect.strong_decay": "Poción de Descomposición",
+  "item.minecraft.splash_potion.effect.strong_decay": "Poción de Descomposición Arrojadiza",
+  "item.minecraft.lingering_potion.effect.strong_decay": "Poción de Descomposición Persistente",
+  "item.minecraft.tipped_arrow.effect.strong_decay": "Flecha de Descomposición",
+
   "item.minecraft.potion.effect.instant_warping": "Poción de Deformación Instantáneo",
   "item.minecraft.splash_potion.effect.instant_warping": "Poción de Deformación Instantáneo Arrojadiza",
   "item.minecraft.lingering_potion.effect.instant_warping": "Poción de Deformación Instantáneo Persistente",
@@ -87,7 +102,7 @@
   "block.netherandend.nether_diamond_ore": "Mena de Diamante del Nether",
   "block.netherandend.cracked_bedrock": "Piedra Base Agrietados",
   "block.netherandend.crumbling_basalt": "Basalto Desmenuzado",
-  "block.netherandend.warped_cake": "Torta de Distorsionado",
+  "block.netherandend.warped_cake": "Torta Distorsionado",
   "block.netherandend.nether_brick_fence_gate": "Puerta de Valla de Ladrillos del Nether",
   "block.netherandend.cracked_red_nether_bricks": "Ladrillos del Nether Rojos Quebrados",
   "block.netherandend.red_nether_brick_fence": "Valla de Ladrillos del Nether Rojos",
@@ -101,6 +116,7 @@
   "block.netherandend.cyan_nether_brick_fence": "Valla de Ladrillos del Nether Cian",
   "block.netherandend.cyan_nether_brick_fence_gate": "Puerta de Valla de Ladrillos del Nether Cian",
   "block.netherandend.chiseled_cyan_nether_bricks": "Ladrillos del Nether Cian Cincelados",
+  "block.netherandend.withered_bone_block": "Bloque de Huesos Marchito",
 
   "block.netherandend.end_coal_ore": "Mena de Carbón del End",
   "block.netherandend.end_iron_ore": "Mena de Hierro del End",
@@ -129,7 +145,7 @@
   "advancement.netherandend.nether_and_end.title": "Nether & End",
   "advancement.netherandend.double_wart.title": "Verruga Doble",
   "advancement.netherandend.why_is_this_so_complicated.title": "¿¿Por Qué es Tan Complicado??",
-  "advancement.netherandend.why_was_this_so_hard.title": "¿¿Por Qué es Tan Difícil??",
+  "advancement.netherandend.why_was_this_so_hard.title": "¿¿Por Qué fue Tan Difícil??",
   "advancement.netherandend.whats_the_difference.title": "¿¿Cuál es la Diferencia?",
   "advancement.netherandend.well_thats_unique.title": "Bueno, Eso es Único",
   "advancement.netherandend.end_compacting.title": "Compactage d'End",
@@ -157,6 +173,9 @@
   "advancement.netherandend.ore_collector.desc": "Esa es la Verdadera Dedicación",
 
   "gamerule.disableElytra": "Desactivar Élitros",
+
+  "tooltip.netherandend.explanation.instructions": "§6Mantenga pulsada la tecla §e[Shift]§6 para obtener más información.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Después de ser golpeado por una turba, presiona §eRight-click§7 para lanzar una bala shulker que se adhiere a ellos.",
 
   "itemgroup.netherandend": "Nether & End"
 }

@@ -42,24 +42,24 @@ public class NetherAndEndBlocks {
     public static final Block CHORUS_SHELF = register("chorus_shelf", ShelfBlock::new,
             Properties.of().mapColor(CHORUS_PLANKS.defaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).noOcclusion().isValidSpawn(Blocks::never));
 
-    public static final Block WARPED_CAKE = register("warped_cake", WarpedCakeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
-    public static final Block WARPED_CANDLE_CAKE = register("warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.CANDLE, settings), BlockBehaviour.Properties.ofLegacyCopy(WARPED_CAKE).lightLevel(Blocks.litBlockEmission(3)));
-    public static final Block WARPED_WHITE_CANDLE_CAKE = register("white_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.WHITE_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_LIGHT_GRAY_CANDLE_CAKE = register("light_gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIGHT_GRAY_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_GRAY_CANDLE_CAKE = register("gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.GRAY_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_BLACK_CANDLE_CAKE = register("black_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BLACK_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_BROWN_CANDLE_CAKE = register("brown_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BROWN_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_RED_CANDLE_CAKE = register("red_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.RED_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_ORANGE_CANDLE_CAKE = register("orange_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.ORANGE_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_YELLOW_CANDLE_CAKE = register("yellow_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.YELLOW_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_LIME_CANDLE_CAKE = register("lime_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIME_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_GREEN_CANDLE_CAKE = register("green_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.GREEN_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_CYAN_CANDLE_CAKE = register("cyan_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.CYAN_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_LIGHT_BLUE_CANDLE_CAKE = register("light_blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIGHT_BLUE_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_BLUE_CANDLE_CAKE = register("blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BLUE_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_PURPLE_CANDLE_CAKE = register("purple_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.PURPLE_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_MAGENTA_CANDLE_CAKE = register("magenta_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.MAGENTA_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
-    public static final Block WARPED_PINK_CANDLE_CAKE = register("pink_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.PINK_CANDLE, settings), BlockBehaviour.Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_CAKE = register("warped_cake", WarpedCakeBlock::new, Properties.ofFullCopy(Blocks.CAKE));
+    public static final Block WARPED_CANDLE_CAKE = register("warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.CANDLE, settings), Properties.ofLegacyCopy(WARPED_CAKE).lightLevel(Blocks.litBlockEmission(3)));
+    public static final Block WARPED_WHITE_CANDLE_CAKE = register("white_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.WHITE_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIGHT_GRAY_CANDLE_CAKE = register("light_gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIGHT_GRAY_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_GRAY_CANDLE_CAKE = register("gray_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.GRAY_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BLACK_CANDLE_CAKE = register("black_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BLACK_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BROWN_CANDLE_CAKE = register("brown_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BROWN_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_RED_CANDLE_CAKE = register("red_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.RED_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_ORANGE_CANDLE_CAKE = register("orange_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.ORANGE_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_YELLOW_CANDLE_CAKE = register("yellow_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.YELLOW_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIME_CANDLE_CAKE = register("lime_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIME_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_GREEN_CANDLE_CAKE = register("green_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.GREEN_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_CYAN_CANDLE_CAKE = register("cyan_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.CYAN_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_LIGHT_BLUE_CANDLE_CAKE = register("light_blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.LIGHT_BLUE_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_BLUE_CANDLE_CAKE = register("blue_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.BLUE_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_PURPLE_CANDLE_CAKE = register("purple_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.PURPLE_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_MAGENTA_CANDLE_CAKE = register("magenta_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.MAGENTA_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
+    public static final Block WARPED_PINK_CANDLE_CAKE = register("pink_warped_candle_cake", settings -> new WarpedCandleCakeBlock(Blocks.PINK_CANDLE, settings), Properties.ofFullCopy(WARPED_CANDLE_CAKE));
 
     public static final Block NETHER_BRICK_FENCE_GATE = register("nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(Blocks.NETHER_BRICKS));
     public static final Block CRACKED_RED_NETHER_BRICKS = register("cracked_red_nether_bricks", Block::new, Properties.ofFullCopy(Blocks.RED_NETHER_BRICKS));
@@ -75,7 +75,7 @@ public class NetherAndEndBlocks {
     public static final Block CYAN_NETHER_BRICK_FENCE = register("cyan_nether_brick_fence", FenceBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
     public static final Block CYAN_NETHER_BRICK_FENCE_GATE = register("cyan_nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
     public static final Block CHISELED_CYAN_NETHER_BRICKS = register("chiseled_cyan_nether_bricks", Block::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
-
+    public static final Block WARPED_WART = register("warped_wart", NetherWartBlock::new, Properties.ofFullCopy(Blocks.NETHER_WART));
 
     public static final Block NETHER_COAL_ORE = register("nether_coal_ore",
             settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
@@ -131,9 +131,11 @@ public class NetherAndEndBlocks {
             .strength(75, -1));
     public static final Block CRUMBLING_BASALT = register("crumbling_basalt", CrumblingBasaltBlock::new, Properties.ofFullCopy(Blocks.BASALT)
             .instabreak().explosionResistance(2.1f));
+    public static final Block WIHERED_BONE_BLOCK = register("withered_bone_block",
+            RotatedPillarBlock::new, Properties.ofFullCopy(Blocks.BONE_BLOCK));
 
-    public static <B extends Block> B register(String name, Function<Properties, B> factory, Properties settings) {
-        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
+    public static <B extends Block> B register(String id, Function<Properties, B> factory, Properties settings) {
+        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));
         B block = factory.apply(settings.setId(key));
 
         return Registry.register(BuiltInRegistries.BLOCK, key, block);

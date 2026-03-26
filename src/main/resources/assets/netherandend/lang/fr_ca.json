@@ -6,8 +6,9 @@
   "item.netherandend.ender_fruit": "Fruits de l'ender",
   "item.netherandend.shulker_falchion": "Épée de Shulker",
   "item.netherandend.chorus_pie": "Tarte à le Chorus",
-  "item.netherandend.warped_stew": "Ragoût de Tordu",
-  "item.netherandend.warped_cake_slice": "Part de Gâteau de Tordu",
+  "item.netherandend.warped_stew": "Soupe Tordu",
+  "item.netherandend.warped_cake_slice": "Part de Gâteau Tordu",
+  "item.netherandend.crimson_pie": "Tarte Cramoisi",
   "item.netherandend.raw_hogchop": "Hogchop Cru",
   "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
@@ -17,7 +18,8 @@
   "item.netherandend.cooked_strider_meat": "Viande d'arpenteur Cuit",
   "item.netherandend.hardened_strider_meat": "Viande d'arpenteur Brûlé",
   "item.netherandend.dragon_charge": "Charge de Dragon",
-
+  "item.netherandend.withered_bone": "Os Desséché",
+  "item.netherandend.withered_bone_meal": "Poudre d'os Desséché",
 
   "item.minecraft.potion.effect.aversion": "Potion de Résistance",
   "item.minecraft.splash_potion.effect.aversion": "Potion de Résistance Jetable",
@@ -67,6 +69,19 @@
   "item.minecraft.lingering_potion.effect.strong_sickness": "Potion de Maladie Persistante",
   "item.minecraft.tipped_arrow.effect.strong_sickness": "Flèche de Maladie",
 
+  "item.minecraft.potion.effect.decay": "Potion de Dégradation",
+  "item.minecraft.splash_potion.effect.decay": "Potion de Dégradation Jetable",
+  "item.minecraft.lingering_potion.effect.decay": "Potion de Dégradation Persistante",
+  "item.minecraft.tipped_arrow.effect.decay": "Flèche de Dégradation",
+  "item.minecraft.potion.effect.long_decay": "Potion de Dégradation",
+  "item.minecraft.splash_potion.effect.long_decay": "Potion de Dégradation Jetable",
+  "item.minecraft.lingering_potion.effect.long_decay": "Potion de Dégradation Persistante",
+  "item.minecraft.tipped_arrow.effect.long_decay": "Flèche de Dégradation",
+  "item.minecraft.potion.effect.strong_decay": "Potion de Dégradation",
+  "item.minecraft.splash_potion.effect.strong_decay": "Potion de Dégradation Jetable",
+  "item.minecraft.lingering_potion.effect.strong_decay": "Potion de Dégradation Persistante",
+  "item.minecraft.tipped_arrow.effect.strong_decay": "Flèche de Dégradation",
+
   "item.minecraft.potion.effect.instant_warping": "Potion de Déformation Instantané",
   "item.minecraft.splash_potion.effect.instant_warping": "Potion de Déformation Instantané Jetable",
   "item.minecraft.lingering_potion.effect.instant_warping": "Potion de Déformation Instantané Persistante",
@@ -87,7 +102,7 @@
   "block.netherandend.nether_diamond_ore": "Minerai de Diamant du Nether",
   "block.netherandend.cracked_bedrock": "Bedrock Craquelée",
   "block.netherandend.crumbling_basalt": "Basalte Effondrement",
-  "block.netherandend.warped_cake": "Gâteau de Tordu",
+  "block.netherandend.warped_cake": "Gâteau Tordu",
   "block.netherandend.nether_brick_fence_gate": "Porte de Clôture en Briques du Nether",
   "block.netherandend.cracked_red_nether_bricks": "Briques Rouges du Nether Craquelées",
   "block.netherandend.red_nether_brick_fence": "Clôture de Briques Rouges du Nether",
@@ -101,6 +116,7 @@
   "block.netherandend.cyan_nether_brick_fence": "Clôture de Briques Cyan du Nether",
   "block.netherandend.cyan_nether_brick_fence_gate": "Porte de Clôture en Briques Cyan du Nether",
   "block.netherandend.chiseled_cyan_nether_bricks": "Briques Cyan du Nether Ciselées",
+  "block.netherandend.withered_bone_block": "Bloc d'os Desséché",
 
   "block.netherandend.end_coal_ore": "Minerai de Charbon de l'End",
   "block.netherandend.end_iron_ore": "Minerai de Fer de l'End",
@@ -129,7 +145,7 @@
   "advancement.netherandend.nether_and_end.title": "Nether et End",
   "advancement.netherandend.double_wart.title": "Double Verrues",
   "advancement.netherandend.why_is_this_so_complicated.title": "Pourquoi est-ce Si Compliqué??",
-  "advancement.netherandend.why_was_this_so_hard.title": "Pourquoi est-ce si Difficile??",
+  "advancement.netherandend.why_was_this_so_hard.title": "Pourquoi était-ce si Difficile??",
   "advancement.netherandend.whats_the_difference.title": "Quelle est la Différence??",
   "advancement.netherandend.well_thats_unique.title": "C'est Unique",
   "advancement.netherandend.end_compacting.title": "Compactage d'End",
@@ -157,6 +173,9 @@
   "advancement.netherandend.ore_collector.desc": "C'est ça le Vrai Dévouement",
 
   "gamerule.disableElytra": "Désactiver Élytres",
+
+  "tooltip.netherandend.explanation.instructions": "§6Maintenez la touche §e[Shift]§6 enfoncée pour plus d'informations.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Après avoir été touché par une foule, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
 
   "itemgroup.netherandend": "Nether et End"
 }

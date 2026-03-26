@@ -54,7 +54,7 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
         return CODEC;
     }
 
-    public WarpedCandleCakeBlock(Block candle, BlockBehaviour.Properties settings) {
+    public WarpedCandleCakeBlock(Block candle, Properties settings) {
         super(settings);
         this.registerDefaultState((BlockState)((BlockState)this.getStateDefinition().any()).setValue(LIT, false));
         if (candle instanceof CandleBlock candleBlock) {

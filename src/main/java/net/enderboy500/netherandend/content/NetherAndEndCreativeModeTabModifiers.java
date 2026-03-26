@@ -1,29 +1,44 @@
 package net.enderboy500.netherandend.content;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
 
 public class NetherAndEndCreativeModeTabModifiers {
     private static void modifyBuildingBlocksCreativeModeTab() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
-            entries.addAfter(Items.NETHER_BRICK_FENCE, NetherAndEndBlockItems.NETHER_BRICK_FENCE_GATE);
-            entries.addAfter(Items.RED_NETHER_BRICKS, NetherAndEndBlockItems.CRACKED_RED_NETHER_BRICKS);
-            entries.addAfter(Items.RED_NETHER_BRICK_WALL, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE);
-            entries.addAfter(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE_GATE);
-            entries.addAfter(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE_GATE, NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS);
-            entries.addAfter(NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CRACKED_CYAN_NETHER_BRICKS);
-            entries.addAfter(NetherAndEndBlockItems.CRACKED_CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB, NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE);
-            entries.addAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE, NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS);
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+            entries.insertAfter(Items.NETHER_BRICK_FENCE, NetherAndEndBlockItems.NETHER_BRICK_FENCE_GATE);
+            entries.insertAfter(Items.RED_NETHER_BRICKS, NetherAndEndBlockItems.CRACKED_RED_NETHER_BRICKS);
+            entries.insertAfter(Items.RED_NETHER_BRICK_WALL, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE);
+            entries.insertAfter(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE, NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE_GATE);
+            entries.insertAfter(NetherAndEndBlockItems.RED_NETHER_BRICK_FENCE_GATE, NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS);
+            entries.insertAfter(NetherAndEndBlockItems.CHISELED_RED_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICKS);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CRACKED_CYAN_NETHER_BRICKS);
+            entries.insertAfter(NetherAndEndBlockItems.CRACKED_CYAN_NETHER_BRICKS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_STAIRS, NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_SLAB, NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_WALL, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE, NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE);
+            entries.insertAfter(NetherAndEndBlockItems.CYAN_NETHER_BRICK_FENCE_GATE, NetherAndEndBlockItems.CHISELED_CYAN_NETHER_BRICKS);
+        });
+    }
+
+    private static void modifyNaturalBlockCreativeModeTab() {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
+            entries.insertAfter(Items.BONE_BLOCK, NetherAndEndBlockItems.WITHERED_BONE_BLOCK);
+        });
+    }
+
+    private static void modifyIngredientsCreativeModeTab() {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
+            entries.insertAfter(Items.BONE_MEAL, NetherAndEndItems.WITHERED_BONE);
+            entries.insertAfter(NetherAndEndItems.WITHERED_BONE, NetherAndEndItems.WITHERED_BONE_MEAL);
         });
     }
 
     public static void loadCreativeModeTabModifiers() {
         modifyBuildingBlocksCreativeModeTab();
+        modifyNaturalBlockCreativeModeTab();
+        modifyIngredientsCreativeModeTab();
     }
 }

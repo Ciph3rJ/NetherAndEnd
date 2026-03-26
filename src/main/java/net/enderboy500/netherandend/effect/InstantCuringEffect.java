@@ -1,10 +1,11 @@
 package net.enderboy500.netherandend.effect;
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.effect.InstantenousMobEffect;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.*;
 import net.minecraft.world.entity.LivingEntity;
+
+import java.util.Collection;
+import java.util.List;
 
 public class InstantCuringEffect extends InstantenousMobEffect {
     public InstantCuringEffect(MobEffectCategory category, int color) {
@@ -22,10 +23,13 @@ public class InstantCuringEffect extends InstantenousMobEffect {
         super.onEffectStarted(entity, amplifier);
     }
 
-    public void removeHarmfulEffects(LivingEntity entity){
-        entity.removeEffect(MobEffects.NAUSEA);
-        entity.removeEffect(MobEffects.POISON);
-        entity.removeEffect(MobEffects.HUNGER);
+    public void removeHarmfulEffects(LivingEntity entity) {
+        List<MobEffectInstance> effects = entity.getActiveEffects().stream().toList();
+        for (MobEffectInstance effectInstance : effects) {
+            if (effectInstance.getEffect().value().getCategory() == MobEffectCategory.HARMFUL) {
+                entity.removeEffect(effectInstance.getEffect());
+            }
+        }
     }
 
     @Override

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "netherandend:withered_bone_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "netherandend:withered_bone_meal"
+  }
+}
