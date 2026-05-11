@@ -38,8 +38,6 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
 
         valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
-        valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)
-                .add(NetherAndEndItems.SHULKER_FALCHION);
         valueLookupBuilder(ItemTags.VANISHING_ENCHANTABLE)
                 .add(NetherAndEndItems.SHULKER_FALCHION);
         valueLookupBuilder(ItemTags.FIRE_ASPECT_ENCHANTABLE)

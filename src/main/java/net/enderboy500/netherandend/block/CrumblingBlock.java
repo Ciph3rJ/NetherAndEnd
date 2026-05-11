@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public abstract class CrumblingBlock extends Block implements Fallable {
-    public CrumblingBlock(BlockBehaviour.Properties settings) {
+    public CrumblingBlock(Properties settings) {
         super(settings);
     }
     @Override

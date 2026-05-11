@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(FireChargeItem.class)
 public abstract class FireChargeItemMixin extends Item {
-    public FireChargeItemMixin(Item.Properties settings) {
+    public FireChargeItemMixin(Properties settings) {
         super(settings);
     }
 

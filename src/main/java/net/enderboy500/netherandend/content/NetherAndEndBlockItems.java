@@ -41,7 +41,6 @@ public class NetherAndEndBlockItems {
     public static final BlockItem CYAN_NETHER_BRICK_FENCE_GATE = register("cyan_nether_brick_fence_gate", NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE);
     public static final BlockItem CHISELED_CYAN_NETHER_BRICKS = register("chiseled_cyan_nether_bricks", NetherAndEndBlocks.CHISELED_CYAN_NETHER_BRICKS);
 
-
     public static final BlockItem NETHER_COAL_ORE = register("nether_coal_ore", NetherAndEndBlocks.NETHER_COAL_ORE);
     public static final BlockItem NETHER_IRON_ORE = register("nether_iron_ore", NetherAndEndBlocks.NETHER_IRON_ORE);
     public static final BlockItem NETHER_COPPER_ORE = register("nether_copper_ore", NetherAndEndBlocks.NETHER_COPPER_ORE);
@@ -62,6 +61,7 @@ public class NetherAndEndBlockItems {
 
     public static final BlockItem CRACKED_BEDROCK = register("cracked_bedrock", NetherAndEndBlocks.CRACKED_BEDROCK);
     public static final BlockItem CRUMBLING_BASALT = register("crumbling_basalt", NetherAndEndBlocks.CRUMBLING_BASALT);
+    public static final BlockItem WITHERED_BONE_BLOCK = register("withered_bone_block", NetherAndEndBlocks.WIHERED_BONE_BLOCK);
 
     public static <I extends Item> I registerItem(String id, Function<Item.Properties, I> factory, Item.Properties settings) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));

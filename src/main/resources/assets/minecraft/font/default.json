@@ -2,10 +2,17 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "netherandend:font/ne_icon_trophies.png",
+      "file": "netherandend:font/warped_icon.png",
       "ascent": 8,
       "height": 16,
       "chars": ["\uE001"]
+    },
+    {
+      "type": "bitmap",
+      "file": "netherandend:font/crimson_icon.png",
+      "ascent": 8,
+      "height": 8,
+      "chars": ["\uE002"]
     }
   ]
 }

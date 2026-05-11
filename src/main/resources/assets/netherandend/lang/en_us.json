@@ -7,8 +7,8 @@
   "item.netherandend.shulker_falchion": "Shulker Falchion",
   "item.netherandend.chorus_pie": "Chorus Pie",
   "item.netherandend.warped_stew": "Warped Stew",
-  "item.netherandend.warped_cake": "Warped Cake",
   "item.netherandend.warped_cake_slice": "Slice of Warped Cake",
+  "item.netherandend.crimson_pie": "Crimson Pie",
   "item.netherandend.raw_hogchop": "Raw Hogchop",
   "item.netherandend.cooked_hogchop": "Cooked Hogchop",
   "item.netherandend.hoglin_skin": "Hoglin Skin",
@@ -18,7 +18,8 @@
   "item.netherandend.cooked_strider_meat": "Cooked Strider Meat",
   "item.netherandend.hardened_strider_meat": "Burnt Strider Meat",
   "item.netherandend.dragon_charge": "Dragon Charge",
-
+  "item.netherandend.withered_bone": "Withered Bone",
+  "item.netherandend.withered_bone_meal": "Withered Bone Meal",
 
   "item.minecraft.potion.effect.aversion": "Potion of Aversion",
   "item.minecraft.splash_potion.effect.aversion": "Splash Potion of Aversion",
@@ -68,6 +69,19 @@
   "item.minecraft.lingering_potion.effect.strong_sickness": "Lingering Potion of Sickness",
   "item.minecraft.tipped_arrow.effect.strong_sickness": "Arrow of Sickness",
 
+  "item.minecraft.potion.effect.decay": "Potion of Decay",
+  "item.minecraft.splash_potion.effect.decay": "Splash Potion of Decay",
+  "item.minecraft.lingering_potion.effect.decay": "Lingering Potion of Decay",
+  "item.minecraft.tipped_arrow.effect.decay": "Arrow of Decay",
+  "item.minecraft.potion.effect.long_decay": "Potion of Decay",
+  "item.minecraft.splash_potion.effect.long_decay": "Splash Potion of Decay",
+  "item.minecraft.lingering_potion.effect.long_decay": "Lingering Potion of Decay",
+  "item.minecraft.tipped_arrow.effect.long_decay": "Arrow of Decay",
+  "item.minecraft.potion.effect.strong_decay": "Potion of Decay",
+  "item.minecraft.splash_potion.effect.strong_decay": "Splash Potion of Decay",
+  "item.minecraft.lingering_potion.effect.strong_decay": "Lingering Potion of Decay",
+  "item.minecraft.tipped_arrow.effect.strong_decay": "Arrow of Decay",
+
   "item.minecraft.potion.effect.instant_warping": "Potion of Instant Warping",
   "item.minecraft.splash_potion.effect.instant_warping": "Splash Potion of Instant Warping",
   "item.minecraft.lingering_potion.effect.instant_warping": "Lingering Potion of Instant Warping",
@@ -102,6 +116,7 @@
   "block.netherandend.cyan_nether_brick_fence": "Cyan Nether Brick Fence",
   "block.netherandend.cyan_nether_brick_fence_gate": "Cyan Nether Brick Fence Gate",
   "block.netherandend.chiseled_cyan_nether_bricks": "Chiseled Cyan Nether Bricks",
+  "block.netherandend.withered_bone_block": "Withered Bone Block",
 
   "block.netherandend.end_coal_ore": "End Coal Ore",
   "block.netherandend.end_iron_ore": "End Iron Ore",
@@ -130,7 +145,7 @@
   "advancement.netherandend.nether_and_end.title": "Nether & End",
   "advancement.netherandend.double_wart.title": "Double Wart",
   "advancement.netherandend.why_is_this_so_complicated.title": "Why Is This So Complicated??",
-  "advancement.netherandend.why_was_this_so_hard.title": "Why Is This So Hard??",
+  "advancement.netherandend.why_was_this_so_hard.title": "Why Was This So Hard??",
   "advancement.netherandend.whats_the_difference.title": "What's The Difference??",
   "advancement.netherandend.well_thats_unique.title": "Well That's Unique",
   "advancement.netherandend.end_compacting.title": "End Compacting",
@@ -158,6 +173,9 @@
   "advancement.netherandend.ore_collector.desc": "That's True Dedication",
 
   "gamerule.disableElytra": "Disable Elytra",
+
+  "tooltip.netherandend.explanation.instructions": "§6Hold §e[Shift]§6 for more information.",
+  "tooltip.netherandend.explanation.shulker_falchion": "After getting hit by a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
 
   "itemgroup.netherandend": "Nether & End"
 }

@@ -6,6 +6,8 @@ import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 
 public class BlockRenderClient {
     public static void registerBlockCutOuts() {
+        BlockRenderLayerMap.putBlock(NetherAndEndBlocks.WARPED_WART, ChunkSectionLayer.CUTOUT);
+
         BlockRenderLayerMap.putBlock(NetherAndEndBlocks.CHORUS_DOOR, ChunkSectionLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(NetherAndEndBlocks.CHORUS_TRAPDOOR, ChunkSectionLayer.CUTOUT);
     }

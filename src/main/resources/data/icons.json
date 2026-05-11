@@ -1,0 +1,26 @@
+{
+  "icons": {
+    "warped": {
+      "available" : true,
+      "start": {
+        "day": 9,
+        "month": 10
+      },
+      "end": {
+        "day": 9,
+        "month": 11
+      }
+    },
+    "crimson": {
+      "available" : false,
+      "start": {
+        "day": 1,
+        "month": 4
+      },
+      "end": {
+        "day": 16,
+        "month": 5
+      }
+    }
+  }
+}

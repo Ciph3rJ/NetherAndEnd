@@ -12,6 +12,9 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.gamerules.GameRule;
+import net.minecraft.world.level.gamerules.GameRuleCategory;
+import net.minecraft.world.level.gamerules.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +23,11 @@ public class NetherAndEnd implements ModInitializer {
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final GameRule<Boolean> DISABLE_ELYTRA = GameRules.registerBoolean("disable_elytra", GameRuleCategory.PLAYER, false);
+
 	@Override
 	public void onInitialize() {
+
 		LOGGER.info("Initializing Nether & End");
 
 		NetherAndEndItems.loadItems();
@@ -66,7 +72,6 @@ public class NetherAndEnd implements ModInitializer {
 
 			builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.ENDER_FRUIT), NetherAndEndPotions.INSTANT_WARPING_POTION);
 		});
-
 
 		LOGGER.info("Finished Initializing Nether & End");
 	}

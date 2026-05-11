@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CrumblingBasaltBlock extends CrumblingBlock{
-    public CrumblingBasaltBlock(BlockBehaviour.Properties settings) {
+    public CrumblingBasaltBlock(Properties settings) {
         super(settings);
     }
 

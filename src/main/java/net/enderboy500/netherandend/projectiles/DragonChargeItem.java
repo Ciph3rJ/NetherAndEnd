@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.phys.Vec3;
 
 public class DragonChargeItem extends Item implements ProjectileItem {
-    public DragonChargeItem(Item.Properties settings) {
+    public DragonChargeItem(Properties settings) {
         super(settings);
     }
 
@@ -37,8 +37,8 @@ public class DragonChargeItem extends Item implements ProjectileItem {
     }
 
     @Override
-    public ProjectileItem.DispenseConfig createDispenseConfig() {
-        return ProjectileItem.DispenseConfig.builder()
+    public DispenseConfig createDispenseConfig() {
+        return DispenseConfig.builder()
                 .positionFunction((pointer, facing) -> DispenserBlock.getDispensePosition(pointer, 1.0, Vec3.ZERO))
                 .uncertainty(6.6666665F)
                 .power(1.0F)
