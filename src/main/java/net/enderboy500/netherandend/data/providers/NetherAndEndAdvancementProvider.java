@@ -8,7 +8,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.criterion.*;
+import net.minecraft.advancements.criterion.ChangeDimensionTrigger;
+import net.minecraft.advancements.criterion.ConsumeItemTrigger;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -42,7 +44,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("entered_nether", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(Level.NETHER))
-                .save(consumer, NetherAndEnd.MOD_ID + ":entered_nether");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/entered_nether"));
 
         AdvancementHolder doubleWart = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
@@ -58,7 +60,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .addCriterion("got_nether_wart", InventoryChangeTrigger.TriggerInstance.hasItems(Items.NETHER_WART))
                 .addCriterion("got_warped_wart", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.WARPED_WART))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_warts");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_warts"));
         AdvancementHolder whyIsThisSoComplicated = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -72,7 +74,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_raw_strider_meat", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.RAW_STRIDER_MEAT))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_raw_strider_meat");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_raw_strider_meat"));
         AdvancementHolder whyWasThisSoHard = Advancement.Builder.advancement()
                 .parent(whyIsThisSoComplicated)
                 .display(
@@ -89,7 +91,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("got_smoked_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.SMOKED_STRIDER_MEAT))
                 .addCriterion("got_cooked_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.COOKED_STRIDER_MEAT))
                 .addCriterion("got_hardened_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_STRIDER_MEAT))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_all_strider_meat");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_all_strider_meat"));
         AdvancementHolder whatsTheDifference = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -104,7 +106,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                 )
                 .addCriterion("got_raw_hogchop", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.RAW_HOGCHOP))
                 .addCriterion("got_raw_porkchop", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PORKCHOP))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_chops");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_chops"));
         AdvancementHolder wellThatsUnique = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -118,7 +120,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_crumbling_basalt", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.CRUMBLING_BASALT))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_crumbling_basalt");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_crumbling_basalt"));
 
         AdvancementHolder endCompacting = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
@@ -133,7 +135,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_chorus_block", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.CHORUS_BLOCK))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_chorus_block");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_chorus_block"));
         AdvancementHolder fruitful = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -147,7 +149,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_ender_fruit", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.ENDER_FRUIT))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_ender_fruit");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_ender_fruit"));
         AdvancementHolder thePowerIsNowMine = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -161,7 +163,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_dragon_charge", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.DRAGON_CHARGE))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_dragon_charge");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_dragon_charge"));
         AdvancementHolder woahImFlying = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -175,7 +177,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("consumed_shulker_pearl", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.SHULKER_PEARL))
-                .save(consumer, NetherAndEnd.MOD_ID + ":consumed_shulker_pearl");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/consumed_shulker_pearl"));
         AdvancementHolder thisIsCrunchy = Advancement.Builder.advancement()
                 .parent(woahImFlying)
                 .display(
@@ -189,7 +191,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("consumed_hardened_shulker_pearl", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_SHULKER_PEARL))
-                .save(consumer, NetherAndEnd.MOD_ID + ":consumed_hardened_shulker_pearl");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/consumed_hardened_shulker_pearl"));
         AdvancementHolder theFinalBlade = Advancement.Builder.advancement()
                 .parent(thisIsCrunchy)
                 .display(
@@ -203,7 +205,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         true
                 )
                 .addCriterion("got_shulker_falchion", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.SHULKER_FALCHION))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_shulker_falchion");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_shulker_falchion"));
         AdvancementHolder thatsMorePeaceful = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
@@ -217,7 +219,7 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         false
                 )
                 .addCriterion("got_ender_pearl_cluster", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndBlockItems.ENDER_PEARL_CLUSTER))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_ender_pearl_cluster");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_ender_pearl_cluster"));
         AdvancementHolder oreCollector = Advancement.Builder.advancement()
                 .parent(thatsMorePeaceful)
                 .display(
@@ -268,6 +270,6 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                         NetherAndEndBlockItems.END_LAPIS_ORE,
                         NetherAndEndBlockItems.END_DIAMOND_ORE,
                         NetherAndEndBlockItems.ENDER_PEARL_CLUSTER))
-                .save(consumer, NetherAndEnd.MOD_ID + ":got_all_ores");
+                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_all_ores"));
     }
 }

@@ -23,22 +23,7 @@ public class NetherAndEndCreativeModeTabModifiers {
         });
     }
 
-    private static void modifyNaturalBlockCreativeModeTab() {
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries -> {
-            entries.insertAfter(Items.BONE_BLOCK, NetherAndEndBlockItems.WITHERED_BONE_BLOCK);
-        });
-    }
-
-    private static void modifyIngredientsCreativeModeTab() {
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
-            entries.insertAfter(Items.BONE_MEAL, NetherAndEndItems.WITHERED_BONE);
-            entries.insertAfter(NetherAndEndItems.WITHERED_BONE, NetherAndEndItems.WITHERED_BONE_MEAL);
-        });
-    }
-
     public static void loadCreativeModeTabModifiers() {
         modifyBuildingBlocksCreativeModeTab();
-        modifyNaturalBlockCreativeModeTab();
-        modifyIngredientsCreativeModeTab();
     }
 }

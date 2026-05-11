@@ -17,12 +17,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ItemMixin {
     @Inject(method = "inventoryTick", at = @At("HEAD"))
     public void inventoryTick(ItemStack stack, ServerLevel world, Entity entity, EquipmentSlot slot, CallbackInfo ci) {
-        /*if (stack.is(Items.ELYTRA)) {
+        if (stack.is(Items.ELYTRA)) {
             if (world.getGameRules().get(NetherAndEnd.DISABLE_ELYTRA)) {
                 stack.set(DataComponents.MAX_DAMAGE, 1);
             } else {
                 stack.set(DataComponents.MAX_DAMAGE, 432);
             }
-        }*/
+        }
     }
 }

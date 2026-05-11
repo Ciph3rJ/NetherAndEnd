@@ -22,7 +22,7 @@ import java.util.function.Function;
 
 public class NetherAndEndItems {
     public static final Item SHULKER_PEARL = register("shulker_pearl", Item::new, new Properties().food(NetherAndEndFoodComponents.SHULKER_PEARL, NetherAndEndConsumableComponents.SHULKER_PEARL).stacksTo(16));
-        public static final Item HARDENED_SHULKER_PEARL = register("hardened_shulker_pearl", Item::new, new Properties().food(NetherAndEndFoodComponents.HARDENED_SHULKER_PEARL, NetherAndEndConsumableComponents.HARDENED_SHULKER_PEARL).stacksTo(16));
+    public static final Item HARDENED_SHULKER_PEARL = register("hardened_shulker_pearl", Item::new, new Properties().food(NetherAndEndFoodComponents.HARDENED_SHULKER_PEARL, NetherAndEndConsumableComponents.HARDENED_SHULKER_PEARL).stacksTo(16));
     public static final Item CHORUS_PIE = register("chorus_pie", Item::new, new Properties().food(NetherAndEndFoodComponents.CHORUS_PIE));
     public static final Item CHORUS_SOUP = register("chorus_soup", Item::new, new Properties().food(NetherAndEndFoodComponents.CHORUS_SOUP).stacksTo(1).usingConvertsTo(Items.BOWL));
     public static final Item ENDER_FRUIT = register("ender_fruit", Item::new, new Properties().food(NetherAndEndFoodComponents.ENDER_FRUIT));
@@ -44,14 +44,20 @@ public class NetherAndEndItems {
     public static final Item WITHERED_BONE = register("withered_bone");
     public static final Item WITHERED_BONE_MEAL = register("withered_bone_meal", WitheredBoneMealItem::new, new Properties());
 
-    private static Function<Item.Properties, Item> createBlockItemWithCustomItemName(final Block block) {
+    private static Function<Properties, Item> createBlockItemWithCustomItemName(final Block block) {
         return (p) -> new BlockItem(block, p.useItemDescriptionPrefix());
     }
 
     public static Item register(String name, Function<Properties, Item> itemFactory, Properties settings) {
+        // Create the item key.
         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
+
+        // Create the item instance.
         Item item = itemFactory.apply(settings.setId(itemKey));
+
+        // Register the item.
         Registry.register(BuiltInRegistries.ITEM, itemKey, item);
+
         return item;
     }
 

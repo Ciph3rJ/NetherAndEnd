@@ -2,30 +2,21 @@ package net.enderboy500.netherandend.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
-import net.minecraft.world.entity.monster.Shulker;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ShulkerBullet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
 public class ShulkerPearlDispenseBehavior extends DefaultDispenseItemBehavior {
-
-
-    public ShulkerPearlDispenseBehavior(Item item) {
-    }
+    public ShulkerPearlDispenseBehavior(Item item) {}
 
     public ItemStack execute(BlockSource blockSource, ItemStack itemStack) {
         ServerLevel serverLevel = blockSource.level();

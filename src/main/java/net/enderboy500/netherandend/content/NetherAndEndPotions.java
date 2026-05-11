@@ -1,6 +1,5 @@
 package net.enderboy500.netherandend.content;
 
-
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -35,13 +34,6 @@ public class NetherAndEndPotions {
             new Potion("long_buoyant", new MobEffectInstance(MobEffects.LEVITATION, 9600, 0)));
     public static final Holder<Potion> STRONG_BUOYANT_POTION = register("strong_buoyant_potion",
             new Potion("strong_buoyant", new MobEffectInstance(MobEffects.LEVITATION, 1800,1)));
-
-    public static final Holder<Potion> DECAY_POTION = register("decay_potion",
-            new Potion("decay", new MobEffectInstance(MobEffects.WITHER, 3600,0)));
-    public static final Holder<Potion> LONG_DECAY_POTION = register("long_decay_potion",
-            new Potion("long_decay", new MobEffectInstance(MobEffects.WITHER, 9600, 0)));
-    public static final Holder<Potion> STRONG_DECAY_POTION = register("strong_decay_potion",
-            new Potion("strong_decay", new MobEffectInstance(MobEffects.WITHER, 1800,1)));
 
     public static final Holder<Potion> INSTANT_WARPING_POTION = register("instant_warping_potion",
             new Potion("instant_warping", new MobEffectInstance(NetherAndEndEffects.INSTANT_WARPING, 100, 0)));

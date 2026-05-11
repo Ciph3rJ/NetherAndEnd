@@ -134,8 +134,8 @@ public class NetherAndEndBlocks {
     public static final Block WIHERED_BONE_BLOCK = register("withered_bone_block",
             RotatedPillarBlock::new, Properties.ofFullCopy(Blocks.BONE_BLOCK));
 
-    public static <B extends Block> B register(String id, Function<Properties, B> factory, Properties settings) {
-        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, id));
+    public static <B extends Block> B register(String name, Function<Properties, B> factory, Properties settings) {
+        ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));
         B block = factory.apply(settings.setId(key));
 
         return Registry.register(BuiltInRegistries.BLOCK, key, block);

@@ -18,10 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Calendar;
 
 @Mixin(Player.class)
-public abstract class PlayerEntityMixin extends Entity {
+public abstract class PlayerMixin extends Entity {
     @Shadow protected abstract MutableComponent decorateDisplayNameComponent(MutableComponent mutableComponent);
 
-    protected PlayerEntityMixin(EntityType<? extends LivingEntity> entityType, Level world) {
+    protected PlayerMixin(EntityType<? extends LivingEntity> entityType, Level world) {
         super(entityType, world);
     }
 

@@ -1,5 +1,9 @@
 package net.enderboy500.netherandend.item;
 
+import net.enderboy500.netherandend.mixin.accessor.CoralBlockAccessor;
+import net.enderboy500.netherandend.mixin.accessor.CoralFanBlockAccessor;
+import net.enderboy500.netherandend.mixin.accessor.CoralPlantBlockAccessor;
+import net.enderboy500.netherandend.mixin.accessor.CropBlockAccessor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
@@ -109,12 +113,12 @@ public class WitheredBoneMealItem extends Item {
 
         if (block instanceof NetherWartBlock) return handleNetherWart(level, stack, pos, state);
 
-        if (block instanceof CropBlock cropBlock) return handleAgedBlock(level, stack, pos, state, cropBlock.getAgeProperty());
+        if (block instanceof CropBlock cropBlock) return handleAgedBlock(level, stack, pos, state, ((CropBlockAccessor) cropBlock).invokeGetAgeProperty());
         if (block instanceof StemBlock)           return handleAgedBlock(level, stack, pos, state, StemBlock.AGE);
 
-        if (block instanceof CoralFanBlock coralFan)     return replaceWith(level, stack, pos, coralFan.deadBlock.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
-        if (block instanceof CoralPlantBlock coralPlant) return replaceWith(level, stack, pos, coralPlant.deadBlock.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
-        if (block instanceof CoralBlock coralBlock)      return replaceWith(level, stack, pos, coralBlock.deadBlock.defaultBlockState());
+        if (block instanceof CoralFanBlock coralFan)     return replaceWith(level, stack, pos, ((CoralFanBlockAccessor) coralFan).getDeadBlock().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
+        if (block instanceof CoralPlantBlock coralPlant) return replaceWith(level, stack, pos, ((CoralPlantBlockAccessor) coralPlant).getDeadBlock().defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, state.getValue(BlockStateProperties.WATERLOGGED)));
+        if (block instanceof CoralBlock coralBlock)      return replaceWith(level, stack, pos, ((CoralBlockAccessor) coralBlock).getDeadBlock().defaultBlockState());
 
         if (block instanceof DoublePlantBlock)     return replaceTallBlockWith(level, stack, pos, state, Blocks.AIR);
         if (block instanceof GrowingPlantBlock)    return replaceWith(level, stack, pos, Blocks.AIR);

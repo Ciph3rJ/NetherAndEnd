@@ -91,9 +91,6 @@ public class NetherAndEndBlockTagProvider extends FabricTagsProvider.BlockTagsPr
         valueLookupBuilder(ConventionalBlockTags.ORES)
                 .add(NetherAndEndBlocks.ENDER_PEARL_CLUSTER)
         ;
-        valueLookupBuilder(ConventionalBlockTags.STORAGE_BLOCKS_BONE_MEAL)
-                .add(NetherAndEndBlocks.WIHERED_BONE_BLOCK)
-        ;
 
         valueLookupBuilder(BlockTags.WOODEN_SHELVES)
                 .add(NetherAndEndBlocks.CHORUS_SHELF)

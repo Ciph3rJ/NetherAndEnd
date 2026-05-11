@@ -1,8 +1,4 @@
 accessWidener v2 official
 
+accessible method net/minecraft/world/level/gamerules/GameRules registerBoolean (Ljava/lang/String;Lnet/minecraft/world/level/gamerules/GameRuleCategory;Z)Lnet/minecraft/world/level/gamerules/GameRule;
 accessible method net/minecraft/world/level/block/AbstractCandleBlock setLit (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/core/BlockPos;Z)V
-accessible method net/minecraft/world/level/block/CropBlock getAgeProperty ()Lnet/minecraft/world/level/block/state/properties/IntegerProperty;
-
-accessible field net/minecraft/world/level/block/CoralBlock deadBlock Lnet/minecraft/world/level/block/Block;
-accessible field net/minecraft/world/level/block/CoralPlantBlock deadBlock Lnet/minecraft/world/level/block/Block;
-accessible field net/minecraft/world/level/block/CoralFanBlock deadBlock Lnet/minecraft/world/level/block/Block;
