@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.mixin;
 
+import net.enderboy500.netherandend.util.icon.IconUtil;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.Entity;
@@ -27,9 +28,9 @@ public abstract class PlayerMixin extends Entity {
     @Inject(method = "getDisplayName", at = @At("HEAD"),cancellable = true)
     public void name(CallbackInfoReturnable<Component> cir) {
         Calendar calendar = Calendar.getInstance();
-        if ((calendar.get(Calendar.MONTH) == Calendar.NOVEMBER && calendar.get(Calendar.DATE) >= 9) || (calendar.get(Calendar.MONTH) == Calendar.DECEMBER && calendar.get(Calendar.DATE) <= 19)) {
+        if (IconUtil.getAvailableIcon() != null) {
             MutableComponent mutableText = PlayerTeam.formatNameForTeam(this.getTeam(), this.getName());
-            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + '\uE001')));
+            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + IconUtil.getAvailableIcon().getChar())));
         }
     }
 }

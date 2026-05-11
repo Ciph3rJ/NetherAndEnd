@@ -5,7 +5,6 @@ import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
@@ -29,6 +28,7 @@ public class NetherAndEnd implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		LOGGER.info("Initializing Nether & End");
 
 		NetherAndEndItems.loadItems();
