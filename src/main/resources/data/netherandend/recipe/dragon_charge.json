@@ -2,11 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:fire_charge",
+    "#minecraft:coals",
+    "minecraft:gunpowder",
     "minecraft:dragon_breath"
   ],
   "result": {
-    "count": 1,
+    "count": 3,
     "id": "netherandend:dragon_charge"
   }
 }

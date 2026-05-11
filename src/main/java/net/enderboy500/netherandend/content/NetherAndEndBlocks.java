@@ -75,6 +75,7 @@ public class NetherAndEndBlocks {
     public static final Block CYAN_NETHER_BRICK_FENCE = register("cyan_nether_brick_fence", FenceBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
     public static final Block CYAN_NETHER_BRICK_FENCE_GATE = register("cyan_nether_brick_fence_gate", BrickFenceGateBlock::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
     public static final Block CHISELED_CYAN_NETHER_BRICKS = register("chiseled_cyan_nether_bricks", Block::new, Properties.ofFullCopy(CYAN_NETHER_BRICKS));
+    public static final Block WARPED_WART = register("warped_wart", NetherWartBlock::new, Properties.ofFullCopy(Blocks.NETHER_WART));
 
     public static final Block NETHER_COAL_ORE = register("nether_coal_ore",
             settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
@@ -130,6 +131,8 @@ public class NetherAndEndBlocks {
             .strength(75, -1));
     public static final Block CRUMBLING_BASALT = register("crumbling_basalt", CrumblingBasaltBlock::new, Properties.ofFullCopy(Blocks.BASALT)
             .instabreak().explosionResistance(2.1f));
+    public static final Block WIHERED_BONE_BLOCK = register("withered_bone_block",
+            RotatedPillarBlock::new, Properties.ofFullCopy(Blocks.BONE_BLOCK));
 
     public static <B extends Block> B register(String name, Function<Properties, B> factory, Properties settings) {
         ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(NetherAndEnd.MOD_ID, name));

@@ -24,7 +24,7 @@ public class InstantWarpingEffect extends InstantenousMobEffect {
     }
 
     @Override
-    public void onEffectAdded(LivingEntity entity, int amplifier) {
+    public void onEffectStarted(LivingEntity entity, int amplifier) {
         Level world = entity.level();
         if (!world.isClientSide()) {
             for (int i = 0; i < 16; i++) {

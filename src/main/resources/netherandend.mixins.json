@@ -1,17 +1,21 @@
 {
-	"required": true,
-	"package": "net.enderboy500.netherandend.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin",
-		"FenceBlockMixin",
-		"FireChargeItemMixin",
-		"ItemMixin",
-		"LivingEntityMixin",
-		"PlayerMixin",
-		"WallBlockMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "net.enderboy500.netherandend.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExampleMixin",
+    "FenceBlockMixin",
+    "FireChargeItemMixin",
+    "ItemMixin",
+    "LivingEntityMixin",
+    "PlayerMixin",
+    "WallBlockMixin",
+    "accessor.CoralBlockAccessor",
+    "accessor.CoralFanBlockAccessor",
+    "accessor.CoralPlantBlockAccessor",
+    "accessor.CropBlockAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }
