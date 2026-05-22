@@ -4,7 +4,7 @@
   "ingredients": [
     "minecraft:chorus_fruit",
     "minecraft:sugar",
-    "minecraft:egg"
+    "#minecraft:eggs"
   ],
   "result": {
     "count": 1,
