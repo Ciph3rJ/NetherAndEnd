@@ -44,6 +44,7 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootSubProvid
         dropSelf(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE);
         dropSelf(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE);
         dropSelf(NetherAndEndBlocks.CHISELED_CYAN_NETHER_BRICKS);
+        dropSelf(NetherAndEndBlocks.WIHERED_BONE_BLOCK);
 
         dropOther(NetherAndEndBlocks.END_COAL_ORE, Items.COAL);
         dropOther(NetherAndEndBlocks.END_IRON_ORE, Items.RAW_IRON);
