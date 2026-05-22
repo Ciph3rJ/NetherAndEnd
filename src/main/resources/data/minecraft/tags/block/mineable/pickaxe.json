@@ -34,6 +34,7 @@
     "netherandend:cyan_nether_brick_wall",
     "netherandend:cyan_nether_brick_fence",
     "netherandend:cyan_nether_brick_fence_gate",
-    "netherandend:chiseled_cyan_nether_bricks"
+    "netherandend:chiseled_cyan_nether_bricks",
+    "netherandend:withered_bone_block"
   ]
 }

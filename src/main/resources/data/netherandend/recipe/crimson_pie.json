@@ -4,7 +4,7 @@
   "ingredients": [
     "minecraft:crimson_fungus",
     "minecraft:sugar",
-    "minecraft:egg"
+    "#minecraft:eggs"
   ],
   "result": {
     "count": 1,
