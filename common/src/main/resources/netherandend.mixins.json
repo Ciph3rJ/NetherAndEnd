@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.enderboy500.netherandend.mixin",
+  "compatibilityLevel": "JAVA_18",
+  "mixins": [
+    "accessor.CoralBlockAccessor",
+    "accessor.CoralFanBlockAccessor",
+    "accessor.CoralPlantBlockAccessor",
+    "accessor.CropBlockAccessor",
+    "FenceBlockMixin",
+    "FireChargeItemMixin",
+    "LivingEntityMixin",
+    "PlayerEntityMixin",
+    "PlayerMixin",
+    "WallBlockMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+
