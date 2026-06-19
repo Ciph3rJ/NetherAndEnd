@@ -12,7 +12,6 @@ public class NetherAndEndTags {
     public static TagKey<Block> NETHER_ORES = TagKey.create(Registries.BLOCK, Identifier.parse(NetherAndEnd.MOD_ID).withPath("nether_ores"));
     public static TagKey<Block> END_ORES = TagKey.create(Registries.BLOCK, Identifier.parse(NetherAndEnd.MOD_ID).withPath("end_ores"));
 
-    public static TagKey<Item> HOGCHOP = TagKey.create(Registries.ITEM, Identifier.parse(NetherAndEnd.MOD_ID).withPath("hogchop"));
     public static TagKey<Item> STRIDER_MEAT = TagKey.create(Registries.ITEM, Identifier.parse(NetherAndEnd.MOD_ID).withPath("strider_meat"));
     public static TagKey<Item> STRIDER_MEAT_BLASTABLE = TagKey.create(Registries.ITEM, Identifier.parse(NetherAndEnd.MOD_ID).withPath("strider_meat_blastable"));
 

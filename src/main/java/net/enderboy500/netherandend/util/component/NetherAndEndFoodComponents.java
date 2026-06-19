@@ -24,12 +24,6 @@ public class NetherAndEndFoodComponents {
     public static final FoodProperties CRIMSON_PIE = new FoodProperties.Builder().nutrition(6)
             .saturationModifier(1)
             .build();
-    public static final FoodProperties RAW_HOGCHOP = new FoodProperties.Builder().nutrition(8)
-            .saturationModifier(1.1f)
-            .build();
-    public static final FoodProperties COOKED_HOGCHOP = new FoodProperties.Builder().nutrition(4)
-            .saturationModifier(0.5f)
-            .build();
     public static final FoodProperties RAW_STRIDER_MEAT = new FoodProperties.Builder().nutrition(2)
             .saturationModifier(0.75f)
             .build();

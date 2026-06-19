@@ -28,7 +28,7 @@ public class NetherAndEndDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(NetherAndEndBlockTagProvider::new);
 		pack.addProvider(NetherAndEndItemTagProvider::new);
 		pack.addProvider(NetherAndEndAdvancementProvider::new);
-		pack.addProvider(NetherAndEndRegistryProvider::new);
+//		pack.addProvider(NetherAndEndRegistryProvider::new);
 		pack.addProvider(toFactory(NetherAndEndRecipeGenerator.Provider::new, completableFuture));
 	}
 

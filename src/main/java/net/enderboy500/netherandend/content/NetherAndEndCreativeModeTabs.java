@@ -39,8 +39,7 @@ public class NetherAndEndCreativeModeTabs {
                         entries.accept(NetherAndEndBlockItems.WARPED_CAKE);
                         if (FabricLoader.getInstance().isModLoaded("farmersdelight")) entries.accept(NEFDCompat.WARPED_CAKE_SLICE);
                         entries.accept(NetherAndEndItems.CRIMSON_PIE);
-                        entries.accept(NetherAndEndItems.RAW_HOGCHOP);
-                        entries.accept(NetherAndEndItems.COOKED_HOGCHOP);
+
                         entries.accept(NetherAndEndItems.HOGLIN_SKIN);
                         entries.accept(NetherAndEndItems.HOGLIN_BUNDLE);
                         entries.accept(NetherAndEndItems.RAW_STRIDER_MEAT);

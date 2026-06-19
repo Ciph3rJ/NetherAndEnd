@@ -3,10 +3,15 @@ package net.enderboy500.netherandend;
 import net.enderboy500.netherandend.compat.NEFDCompat;
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
+import net.enderboy500.netherandend.util.ShulkerPearlDispenseBehavior;
 import net.enderboy500.netherandend.world.NetherAndEndBiomeModifications;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
+import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
+import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -49,7 +54,17 @@ public class NetherAndEnd implements ModInitializer {
 
 		NetherAndEndBiomeModifications.loadBiomeModifications();
 
+		FabricLoader.getInstance().getModContainer(NetherAndEnd.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "glowing_ores"), container,
+				Component.translatable("resourcePack.netherandend.glowing_ores.name"), PackActivationType.NORMAL));
+		FabricLoader.getInstance().getModContainer(NetherAndEnd.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "ore_borders"), container,
+				Component.translatable("resourcePack.netherandend.ore_borders.name"), PackActivationType.NORMAL));
+		FabricLoader.getInstance().getModContainer(NetherAndEnd.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "glowing_ore_borders"), container,
+				Component.translatable("resourcePack.netherandend.glowing_ore_borders.name"), PackActivationType.NORMAL));
+		FabricLoader.getInstance().getModContainer(NetherAndEnd.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "alternate_cracked_bedrock"), container,
+				Component.translatable("resourcePack.netherandend.alternate_cracked_bedrock.name"), PackActivationType.NORMAL));
+
 		DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE);
+		DispenserBlock.registerBehavior(NetherAndEndItems.SHULKER_PEARL, new ShulkerPearlDispenseBehavior(NetherAndEndItems.SHULKER_PEARL));
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.HARDENED_SHULKER_PEARL), NetherAndEndPotions.AVERSION_POTION);

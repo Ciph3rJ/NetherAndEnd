@@ -9,14 +9,12 @@
   "item.netherandend.warped_stew": "Wirrsuppe",
   "item.netherandend.warped_cake_slice": "Wirrkuchenstück",
   "item.netherandend.crimson_pie": "Karmesinkuchen",
-  "item.netherandend.raw_hogchop": "Rohes Schweinekotelett",
-  "item.netherandend.cooked_hogchop": "Gebratenes Schweinekotelett",
   "item.netherandend.hoglin_skin": "Hoglin-Haut",
   "item.netherandend.hoglin_bundle": "Hoglin-Bündel",
-  "item.netherandend.raw_strider_meat": "Rohos Schreiterfleisch",
+  "item.netherandend.raw_strider_meat": "Rohes Schreiterfleisch",
   "item.netherandend.smoked_strider_meat": "Geräuchertes Schreiterfleisch",
   "item.netherandend.cooked_strider_meat": "Gebratenes Schreiterfleisch",
-  "item.netherandend.hardened_strider_meat": "Verbrannt Schreiterfleisch",
+  "item.netherandend.burnt_strider_meat": "Verbrannt Schreiterfleisch",
   "item.netherandend.dragon_charge": "Drachenkugel",
   "item.netherandend.withered_bone": "Verwelkt Knochen",
   "item.netherandend.withered_bone_meal": "Verwelkt Knochenmehl",
@@ -82,10 +80,10 @@
   "item.minecraft.lingering_potion.effect.strong_decay": "Verweiltrank der Verfall",
   "item.minecraft.tipped_arrow.effect.strong_decay": "Pfeil der Verfall",
   
-  "item.minecraft.potion.effect.instant_warping": "Trank der Sofortige Verziehen",
-  "item.minecraft.splash_potion.effect.instant_warping": "Wurftrank der Sofortige Verziehen",
-  "item.minecraft.lingering_potion.effect.instant_warping": "Verweiltrank der Sofortige Verziehen",
-  "item.minecraft.tipped_arrow.effect.instant_warping": "Pfeil der Sofortige Verziehen",
+  "item.minecraft.potion.effect.instant_warping": "Trank der Sofortige Verschiebung",
+  "item.minecraft.splash_potion.effect.instant_warping": "Wurftrank der Sofortige Verschiebung",
+  "item.minecraft.lingering_potion.effect.instant_warping": "Verweiltrank der Sofortige Verschiebung",
+  "item.minecraft.tipped_arrow.effect.instant_warping": "Pfeil der Sofortige Verschiebung",
 
   "item.minecraft.potion.effect.instant_curing": "Trank der Sofortige Aushärtung",
   "item.minecraft.splash_potion.effect.instant_curing": "Wurftrank der Sofortige Aushärtung",
@@ -139,17 +137,16 @@
   "block.netherandend.chorus_shelf": "Chorusregal",
   "block.netherandend.ender_pearl_cluster": "Enderperlehaufen",
 
-  "effect.netherandend.instant_warping": "Sofortige Verziehen",
+  "effect.netherandend.instant_warping": "Sofortige Verschiebung",
   "effect.netherandend.instant_curing": "Sofortige Aushärtung",
 
   "advancement.netherandend.nether_and_end.title": "Nether und End",
   "advancement.netherandend.double_wart.title": "Doppelte Warze",
   "advancement.netherandend.why_is_this_so_complicated.title": "Warum ist das so kompliziert??",
   "advancement.netherandend.why_was_this_so_hard.title": "Warum war das so schwer??",
-  "advancement.netherandend.whats_the_difference.title": "Was ist der Unterschied??",
   "advancement.netherandend.well_thats_unique.title": "Das ist einzigartig",
   "advancement.netherandend.end_compacting.title": "End Verdichtung",
-  "advancement.netherandend.fruitful.title": "Fruchtbar",
+  "advancement.netherandend.fruitful.title": "Erfolgreich",
   "advancement.netherandend.the_power_is_now_mine.title": "Die Macht gehört jetzt mir!",
   "advancement.netherandend.woah_im_flying.title": "Wow! Ich fliege",
   "advancement.netherandend.this_is_crunchy.title": "Das ist knusprig",
@@ -161,7 +158,6 @@
   "advancement.netherandend.double_wart.desc": "Erhalte Netherwarze und Wirrwarze",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Schreiterfleisch, so kompliziert",
   "advancement.netherandend.why_was_this_so_hard.desc": "Endlich!!",
-  "advancement.netherandend.whats_the_difference.desc": "Die beiden Koteletts",
   "advancement.netherandend.well_thats_unique.desc": "Krümel die Basalt",
   "advancement.netherandend.end_compacting.desc": "Kompakt die Chorus",
   "advancement.netherandend.fruitful.desc": "Teleportieren + Teleportieren = Nein Teleportieren???",
@@ -172,10 +168,15 @@
   "advancement.netherandend.thats_more_peaceful.desc": "Das ist besser als Mord",
   "advancement.netherandend.ore_collector.desc": "Das ist echte Hingabe.",
 
-  "gamerule.disableElytra": "Deaktivieren Elytren",
+  "gamerule.minecraft.disable_elytras": "Deaktivieren Elytren",
 
   "tooltip.netherandend.explanation.instructions": "§6Halten Sie die §e[Shift]§6 gedrückt, um weitere Informationen zu erhalten.",
   "tooltip.netherandend.explanation.shulker_falchion": "Nachdem Sie von einem Mob getroffen wurden, drücken Sie §eRight-click§7, um eine Shulker-Kugel abzufeuern, die sich an ihnen festsetzt.",
+
+  "resourcePack.netherandend.glowing_ores.name": "Nether und End Leucht-Erz",
+  "resourcePack.netherandend.ore_borders.name": "Nether und End Erz Grenzen",
+  "resourcePack.netherandend.glowing_ore_borders.name": "Nether und End Leucht-Erz X Erz Grenzen",
+  "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether und End X Vanilla Tweaks Alternativ Grundgestein",
 
   "itemgroup.netherandend": "Nether und End"
 }

@@ -32,14 +32,12 @@ public class NetherAndEndItems {
     public static final Item WARPED_WART = register("warped_wart", createBlockItemWithCustomItemName(NetherAndEndBlocks.WARPED_WART), new Properties());
     public static final Item WARPED_STEW = register("warped_stew", Item::new, new Properties().food(NetherAndEndFoodComponents.WARPED_STEW).stacksTo(1).usingConvertsTo(Items.BOWL));
     public static final Item CRIMSON_PIE = register("crimson_pie", Item::new, new Properties().food(NetherAndEndFoodComponents.CRIMSON_PIE));
-    public static final Item RAW_HOGCHOP = register("raw_hogchop", Item::new, new Properties().food(NetherAndEndFoodComponents.RAW_HOGCHOP, NetherAndEndConsumableComponents.RAW_HOGCHOP));
-    public static final Item COOKED_HOGCHOP = register("cooked_hogchop", Item::new, new Properties().food(NetherAndEndFoodComponents.COOKED_HOGCHOP));
     public static final Item HOGLIN_SKIN = register("hoglin_skin", Item::new, new Properties().fireResistant());
     public static final Item HOGLIN_BUNDLE = register("hoglin_bundle", BundleItem::new, new Properties().fireResistant().stacksTo(1).component(DataComponents.BUNDLE_CONTENTS, BundleContents.EMPTY));
     public static final Item RAW_STRIDER_MEAT = register("raw_strider_meat", Item::new, new Properties().food(NetherAndEndFoodComponents.RAW_STRIDER_MEAT, NetherAndEndConsumableComponents.RAW_STRIDER_MEAT));
     public static final Item SMOKED_STRIDER_MEAT = register("smoked_strider_meat", Item::new, new Properties().food(NetherAndEndFoodComponents.SMOKED_STRIDER_MEAT, NetherAndEndConsumableComponents.SMOKED_STRIDER_MEAT));
     public static final Item COOKED_STRIDER_MEAT = register("cooked_strider_meat", Item::new, new Properties().food(NetherAndEndFoodComponents.COOKED_STRIDER_MEAT));
-    public static final Item HARDENED_STRIDER_MEAT = register("hardened_strider_meat", Item::new, new Properties().food(NetherAndEndFoodComponents.HARDENED_STRIDER_MEAT, NetherAndEndConsumableComponents.HARDENED_STRIDER_MEAT).fireResistant());
+    public static final Item HARDENED_STRIDER_MEAT = register("burnt_strider_meat", Item::new, new Properties().food(NetherAndEndFoodComponents.HARDENED_STRIDER_MEAT, NetherAndEndConsumableComponents.HARDENED_STRIDER_MEAT).fireResistant());
 
     public static final Item WITHERED_BONE = register("withered_bone");
     public static final Item WITHERED_BONE_MEAL = register("withered_bone_meal", WitheredBoneMealItem::new, new Properties());

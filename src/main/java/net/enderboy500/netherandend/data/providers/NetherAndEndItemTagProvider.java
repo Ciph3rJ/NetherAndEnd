@@ -16,9 +16,6 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        valueLookupBuilder(NetherAndEndTags.HOGCHOP)
-                .add(NetherAndEndItems.RAW_HOGCHOP)
-                .add(NetherAndEndItems.COOKED_HOGCHOP);
         valueLookupBuilder(NetherAndEndTags.STRIDER_MEAT)
                 .add(NetherAndEndItems.RAW_STRIDER_MEAT)
                 .add(NetherAndEndItems.COOKED_STRIDER_MEAT)
@@ -33,7 +30,6 @@ public class NetherAndEndItemTagProvider extends FabricTagProvider.ItemTagProvid
                 .add(NetherAndEndItems.SHULKER_PEARL);
 
         valueLookupBuilder(ItemTags.MEAT)
-                .addTag(NetherAndEndTags.HOGCHOP)
                 .addTag(NetherAndEndTags.STRIDER_MEAT);
 
         valueLookupBuilder(ItemTags.SHARP_WEAPON_ENCHANTABLE)

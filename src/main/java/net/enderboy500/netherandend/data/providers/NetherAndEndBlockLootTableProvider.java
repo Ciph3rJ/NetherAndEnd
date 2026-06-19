@@ -24,14 +24,6 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
 
     @Override
     public void generate() {
-        dropOther(NetherAndEndBlocks.NETHER_COAL_ORE, Items.COAL);
-        dropOther(NetherAndEndBlocks.NETHER_IRON_ORE, Items.IRON_NUGGET);
-        copperOreDrop(NetherAndEndBlocks.NETHER_COPPER_ORE);
-        redstoneOreDrop(NetherAndEndBlocks.NETHER_REDSTONE_ORE);
-        dropOther(NetherAndEndBlocks.NETHER_EMERALD_ORE, Items.EMERALD);
-        lapisOreDrop(NetherAndEndBlocks.NETHER_LAPIS_ORE);
-        dropOther(NetherAndEndBlocks.NETHER_DIAMOND_ORE, Items.DIAMOND);
-
         dropSelf(NetherAndEndBlocks.NETHER_BRICK_FENCE_GATE);
         dropSelf(NetherAndEndBlocks.CRACKED_RED_NETHER_BRICKS);
         dropSelf(NetherAndEndBlocks.RED_NETHER_BRICK_FENCE);
@@ -45,67 +37,5 @@ public class NetherAndEndBlockLootTableProvider extends FabricBlockLootTableProv
         dropSelf(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE_GATE);
         dropSelf(NetherAndEndBlocks.CHISELED_CYAN_NETHER_BRICKS);
         dropSelf(NetherAndEndBlocks.WIHERED_BONE_BLOCK);
-
-        dropOther(NetherAndEndBlocks.END_COAL_ORE, Items.COAL);
-        dropOther(NetherAndEndBlocks.END_IRON_ORE, Items.RAW_IRON);
-        copperOreDrop(NetherAndEndBlocks.END_COPPER_ORE);
-        dropOther(NetherAndEndBlocks.END_GOLD_ORE, Items.RAW_GOLD);
-        redstoneOreDrop(NetherAndEndBlocks.END_REDSTONE_ORE);
-        dropOther(NetherAndEndBlocks.END_EMERALD_ORE, Items.EMERALD);
-        lapisOreDrop(NetherAndEndBlocks.END_LAPIS_ORE);
-        dropOther(NetherAndEndBlocks.END_DIAMOND_ORE, Items.DIAMOND);
-        enderPearlClusterDrop(NetherAndEndBlocks.ENDER_PEARL_CLUSTER);
-    }
-
-    public LootTable.Builder copperOreDrop(Block drop) {
-        HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(
-                drop,
-                this.applyExplosionDecay(
-                        drop,
-                        LootItem.lootTableItem(Items.RAW_COPPER)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
-                                .apply(ApplyBonusCount.addOreBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
-    }
-
-    public LootTable.Builder lapisOreDrop(Block drop) {
-        HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(
-                drop,
-                this.applyExplosionDecay(
-                        drop,
-                        LootItem.lootTableItem(Items.LAPIS_LAZULI)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 9.0F)))
-                                .apply(ApplyBonusCount.addOreBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
-    }
-
-    public LootTable.Builder redstoneOreDrop(Block drop) {
-        HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(
-                drop,
-                this.applyExplosionDecay(
-                        drop,
-                        LootItem.lootTableItem(Items.REDSTONE)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 5.0F)))
-                                .apply(ApplyBonusCount.addUniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
-    }
-
-    public LootTable.Builder enderPearlClusterDrop(Block drop) {
-        HolderLookup.RegistryLookup<Enchantment> impl = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
-        return this.createSilkTouchDispatchTable(
-                drop,
-                this.applyExplosionDecay(
-                        drop,
-                        LootItem.lootTableItem(Items.ENDER_PEARL)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2, 7)))
-                                .apply(ApplyBonusCount.addUniformBonusCount(impl.getOrThrow(Enchantments.FORTUNE)))
-                )
-        );
     }
 }

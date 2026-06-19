@@ -62,7 +62,7 @@
               "function": "minecraft:enchanted_count_increase"
             }
           ],
-          "name": "netherandend:raw_hogchop"
+          "name": "minecraft:porkchop"
         }
       ],
       "rolls": 1.0

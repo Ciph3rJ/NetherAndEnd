@@ -9,14 +9,12 @@
   "item.netherandend.warped_stew": "Guiso Distorsionado",
   "item.netherandend.warped_cake_slice": "Porción de Torta Distorsionado",
   "item.netherandend.crimson_pie": "Torta Carmesí",
-  "item.netherandend.raw_hogchop": "Hogchop Crudo",
-  "item.netherandend.cooked_hogchop": "Hogchop Asado",
   "item.netherandend.hoglin_skin": "Piel de Hoglin",
   "item.netherandend.hoglin_bundle": "Bolsa Hoglin",
   "item.netherandend.raw_strider_meat": "Carne de Strider Crudo",
   "item.netherandend.smoked_strider_meat": "Carne de Strider Ahumado",
   "item.netherandend.cooked_strider_meat": "Carne de Strider Asado",
-  "item.netherandend.hardened_strider_meat": "Carne de Strider Quemado",
+  "item.netherandend.burnt_strider_meat": "Carne de Strider Quemado",
   "item.netherandend.dragon_charge": "Carga de Dragon",
   "item.netherandend.withered_bone": "Hueso Marchito",
   "item.netherandend.withered_bone_meal": "Hueso Molido Marchito",
@@ -146,7 +144,6 @@
   "advancement.netherandend.double_wart.title": "Verruga Doble",
   "advancement.netherandend.why_is_this_so_complicated.title": "¿¿Por Qué es Tan Complicado??",
   "advancement.netherandend.why_was_this_so_hard.title": "¿¿Por Qué fue Tan Difícil??",
-  "advancement.netherandend.whats_the_difference.title": "¿¿Cuál es la Diferencia?",
   "advancement.netherandend.well_thats_unique.title": "Bueno, Eso es Único",
   "advancement.netherandend.end_compacting.title": "Compactage d'End",
   "advancement.netherandend.fruitful.title": "Fructífero",
@@ -161,7 +158,6 @@
   "advancement.netherandend.double_wart.desc": "Obtener Nether & Warped Warts",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Carne de Strider, Tan Complicado",
   "advancement.netherandend.why_was_this_so_hard.desc": "¡¡Por Fin!!",
-  "advancement.netherandend.whats_the_difference.desc": "Las Dos Chuletas",
   "advancement.netherandend.well_thats_unique.desc": "Desmenuzar el Basalto",
   "advancement.netherandend.end_compacting.desc": "Compactar el Chorus",
   "advancement.netherandend.fruitful.desc": "¿¿¿Teletransporte + Teletransporte = Sin Teletransporte???",
@@ -172,10 +168,15 @@
   "advancement.netherandend.thats_more_peaceful.desc": "Esto es Mejor Que un Asesinato",
   "advancement.netherandend.ore_collector.desc": "Esa es la Verdadera Dedicación",
 
-  "gamerule.disableElytra": "Desactivar Élitros",
+  "gamerule.minecraft.disable_elytras": "Desactivar Élitros",
 
   "tooltip.netherandend.explanation.instructions": "§6Mantenga pulsada la tecla §e[Shift]§6 para obtener más información.",
   "tooltip.netherandend.explanation.shulker_falchion": "Después de ser golpeado por una turba, presiona §eRight-click§7 para lanzar una bala shulker que se adhiere a ellos.",
+
+  "resourcePack.netherandend.glowing_ores.name": "Nether & End Mena Luminoso",
+  "resourcePack.netherandend.ore_borders.name": "Nether & End Mena Fronteras",
+  "resourcePack.netherandend.glowing_ore_borders.name": "Nether & End Mena Luminoso X Mena Fronteras",
+  "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether & End X Vanilla Tweaks Piedra Madre Suplente",
 
   "itemgroup.netherandend": "Nether & End"
 }

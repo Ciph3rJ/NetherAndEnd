@@ -92,21 +92,6 @@ public class NetherAndEndAdvancementProvider extends FabricAdvancementProvider {
                 .addCriterion("got_cooked_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.COOKED_STRIDER_MEAT))
                 .addCriterion("got_hardened_strider_meat", ConsumeItemTrigger.TriggerInstance.usedItem(itemRegistryEntryLookup, NetherAndEndItems.HARDENED_STRIDER_MEAT))
                 .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_all_strider_meat"));
-        AdvancementHolder whatsTheDifference = Advancement.Builder.advancement()
-                .parent(netherAndEnd)
-                .display(
-                        NetherAndEndItems.RAW_HOGCHOP,
-                        Component.translatable("advancement.netherandend.whats_the_difference.title"),
-                        Component.translatable("advancement.netherandend.whats_the_difference.desc"),
-                        null,
-                        AdvancementType.TASK,
-                        true,
-                        true,
-                        false
-                )
-                .addCriterion("got_raw_hogchop", InventoryChangeTrigger.TriggerInstance.hasItems(NetherAndEndItems.RAW_HOGCHOP))
-                .addCriterion("got_raw_porkchop", InventoryChangeTrigger.TriggerInstance.hasItems(Items.PORKCHOP))
-                .build(Identifier.fromNamespaceAndPath(NetherAndEnd.MOD_ID, "/got_chops"));
         AdvancementHolder wellThatsUnique = Advancement.Builder.advancement()
                 .parent(netherAndEnd)
                 .display(
