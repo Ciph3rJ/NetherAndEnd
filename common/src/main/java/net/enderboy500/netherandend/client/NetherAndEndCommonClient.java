@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.client;
 
+import net.enderboy500.netherandend.Constants;
 import net.enderboy500.netherandend.client.services.ServicesClient;
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;

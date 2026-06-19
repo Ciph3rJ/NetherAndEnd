@@ -38,8 +38,6 @@ public class FabricCreativeModeTab {
                         entries.accept(FabricBlocks.WARPED_CAKE.blockItem().get());
                         if (Services.PLATFORM.isModLoaded("farmersdelight")) entries.accept(NEFDRFCompat.WARPED_CAKE_SLICE);
                         entries.accept(NetherAndEndItems.CRIMSON_PIE.get());
-                        entries.accept(NetherAndEndItems.RAW_HOGCHOP.get());
-                        entries.accept(NetherAndEndItems.COOKED_HOGCHOP.get());
                         entries.accept(NetherAndEndItems.HOGLIN_SKIN.get());
                         entries.accept(NetherAndEndItems.HOGLIN_BUNDLE.get());
                         entries.accept(NetherAndEndItems.RAW_STRIDER_MEAT.get());

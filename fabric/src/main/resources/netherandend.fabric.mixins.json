@@ -5,7 +5,8 @@
   "refmap": "${mod_id}.refmap.json",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ItemMixin"
+    "ItemMixin",
+    "MappedRegistryMixin"
   ],
   "client": [],
   "server": [],

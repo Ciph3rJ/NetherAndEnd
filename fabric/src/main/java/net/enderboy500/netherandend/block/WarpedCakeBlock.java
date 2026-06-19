@@ -76,7 +76,7 @@ public class WarpedCakeBlock extends Block {
 
     public boolean isDelighted(ItemStack stack) {
         if (Services.PLATFORM.isModLoaded("farmersdelight")) {
-            return stack.is(ModTags.KNIVES);
+            return stack.is(ModTags.Items.KNIVES);
         }
         return false;
     }
@@ -86,7 +86,7 @@ public class WarpedCakeBlock extends Block {
             return InteractionResult.PASS;
         } else {
             ItemStack toolStack = player.getItemInHand(hand);
-            if (!toolStack.is(ModTags.KNIVES)) {
+            if (!toolStack.is(ModTags.Items.KNIVES)) {
                 return InteractionResult.PASS;
             } else {
                 BlockPos pos = hitResult.getBlockPos();

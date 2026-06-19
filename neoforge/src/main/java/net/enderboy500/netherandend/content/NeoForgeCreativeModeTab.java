@@ -38,8 +38,6 @@ public class NeoForgeCreativeModeTab {
                 entries.accept(NetherAndEndItems.WARPED_STEW.get());
                 entries.accept(NeoForgeBlocks.WARPED_CAKE.blockItem().get());
                 entries.accept(NetherAndEndItems.CRIMSON_PIE.get());
-                entries.accept(NetherAndEndItems.RAW_HOGCHOP.get());
-                entries.accept(NetherAndEndItems.COOKED_HOGCHOP.get());
                 entries.accept(NetherAndEndItems.HOGLIN_SKIN.get());
                 entries.accept(NetherAndEndItems.HOGLIN_BUNDLE.get());
                 entries.accept(NetherAndEndItems.RAW_STRIDER_MEAT.get());

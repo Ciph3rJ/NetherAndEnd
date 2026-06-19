@@ -12,6 +12,7 @@ public class NetherAndEndNeoForgeClient {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         NetherAndEndCommonClient.init();
+
         ServicesClient.REGISTRY.applyEntityRendererRegistrations(event::registerEntityRenderer);
     }
 }

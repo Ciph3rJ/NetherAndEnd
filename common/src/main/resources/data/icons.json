@@ -12,7 +12,7 @@
       }
     },
     "crimson": {
-      "available" : true,
+      "available" : false,
       "start": {
         "day": 1,
         "month": 4
