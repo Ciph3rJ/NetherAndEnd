@@ -5,7 +5,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.effect.InstantenousMobEffect;
+import net.minecraft.world.effect.InstantaneousMobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -13,13 +13,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 
-public class InstantWarpingEffect extends InstantenousMobEffect {
+public class InstantWarpingEffect extends InstantaneousMobEffect {
     public InstantWarpingEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
     @Override
-    public boolean isInstantenous() {
+    public boolean isInstantaneous() {
         return false;
     }
 

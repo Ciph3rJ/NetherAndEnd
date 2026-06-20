@@ -62,7 +62,7 @@ public abstract class CrumblingBlock extends Block implements Fallable {
         if (random.nextInt(16) == 0) {
             BlockPos blockPos = pos.below();
             if (canFallThrough(world.getBlockState(blockPos))) {
-                ParticleUtils.spawnParticleOnFace(world, pos, Direction.DOWN, ParticleTypes.LAVA, pos.getBottomCenter(), 1);
+                ParticleUtils.spawnParticleBelow(world, pos, random, ParticleTypes.LAVA);
             }
         }
     }

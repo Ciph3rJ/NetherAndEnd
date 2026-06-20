@@ -3,7 +3,6 @@ package net.enderboy500.netherandend.block;
 import com.mojang.serialization.MapCodec;
 import net.enderboy500.netherandend.compat.NEFDRFCompat;
 import net.enderboy500.netherandend.content.FabricBlocks;
-import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.services.Services;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,8 +29,6 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Unique;
 import vectorwing.farmersdelight.common.registry.ModItems;
 import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
@@ -76,7 +73,7 @@ public class WarpedCakeBlock extends Block {
 
     public boolean isDelighted(ItemStack stack) {
         if (Services.PLATFORM.isModLoaded("farmersdelight")) {
-            return stack.is(ModTags.KNIVES);
+            return stack.is(ModTags.Items.KNIVES);
         }
         return false;
     }
@@ -86,7 +83,7 @@ public class WarpedCakeBlock extends Block {
             return InteractionResult.PASS;
         } else {
             ItemStack toolStack = player.getItemInHand(hand);
-            if (!toolStack.is(ModTags.KNIVES)) {
+            if (!toolStack.is(ModTags.Items.KNIVES)) {
                 return InteractionResult.PASS;
             } else {
                 BlockPos pos = hitResult.getBlockPos();

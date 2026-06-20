@@ -9,14 +9,12 @@
   "item.netherandend.warped_stew": "Warped Stew",
   "item.netherandend.warped_cake_slice": "Slice of Warped Cake",
   "item.netherandend.crimson_pie": "Crimson Pie",
-  "item.netherandend.raw_hogchop": "Raw Hogchop",
-  "item.netherandend.cooked_hogchop": "Cooked Hogchop",
   "item.netherandend.hoglin_skin": "Hoglin Skin",
   "item.netherandend.hoglin_bundle": "Hoglin Bundle",
   "item.netherandend.raw_strider_meat": "Raw Strider Meat",
   "item.netherandend.smoked_strider_meat": "Smoked Strider Meat",
   "item.netherandend.cooked_strider_meat": "Cooked Strider Meat",
-  "item.netherandend.hardened_strider_meat": "Burnt Strider Meat",
+  "item.netherandend.burnt_strider_meat": "Burnt Strider Meat",
   "item.netherandend.dragon_charge": "Dragon Charge",
   "item.netherandend.withered_bone": "Withered Bone",
   "item.netherandend.withered_bone_meal": "Withered Bone Meal",
@@ -146,7 +144,6 @@
   "advancement.netherandend.double_wart.title": "Double Wart",
   "advancement.netherandend.why_is_this_so_complicated.title": "Why Is This So Complicated??",
   "advancement.netherandend.why_was_this_so_hard.title": "Why Was This So Hard??",
-  "advancement.netherandend.whats_the_difference.title": "What's The Difference??",
   "advancement.netherandend.well_thats_unique.title": "Well That's Unique",
   "advancement.netherandend.end_compacting.title": "End Compacting",
   "advancement.netherandend.fruitful.title": "Fruitful",
@@ -161,7 +158,6 @@
   "advancement.netherandend.double_wart.desc": "Obtain Nether & Warped Warts",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Strider Meat, So Complicated",
   "advancement.netherandend.why_was_this_so_hard.desc": "Finally!!",
-  "advancement.netherandend.whats_the_difference.desc": "The Two Chops",
   "advancement.netherandend.well_thats_unique.desc": "Crumble the Basalt",
   "advancement.netherandend.end_compacting.desc": "Compact the Chorus",
   "advancement.netherandend.fruitful.desc": "Teleport + Teleport = No Teleport???",
@@ -175,7 +171,12 @@
   "gamerule.minecraft.disable_elytras": "Disable Elytra",
 
   "tooltip.netherandend.explanation.instructions": "§6Hold §e[Shift]§6 for more information.",
-  "tooltip.netherandend.explanation.shulker_falchion": "After getting hit by a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
+  "tooltip.netherandend.explanation.shulker_falchion": "After attacking a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
+
+  "resourcePack.netherandend.glowing_ores.name": "Nether & End Glowing Ores",
+  "resourcePack.netherandend.ore_borders.name": "Nether & End Ore Borders",
+  "resourcePack.netherandend.glowing_ore_borders.name": "Nether & End Glowing Ores X Ore Borders",
+  "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether & End X Vanilla Tweaks Alternate Bedrock",
 
   "itemgroup.netherandend": "Nether & End"
 }

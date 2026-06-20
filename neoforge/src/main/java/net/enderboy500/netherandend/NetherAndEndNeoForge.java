@@ -2,9 +2,18 @@ package net.enderboy500.netherandend;
 
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.services.NeoForgeRegistryHelperService;
+import net.enderboy500.netherandend.util.NeoForgeEvents;
+import net.enderboy500.netherandend.util.ShulkerPearlDispenseBehavior;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 
 @Mod(Constants.MOD_ID)
@@ -21,15 +30,23 @@ public class NetherAndEndNeoForge {
         NeoForgeMobEffects.loadEffects(eventBus);
         NeoForgeCreativeModeTab.loadCreativeModeTab(eventBus);
 
+        eventBus.addListener(this::commonSetup);
+
         eventBus.addListener(NeoForgeCreativeModeTabModifier::modifyBuildingBlocksCreativeModeTab);
         eventBus.addListener(NeoForgeCreativeModeTabModifier::modifyNaturalBlockCreativeModeTab);
         eventBus.addListener(NeoForgeCreativeModeTabModifier::modifyIngredientsCreativeModeTab);
-        eventBus.addListener(this::onBlockEntityTypeAddBlocks);
+        eventBus.addListener(NeoForgeEvents::addBuiltInPacks);
+        eventBus.addListener(NeoForgeEvents::onBlockEntityTypeAddBlocks);
 
         Constants.LOG.info("Finished Initializing Nether & End");
     }
 
-    private void onBlockEntityTypeAddBlocks(BlockEntityTypeAddBlocksEvent event) {
-        event.modify(BlockEntityType.SHELF, NetherAndEndBlocks.CHORUS_SHELF.block().get());
+
+
+    private void commonSetup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE.get());
+            DispenserBlock.registerBehavior(NetherAndEndItems.SHULKER_PEARL.get(), new ShulkerPearlDispenseBehavior(NetherAndEndItems.SHULKER_PEARL.get()));
+        });
     }
 }

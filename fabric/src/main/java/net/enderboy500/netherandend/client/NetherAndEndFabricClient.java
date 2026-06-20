@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.client;
 
+import net.enderboy500.netherandend.NetherAndEndCommon;
 import net.enderboy500.netherandend.client.services.ServicesClient;
 import net.fabricmc.api.ClientModInitializer;
 import net.minecraft.client.renderer.entity.EntityRenderers;

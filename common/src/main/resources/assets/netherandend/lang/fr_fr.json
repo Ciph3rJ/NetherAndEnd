@@ -9,14 +9,12 @@
   "item.netherandend.warped_stew": "Soupe Biscornu",
   "item.netherandend.warped_cake_slice": "Part de Gâteau Biscornu",
   "item.netherandend.crimson_pie": "Tarte Carmin",
-  "item.netherandend.raw_hogchop": "Hogchop Cru",
-  "item.netherandend.cooked_hogchop": "Hogchop Cuit",
   "item.netherandend.hoglin_skin": "Peau de Hoglin",
   "item.netherandend.hoglin_bundle": "Sac Hoglin",
   "item.netherandend.raw_strider_meat": "Viande d'arpenteur Cru",
   "item.netherandend.smoked_strider_meat": "Viande d'arpenteur Fumé",
   "item.netherandend.cooked_strider_meat": "Viande d'arpenteur Cuit",
-  "item.netherandend.hardened_strider_meat": "Viande d'arpenteur Brûlé",
+  "item.netherandend.burnt_strider_meat": "Viande d'arpenteur Brûlé",
   "item.netherandend.dragon_charge": "Charge de Dragon",
   "item.netherandend.withered_bone": "Os Desséché",
   "item.netherandend.withered_bone_meal": "Poudre d'os Desséché",
@@ -146,7 +144,6 @@
   "advancement.netherandend.double_wart.title": "Double Verrues",
   "advancement.netherandend.why_is_this_so_complicated.title": "Pourquoi est-ce Si Compliqué??",
   "advancement.netherandend.why_was_this_so_hard.title": "Pourquoi était-ce si Difficile??",
-  "advancement.netherandend.whats_the_difference.title": "Quelle est la Différence??",
   "advancement.netherandend.well_thats_unique.title": "C'est Unique",
   "advancement.netherandend.end_compacting.title": "Compactage d'End",
   "advancement.netherandend.fruitful.title": "Fructueux",
@@ -161,7 +158,6 @@
   "advancement.netherandend.double_wart.desc": "Obtenir des Verrues du Nether et de Warped",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Viande d'arpenteur, Si Compliqué",
   "advancement.netherandend.why_was_this_so_hard.desc": "Enfin!!",
-  "advancement.netherandend.whats_the_difference.desc": "Les Deux Côtelettes",
   "advancement.netherandend.well_thats_unique.desc": "Effriter le Basalte",
   "advancement.netherandend.end_compacting.desc": "Compacter le Chorus",
   "advancement.netherandend.fruitful.desc": "Téléportation + Téléportation = Pas de Téléportation???",
@@ -175,7 +171,12 @@
   "gamerule.minecraft.disable_elytras": "Désactiver Élytres",
 
   "tooltip.netherandend.explanation.instructions": "§6Maintenez la touche §e[Shift]§6 enfoncée pour plus d'informations.",
-  "tooltip.netherandend.explanation.shulker_falchion": "Après avoir été touché par une foule, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Après avoir attaqué un monstre, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
+
+  "resourcePack.netherandend.glowing_ores.name": "Nether et End Minirais Luisant",
+  "resourcePack.netherandend.ore_borders.name": "Nether et End Minirais Frontières",
+  "resourcePack.netherandend.glowing_ore_borders.name": "Nether et End Minirais Luisant X Minirais Frontières",
+  "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether et End X Vanilla Tweaks Bedrock Suppléant",
 
   "itemgroup.netherandend": "Nether et End"
 }

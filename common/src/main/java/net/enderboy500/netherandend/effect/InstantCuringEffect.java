@@ -7,13 +7,13 @@ import net.minecraft.world.entity.LivingEntity;
 import java.util.Collection;
 import java.util.List;
 
-public class InstantCuringEffect extends InstantenousMobEffect {
+public class InstantCuringEffect extends InstantaneousMobEffect {
     public InstantCuringEffect(MobEffectCategory category, int color) {
         super(category, color);
     }
 
     @Override
-    public boolean isInstantenous() {
+    public boolean isInstantaneous() {
         return false;
     }
 
