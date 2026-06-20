@@ -1,6 +1,6 @@
 {
   "item.netherandend.chorus_soup": "Soupe de Chorus",
-  "item.netherandend.warped_wart": "Verrues du Tordues",
+  "block.netherandend.warped_wart": "Verrues du Tordues",
   "item.netherandend.shulker_pearl": "Perle de Shulker",
   "item.netherandend.hardened_shulker_pearl": "Perle de Shulker Durcie",
   "item.netherandend.ender_fruit": "Fruits de l'ender",
@@ -171,7 +171,7 @@
   "gamerule.minecraft.disable_elytras": "Désactiver Élytres",
 
   "tooltip.netherandend.explanation.instructions": "§6Maintenez la touche §e[Shift]§6 enfoncée pour plus d'informations.",
-  "tooltip.netherandend.explanation.shulker_falchion": "Après avoir été touché par une foule, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Après avoir attaqué un monstre, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
 
   "resourcePack.netherandend.glowing_ores.name": "Nether et End Minirais Luisant",
   "resourcePack.netherandend.ore_borders.name": "Nether et End Minirais Frontières",

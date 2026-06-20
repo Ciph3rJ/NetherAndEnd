@@ -1,6 +1,6 @@
 {
   "item.netherandend.chorus_soup": "Chorus Soup",
-  "item.netherandend.warped_wart": "Warped Wart",
+  "block.netherandend.warped_wart": "Warped Wart",
   "item.netherandend.shulker_pearl": "Shulker Pearl",
   "item.netherandend.hardened_shulker_pearl": "Hardened Shulker Pearl",
   "item.netherandend.ender_fruit": "Ender Fruit",
@@ -171,7 +171,7 @@
   "gamerule.minecraft.disable_elytras": "Disable Elytra",
 
   "tooltip.netherandend.explanation.instructions": "§6Hold §e[Shift]§6 for more information.",
-  "tooltip.netherandend.explanation.shulker_falchion": "After getting hit by a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
+  "tooltip.netherandend.explanation.shulker_falchion": "After attacking a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
 
   "resourcePack.netherandend.glowing_ores.name": "Nether & End Glowing Ores",
   "resourcePack.netherandend.ore_borders.name": "Nether & End Ore Borders",

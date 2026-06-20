@@ -1,0 +1,65 @@
+{
+  "parent": "netherandend:got_raw_strider_meat",
+  "criteria": {
+    "got_cooked_strider_meat": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:cooked_strider_meat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "got_hardened_strider_meat": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:hardened_strider_meat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "got_raw_strider_meat": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:raw_strider_meat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "got_smoked_strider_meat": {
+      "conditions": {
+        "item": {
+          "items": "netherandend:smoked_strider_meat"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.why_was_this_so_hard.desc"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "id": "netherandend:hardened_strider_meat"
+    },
+    "title": {
+      "translate": "advancement.netherandend.why_was_this_so_hard.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_raw_strider_meat"
+    ],
+    [
+      "got_smoked_strider_meat"
+    ],
+    [
+      "got_cooked_strider_meat"
+    ],
+    [
+      "got_hardened_strider_meat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
