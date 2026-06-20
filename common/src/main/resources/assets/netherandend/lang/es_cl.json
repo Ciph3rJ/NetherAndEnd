@@ -171,7 +171,7 @@
   "gamerule.minecraft.disable_elytras": "Desactivar Élitros",
 
   "tooltip.netherandend.explanation.instructions": "§6Mantenga pulsada la tecla §e[Shift]§6 para obtener más información.",
-  "tooltip.netherandend.explanation.shulker_falchion": "Después de ser golpeado por una turba, presiona §eRight-click§7 para lanzar una bala shulker que se adhiere a ellos.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Después de atacar a un mob, presiona §eRight-click§7 para lanzar una bala shulker que se adhiere a ellos.",
 
   "resourcePack.netherandend.glowing_ores.name": "Nether & End Mena Brillante",
   "resourcePack.netherandend.ore_borders.name": "Nether & End Mena Fronteras",

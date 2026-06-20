@@ -171,7 +171,7 @@
   "gamerule.minecraft.disable_elytras": "Deaktivieren Elytren",
 
   "tooltip.netherandend.explanation.instructions": "§6Halten Sie die §e[Shift]§6 gedrückt, um weitere Informationen zu erhalten.",
-  "tooltip.netherandend.explanation.shulker_falchion": "Nachdem Sie von einem Mob getroffen wurden, drücken Sie §eRight-click§7, um eine Shulker-Kugel abzufeuern, die sich an ihnen festsetzt.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Nach dem Angriff auf eine Gruppe, drücken Sie §eRight-click§7, um eine Shulker-Kugel abzufeuern, die sich an ihnen festsetzt.",
 
   "resourcePack.netherandend.glowing_ores.name": "Nether und End Leucht-Erz",
   "resourcePack.netherandend.ore_borders.name": "Nether und End Erz Grenzen",

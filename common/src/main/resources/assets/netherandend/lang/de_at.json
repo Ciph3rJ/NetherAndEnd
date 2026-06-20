@@ -171,7 +171,7 @@
   "gamerule.minecraft.disable_elytras": "Deaktivieren Elytren",
 
   "tooltip.netherandend.explanation.instructions": "§6Halten Sie §e[Umschalt]§6 gedrückt, um weitere Informationen zu erhalten.",
-  "tooltip.netherandend.explanation.shulker_falchion": "Nachdem Sie von einer Horde getroffen wurden, klicken Sie mit der §eRight-click§7, um eine Shulker-Munition abzufeuern, die sich an ihnen festklammert.",
+  "tooltip.netherandend.explanation.shulker_falchion": "Nach dem Angriff auf eine Horde, klicken Sie mit der §eRight-click§7, um eine Shulker-Munition abzufeuern, die sich an ihnen festklammert.",
 
   "resourcePack.netherandend.glowing_ores.name": "Nether und End Leicht-Erz",
   "resourcePack.netherandend.ore_borders.name": "Nether und End Erz Grenzen",

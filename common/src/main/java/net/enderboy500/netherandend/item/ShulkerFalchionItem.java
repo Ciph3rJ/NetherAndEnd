@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.item;
 
+import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -23,22 +24,28 @@ public class ShulkerFalchionItem extends Item {
 
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand interactionHand) {
-        if (player.getLastAttacker() == null) {
-            return super.use(level, player, interactionHand);
-        } else {
-            level.addFreshEntity(new ShulkerBullet(level, player, player.getLastAttacker(), player.getNearestViewDirection().getAxis()));
-            player.getCooldowns().addCooldown(this.getDefaultInstance(), 10);
-            return InteractionResult.SUCCESS;
+        if (player.getInventory().contains(NetherAndEndItems.SHULKER_PEARL.get().getDefaultInstance())) {
+            if (player.getLastHurtMob() != null) {
+                level.addFreshEntity(new ShulkerBullet(level, player, player.getLastHurtMob(), player.getNearestViewDirection().getAxis()));
+                player.getCooldowns().addCooldown(this.getDefaultInstance(), 10);
+                for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
+                    if (player.getInventory().getItem(slot).is(NetherAndEndItems.SHULKER_PEARL.get())) {
+                        player.getInventory().getItem(slot).shrink(1);
+                        return InteractionResult.SUCCESS;
+                    }
+                }
+            }
         }
+        return super.use(level, player, interactionHand);
     }
 
     @Override
-    public void appendHoverText(ItemStack itemStack, TooltipContext tooltipContext, TooltipDisplay tooltipDisplay, Consumer<Component> consumer, TooltipFlag tooltipFlag) {
+    public void appendHoverText(ItemStack itemStack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag tooltipFlag) {
         if (Minecraft.getInstance().hasShiftDown()) {
-            consumer.accept(Component.translatable("tooltip.netherandend.explanation.shulker_falchion").withStyle(ChatFormatting.GRAY));
+            builder.accept(Component.translatable("tooltip.netherandend.explanation.shulker_falchion").withStyle(ChatFormatting.GRAY));
         } else {
-            consumer.accept(Component.translatable("tooltip.netherandend.explanation.instructions"));
+            builder.accept(Component.translatable("tooltip.netherandend.explanation.instructions"));
         }
-        super.appendHoverText(itemStack, tooltipContext, tooltipDisplay, consumer, tooltipFlag);
+        super.appendHoverText(itemStack, context, display, builder, tooltipFlag);
     }
 }
