@@ -12,14 +12,14 @@
       }
     },
     "crimson": {
-      "available" : false,
+      "available" : true,
       "start": {
         "day": 1,
-        "month": 4
+        "month": 6
       },
       "end": {
-        "day": 19,
-        "month": 5
+        "day": 1,
+        "month": 7
       }
     }
   }

@@ -38,11 +38,21 @@ public class NeoForgePotions {
     public static final Holder<Potion> STRONG_BUOYANT_POTION = POTIONS.register("strong_buoyant_potion",
             () -> new Potion("strong_buoyant", new MobEffectInstance(MobEffects.LEVITATION, 1800,1)));
 
+    public static final Holder<Potion> DECAY_POTION = POTIONS.register("decay_potion",
+            () -> new Potion("decay", new MobEffectInstance(MobEffects.WITHER, 1800, 0)));
+    public static final Holder<Potion> LONG_DECAY_POTION = POTIONS.register("long_decay_potion",
+            () -> new Potion("long_decay", new MobEffectInstance(MobEffects.WITHER, 3600, 0)));
+    public static final Holder<Potion> STRONG_DECAY_POTION = POTIONS.register("strong_decay_potion",
+            () -> new Potion("strong_decay", new MobEffectInstance(MobEffects.WITHER, 900, 1)));
+
     public static final Holder<Potion> INSTANT_WARPING_POTION = POTIONS.register("instant_warping_potion",
             () -> new Potion("instant_warping", new MobEffectInstance(NeoForgeMobEffects.INSTANT_WARPING, 100, 0)));
 
     public static final Holder<Potion> INSTANT_CURING_POTION = POTIONS.register("instant_curing_potion",
             () -> new Potion("instant_curing", new MobEffectInstance(NeoForgeMobEffects.INSTANT_CURING, 100, 0)));
+
+    public static final Holder<Potion> ENDERSIGHT_POTION = POTIONS.register("endersight_potion",
+            () -> new Potion("endersight", new MobEffectInstance(NeoForgeMobEffects.INVERTED_VISION, 4800, 0)));
 
     public static void loadPotions(IEventBus eventBus) {
         POTIONS.register(eventBus);

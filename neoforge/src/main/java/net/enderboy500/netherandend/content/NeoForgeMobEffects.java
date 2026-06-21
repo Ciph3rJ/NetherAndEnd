@@ -1,6 +1,7 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.Constants;
+import net.enderboy500.netherandend.effect.BasicEffect;
 import net.enderboy500.netherandend.effect.InstantCuringEffect;
 import net.enderboy500.netherandend.effect.InstantWarpingEffect;
 import net.minecraft.core.Holder;
@@ -15,6 +16,7 @@ public class NeoForgeMobEffects {
 
     public static final Holder<MobEffect> INSTANT_WARPING = MOB_EFFECTS.register("instant_warping", () -> new InstantWarpingEffect(MobEffectCategory.NEUTRAL, 9520781));
     public static final Holder<MobEffect> INSTANT_CURING = MOB_EFFECTS.register("instant_curing", () -> new InstantCuringEffect(MobEffectCategory.NEUTRAL, 3532652));
+    public static final Holder<MobEffect> INVERTED_VISION = MOB_EFFECTS.register("inverted_vision", () -> new BasicEffect(MobEffectCategory.HARMFUL, 0x654448));
 
     public static void loadEffects(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

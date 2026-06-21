@@ -90,6 +90,10 @@
   "item.minecraft.lingering_potion.effect.instant_curing": "Verwiiltrank der Sofort Heiligä",
   "item.minecraft.tipped_arrow.effect.instant_curing": "Pfiil der Sofort Heiligä",
 
+  "item.minecraft.potion.effect.endersight": "Trank der Endersicht",
+  "item.minecraft.splash_potion.effect.endersight": "Wurftrank der Endersicht",
+  "item.minecraft.lingering_potion.effect.endersight": "Verwiiltrank der Endersicht",
+  "item.minecraft.tipped_arrow.effect.endersight": "Pfiil der Endersicht",
 
   "block.netherandend.nether_coal_ore": "Nethersteicholeerz",
   "block.netherandend.nether_iron_ore": "Netheriiseerz",
@@ -139,6 +143,7 @@
 
   "effect.netherandend.instant_warping": "Sofort Verzoge",
   "effect.netherandend.instant_curing": "Sofort Heiligä",
+  "effect.netherandend.inverted_vision": "Umgekehrte Vision",
 
   "advancement.netherandend.nether_and_end.title": "Nether und End",
   "advancement.netherandend.double_wart.title": "Double Warze",

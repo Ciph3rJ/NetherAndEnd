@@ -67,11 +67,17 @@ public class NetherAndEndFabric implements ModInitializer {
             builder.registerPotionRecipe(FabricPotions.BUOYANT_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_BUOYANT_POTION);
             builder.registerPotionRecipe(FabricPotions.BUOYANT_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_BUOYANT_POTION);
 
+            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.WITHER_ROSE), FabricPotions.DECAY_POTION);
+            builder.registerPotionRecipe(FabricPotions.DECAY_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_DECAY_POTION);
+            builder.registerPotionRecipe(FabricPotions.DECAY_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_DECAY_POTION);
+
             builder.registerPotionRecipe(FabricPotions.SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
             builder.registerPotionRecipe(FabricPotions.LONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
             builder.registerPotionRecipe(FabricPotions.STRONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
 
             builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.ENDER_FRUIT.get()), FabricPotions.INSTANT_WARPING_POTION);
+
+            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.ENDER_EYE), FabricPotions.ENDERSIGHT_POTION);
         });
 
         Constants.LOG.info("Finished Initializing Nether & End");
