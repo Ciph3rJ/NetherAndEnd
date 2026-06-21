@@ -81,11 +81,17 @@ public class NetherAndEnd implements ModInitializer {
 			builder.registerPotionRecipe(NetherAndEndPotions.BUOYANT_POTION, Ingredient.of(Items.REDSTONE), NetherAndEndPotions.LONG_BUOYANT_POTION);
 			builder.registerPotionRecipe(NetherAndEndPotions.BUOYANT_POTION, Ingredient.of(Items.GLOWSTONE_DUST), NetherAndEndPotions.STRONG_BUOYANT_POTION);
 
+			builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.WITHER_ROSE), NetherAndEndPotions.DECAY_POTION);
+			builder.registerPotionRecipe(NetherAndEndPotions.DECAY_POTION, Ingredient.of(Items.REDSTONE), NetherAndEndPotions.LONG_DECAY_POTION);
+			builder.registerPotionRecipe(NetherAndEndPotions.DECAY_POTION, Ingredient.of(Items.GLOWSTONE_DUST), NetherAndEndPotions.STRONG_DECAY_POTION);
+
 			builder.registerPotionRecipe(NetherAndEndPotions.SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), NetherAndEndPotions.INSTANT_CURING_POTION);
 			builder.registerPotionRecipe(NetherAndEndPotions.LONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), NetherAndEndPotions.INSTANT_CURING_POTION);
 			builder.registerPotionRecipe(NetherAndEndPotions.STRONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), NetherAndEndPotions.INSTANT_CURING_POTION);
 
 			builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.ENDER_FRUIT), NetherAndEndPotions.INSTANT_WARPING_POTION);
+
+			builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.ENDER_EYE), NetherAndEndPotions.ENDERSIGHT_POTION);
 		});
 
 		LOGGER.info("Finished Initializing Nether & End");

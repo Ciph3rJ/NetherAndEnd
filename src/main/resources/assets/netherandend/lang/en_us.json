@@ -90,6 +90,11 @@
   "item.minecraft.lingering_potion.effect.instant_curing": "Lingering Potion of Instant Curing",
   "item.minecraft.tipped_arrow.effect.instant_curing": "Arrow of Instant Curing",
 
+  "item.minecraft.potion.effect.endersight": "Potion of Endersight",
+  "item.minecraft.splash_potion.effect.endersight": "Splash Potion of Endersight",
+  "item.minecraft.lingering_potion.effect.endersight": "Lingering Potion of Endersight",
+  "item.minecraft.tipped_arrow.effect.endersight": "Arrow of Endersight",
+
 
   "block.netherandend.nether_coal_ore": "Nether Coal Ore",
   "block.netherandend.nether_iron_ore": "Nether Iron Ore",
@@ -139,6 +144,7 @@
 
   "effect.netherandend.instant_warping": "Instant Warping",
   "effect.netherandend.instant_curing": "Instant Curing",
+  "effect.netherandend.inverted_vision": "Inverted Vision",
 
   "advancement.netherandend.nether_and_end.title": "Nether & End",
   "advancement.netherandend.double_wart.title": "Double Wart",

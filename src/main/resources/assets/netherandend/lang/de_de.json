@@ -90,6 +90,10 @@
   "item.minecraft.lingering_potion.effect.instant_curing": "Verweiltrank der Sofortige Aushärtung",
   "item.minecraft.tipped_arrow.effect.instant_curing": "Pfeil der Sofortige Aushärtung",
 
+  "item.minecraft.potion.effect.endersight": "Trank der Enderblick",
+  "item.minecraft.splash_potion.effect.endersight": "Wurftrank der Enderblick",
+  "item.minecraft.lingering_potion.effect.endersight": "Verweiltrank der Enderblick",
+  "item.minecraft.tipped_arrow.effect.endersight": "Pfeil der Enderblick",
 
   "block.netherandend.nether_coal_ore": "Nethersteinkohle",
   "block.netherandend.nether_iron_ore": "Nethereisenrez",
@@ -139,6 +143,7 @@
 
   "effect.netherandend.instant_warping": "Sofortige Verschiebung",
   "effect.netherandend.instant_curing": "Sofortige Aushärtung",
+  "effect.netherandend.inverted_vision": "Umgekehrte Sichtweise",
 
   "advancement.netherandend.nether_and_end.title": "Nether und End",
   "advancement.netherandend.double_wart.title": "Doppelte Warze",

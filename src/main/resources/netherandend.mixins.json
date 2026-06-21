@@ -6,6 +6,7 @@
     "ExampleMixin",
     "FenceBlockMixin",
     "FireChargeItemMixin",
+    "GameRendererMixin",
     "ItemMixin",
     "LivingEntityMixin",
     "MappedRegistryMixin",

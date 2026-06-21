@@ -90,6 +90,10 @@
   "item.minecraft.lingering_potion.effect.instant_curing": "Poción de Curado Instantáneo Persistente",
   "item.minecraft.tipped_arrow.effect.instant_curing": "Flecha de Curado Instantáneo",
 
+  "item.minecraft.potion.effect.endersight": "Poción de Endervista",
+  "item.minecraft.splash_potion.effect.endersight": "Poción de Endervista Arrojadiza",
+  "item.minecraft.lingering_potion.effect.endersight": "Poción de Endervista Persistente",
+  "item.minecraft.tipped_arrow.effect.endersight": "Flecha de Endervista",
 
   "block.netherandend.nether_coal_ore": "Mena de Carbón del Nether",
   "block.netherandend.nether_iron_ore": "Mena de Hierro del Nether",
@@ -139,6 +143,7 @@
 
   "effect.netherandend.instant_warping": "Deformación Instantáneo",
   "effect.netherandend.instant_curing": "Curado Instantáneo",
+  "effect.netherandend.inverted_vision": "Visión Invertida",
 
   "advancement.netherandend.nether_and_end.title": "Nether & End",
   "advancement.netherandend.double_wart.title": "Verruga Doble",
