@@ -35,11 +35,17 @@ public class FabricPotions {
     public static final Holder<Potion> STRONG_BUOYANT_POTION = register("strong_buoyant_potion",
             new Potion("strong_buoyant", new MobEffectInstance(MobEffects.LEVITATION, 1800,1)));
 
+    public static final Holder<Potion> DECAY_POTION = register("decay_potion",  new Potion("decay", new MobEffectInstance(MobEffects.WITHER, 1800, 0)));
+    public static final Holder<Potion> LONG_DECAY_POTION = register("long_decay_potion",  new Potion("long_decay", new MobEffectInstance(MobEffects.WITHER, 3600, 0)));
+    public static final Holder<Potion> STRONG_DECAY_POTION = register("strong_decay_potion",  new Potion("long_decay", new MobEffectInstance(MobEffects.WITHER, 900, 1)));
+
     public static final Holder<Potion> INSTANT_WARPING_POTION = register("instant_warping_potion",
             new Potion("instant_warping", new MobEffectInstance(FabricMobEffects.INSTANT_WARPING, 100, 0)));
 
     public static final Holder<Potion> INSTANT_CURING_POTION = register("instant_curing_potion",
             new Potion("instant_curing", new MobEffectInstance(FabricMobEffects.INSTANT_CURING, 100, 0)));
+
+    public static final Holder<Potion> ENDERSIGHT_POTION = register("endersight_potion", new Potion("endersight", new MobEffectInstance(FabricMobEffects.INVERTED_VISION, 4800, 0)));
 
     private static Holder<Potion> register(String name, Potion potion) {
         return Registry.registerForHolder(BuiltInRegistries.POTION, Identifier.withDefaultNamespace(name), potion);

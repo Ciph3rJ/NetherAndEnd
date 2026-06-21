@@ -10,7 +10,6 @@ import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -36,11 +35,17 @@ public class NeoForgeEvents {
         event.getBuilder().addMix(NeoForgePotions.BUOYANT_POTION, Items.REDSTONE, NeoForgePotions.LONG_BUOYANT_POTION);
         event.getBuilder().addMix(NeoForgePotions.BUOYANT_POTION, Items.GLOWSTONE_DUST, NeoForgePotions.STRONG_BUOYANT_POTION);
 
+        event.getBuilder().addMix(Potions.AWKWARD, Items.WITHER_ROSE, NeoForgePotions.DECAY_POTION);
+        event.getBuilder().addMix(NeoForgePotions.DECAY_POTION, Items.REDSTONE, NeoForgePotions.LONG_DECAY_POTION);
+        event.getBuilder().addMix(NeoForgePotions.DECAY_POTION, Items.GLOWSTONE_DUST, NeoForgePotions.STRONG_DECAY_POTION);
+
         event.getBuilder().addMix(NeoForgePotions.SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NeoForgePotions.INSTANT_CURING_POTION);
         event.getBuilder().addMix(NeoForgePotions.LONG_SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NeoForgePotions.INSTANT_CURING_POTION);
         event.getBuilder().addMix(NeoForgePotions.STRONG_SICKNESS_POTION, Items.FERMENTED_SPIDER_EYE, NeoForgePotions.INSTANT_CURING_POTION);
 
         event.getBuilder().addMix(Potions.AWKWARD, NetherAndEndItems.ENDER_FRUIT.get(), NeoForgePotions.INSTANT_WARPING_POTION);
+
+        event.getBuilder().addMix(Potions.AWKWARD, Items.ENDER_EYE, NeoForgePotions.ENDERSIGHT_POTION);
     }
 
     public static void addBuiltInPacks(AddPackFindersEvent event) {

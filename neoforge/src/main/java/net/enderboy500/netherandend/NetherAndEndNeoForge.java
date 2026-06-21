@@ -22,6 +22,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
+import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 
 @Mod(Constants.MOD_ID)
 public class NetherAndEndNeoForge {

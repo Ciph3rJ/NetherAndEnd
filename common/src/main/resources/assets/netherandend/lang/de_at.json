@@ -90,6 +90,11 @@
   "item.minecraft.lingering_potion.effect.instant_curing": "Vaweiltronk der Sofortige Härtung",
   "item.minecraft.tipped_arrow.effect.instant_curing": "Pfeil der Sofortige Härtung",
 
+  "item.minecraft.potion.effect.endersight": "Tronk der Endersicht",
+  "item.minecraft.splash_potion.effect.endersight": "Wurftronk der Endersicht",
+  "item.minecraft.lingering_potion.effect.endersight": "Vaweiltronk der Endersicht",
+  "item.minecraft.tipped_arrow.effect.endersight": "Pfeil der Endersicht",
+
 
   "block.netherandend.nether_coal_ore": "Netherstoakohle",
   "block.netherandend.nether_iron_ore": "Nethereisnerz",
@@ -139,6 +144,7 @@
 
   "effect.netherandend.instant_warping": "Sofortiges Springen",
   "effect.netherandend.instant_curing": "Sofortige Härtung",
+  "effect.netherandend.inverted_vision": "Umgekehrte Vision",
 
   "advancement.netherandend.nether_and_end.title": "Nether und End",
   "advancement.netherandend.double_wart.title": "Doppel Woazn",
