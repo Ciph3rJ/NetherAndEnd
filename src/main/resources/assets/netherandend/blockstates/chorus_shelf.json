@@ -250,7 +250,7 @@
     },
     {
       "apply": {
-        "model": "netherandend:block/acacia_shelf_center"
+        "model": "netherandend:block/chorus_shelf_center"
       },
       "when": {
         "AND": [

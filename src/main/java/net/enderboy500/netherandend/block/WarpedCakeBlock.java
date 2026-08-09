@@ -145,20 +145,22 @@ public class WarpedCakeBlock extends Block {
         return eat(level, blockPos, blockState, player);
     }
 
-    protected static InteractionResult eat(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, Player player) {
+    public static InteractionResult eat(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, Player player) {
+        if (player.getFoodData().needsFood()) {
             player.awardStat(Stats.EAT_CAKE_SLICE);
             player.getFoodData().eat(2, 0.1F);
             player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
-            int i = (Integer)blockState.getValue(BITES);
+            int i = blockState.getValue(BITES);
             levelAccessor.gameEvent(player, GameEvent.EAT, blockPos);
             if (i < 6) {
-                levelAccessor.setBlock(blockPos, (BlockState)blockState.setValue(BITES, i + 1), 3);
+                levelAccessor.setBlock(blockPos, blockState.setValue(BITES, i + 1), 3);
             } else {
                 levelAccessor.removeBlock(blockPos, false);
                 levelAccessor.gameEvent(player, GameEvent.BLOCK_DESTROY, blockPos);
             }
-
             return InteractionResult.SUCCESS;
+        }
+        return InteractionResult.PASS;
     }
 
     protected BlockState updateShape(BlockState blockState, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos blockPos, Direction direction, BlockPos blockPos2, BlockState blockState2, RandomSource randomSource) {

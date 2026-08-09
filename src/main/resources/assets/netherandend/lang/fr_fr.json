@@ -1,6 +1,6 @@
 {
   "item.netherandend.chorus_soup": "Soupe de Chorus",
-  "block.netherandend.warped_wart": "Verrues du Biscornu",
+  "item.netherandend.warped_wart": "Verrues du Biscornu",
   "item.netherandend.shulker_pearl": "Perle de Shulker",
   "item.netherandend.hardened_shulker_pearl": "Perle de Shulker Durcie",
   "item.netherandend.ender_fruit": "Fruits de l'ender",
@@ -161,7 +161,7 @@
   "advancement.netherandend.ore_collector.title": "Collecteur de Minerai",
 
   "advancement.netherandend.nether_and_end.desc": "Un Début",
-  "advancement.netherandend.double_wart.desc": "Obtenir des Verrues du Nether et de Warped",
+  "advancement.netherandend.double_wart.desc": "Obtenir des Verrues du Nether et de Biscornu",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Viande d'arpenteur, Si Compliqué",
   "advancement.netherandend.why_was_this_so_hard.desc": "Enfin!!",
   "advancement.netherandend.well_thats_unique.desc": "Effriter le Basalte",

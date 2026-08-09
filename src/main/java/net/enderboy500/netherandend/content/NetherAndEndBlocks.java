@@ -86,10 +86,7 @@ public class NetherAndEndBlocks {
     public static final Block NETHER_COPPER_ORE = register("nether_copper_ore",
             Block::new, Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
 
-    public static final Block NETHER_REDSTONE_ORE = register("nether_redstone_ore",
-            settings -> {
-                return new DropExperienceBlock(UniformInt.of(0, 2), settings);
-            }, Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
+    public static final Block NETHER_REDSTONE_ORE = register("nether_redstone_ore", RedStoneOreBlock::new, Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
 
     public static final Block NETHER_EMERALD_ORE = register("nether_emerald_ore",
             settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE));
@@ -112,8 +109,7 @@ public class NetherAndEndBlocks {
     public static final Block END_COPPER_ORE = register("end_copper_ore",
             Block::new, Properties.ofFullCopy(Blocks.END_STONE));
 
-    public static final Block END_REDSTONE_ORE = register("end_redstone_ore",
-            settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.END_STONE));
+    public static final Block END_REDSTONE_ORE = register("end_redstone_ore", RedStoneOreBlock::new, Properties.ofFullCopy(Blocks.END_STONE));
 
     public static final Block END_EMERALD_ORE = register("end_emerald_ore",
             settings -> new DropExperienceBlock(UniformInt.of(0, 2), settings), Properties.ofFullCopy(Blocks.END_STONE));

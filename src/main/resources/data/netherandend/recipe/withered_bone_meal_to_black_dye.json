@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "netherandend:withered_bone_meal"
+  ],
+  "result": {
+    "id": "minecraft:black_dye"
+  }
+}

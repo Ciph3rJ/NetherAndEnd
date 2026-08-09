@@ -33,6 +33,21 @@ public class NetherAndEnd implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
+		// FIXED: Fix Warped Candle Cake Particle Position
+		// DONE: New Withered Bone Meal -> Black Dye Recipe
+		// FIXED: Fix cake eating when not hungry
+		// FIXED: Cyan Nether Brick Fence Gate recipe output count from 3 -> 1
+		// FIXED: Withered Bone -> Withered Bone Meal recipe now works
+		// FIXED: Hoglin Bundle recipe is now shaped
+		// FIXED: Fix Redstone Ores
+		// FIXED: Fixed inconsistencies and mistakes in Crimson Pie and Chorus Pie Textures + Crimson Icon Texture
+		// FIXED: The French Translation for the "Double Wart" Advancement Description to change "Warped" to the appropriate words "Biscornu" and "Tordu" for Standard and Canadian French respectively
+		// FIXED: Chorus Shelf in specific states
+		// DONE: Swiss French, Austrian German, and Swiss German
+		// FIXED: Warped Wart Translation Failing
+		// FIXED: Fixed Inconsistent Crumbling Basalt Texture Between Versions
+		// FIXED: Warped Candle Cake not reducing durability for Flint & Steel and not destroying Fire Charge on lighting the candle
+
 		LOGGER.info("Initializing Nether & End");
 
 		NetherAndEndItems.loadItems();

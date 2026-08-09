@@ -8,7 +8,10 @@ import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -66,6 +69,21 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
         }
     }
 
+    @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if (state.getValue(LIT)) {
+            float chance = random.nextFloat();
+            if (chance < 0.3F) {
+                level.addParticle(ParticleTypes.SMOKE, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0.0F, 0.0F, 0.0F);
+                if (chance < 0.17F) {
+                    level.playLocalSound(pos.getX() + (double)0.5F, pos.getY() + (double)0.5F, pos.getZ() + (double)0.5F, SoundEvents.CANDLE_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat(), random.nextFloat() * 0.7F + 0.3F, false);
+                }
+            }
+
+            level.addParticle(ParticleTypes.SMALL_FLAME, pos.getX() + 0.5, pos.getY() + 1, pos.getZ() + 0.5, 0.0F, 0.0F, 0.0F);
+        }
+    }
+
     protected Iterable<Vec3> getParticleOffsets(BlockState state) {
         return PARTICLE_OFFSETS;
     }
@@ -84,6 +102,12 @@ public class WarpedCandleCakeBlock extends AbstractCandleBlock {
                 return useItemOn(stack, state, world, pos, player, hand, hit);
             }
         } else if (stack.is(Items.FLINT_AND_STEEL) || stack.is(Items.FIRE_CHARGE) && !isHittingCandle(hit)) {
+            if (stack.is(Items.FLINT_AND_STEEL)) {
+                stack.hurtAndBreak(1, player, hand);
+            }
+            if (stack.is(Items.FIRE_CHARGE)) {
+                stack.consumeAndReturn(1, player);
+            }
             setLit(world, state, pos, true);
             return InteractionResult.SUCCESS;
         } else if (!isLit(state)){
