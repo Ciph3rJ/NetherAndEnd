@@ -176,6 +176,8 @@
 
   "gamerule.minecraft.disable_elytras": "Disable Elytra",
 
+  "stat.netherandend.eat_warped_cake_slice": "Warped Cake Slice Eaten",
+
   "tooltip.netherandend.explanation.instructions": "§6Hold §e[Shift]§6 for more information.",
   "tooltip.netherandend.explanation.shulker_falchion": "After attacking a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
 
@@ -183,6 +185,8 @@
   "resourcePack.netherandend.ore_borders.name": "Nether & End Ore Borders",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether & End Glowing Ores X Ore Borders",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether & End X Vanilla Tweaks Alternate Bedrock",
+  "resourcePack.netherandend.bare_bones.name": "Nether & End X Bare Bones",
+  "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether & End Glowing Ores X Bare Bones",
 
   "itemgroup.netherandend": "Nether & End"
 }

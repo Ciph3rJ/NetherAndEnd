@@ -14,13 +14,7 @@ public class InstantCuringEffect extends InstantenousMobEffect {
 
     @Override
     public boolean isInstantenous() {
-        return false;
-    }
-
-    @Override
-    public void onEffectStarted(LivingEntity entity, int amplifier) {
-        removeHarmfulEffects(entity);
-        super.onEffectStarted(entity, amplifier);
+        return true;
     }
 
     public void removeHarmfulEffects(LivingEntity entity) {
@@ -34,6 +28,7 @@ public class InstantCuringEffect extends InstantenousMobEffect {
 
     @Override
     public boolean applyEffectTick(ServerLevel world, LivingEntity entity, int amplifier) {
+        removeHarmfulEffects(entity);
         return super.applyEffectTick(world, entity, amplifier);
     }
 

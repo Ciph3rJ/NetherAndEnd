@@ -176,6 +176,8 @@
 
   "gamerule.minecraft.disable_elytras": "Desactivar Élitros",
 
+  "stat.netherandend.eat_warped_cake_slice": "Porción de Torta Distorsionado Comidos",
+
   "tooltip.netherandend.explanation.instructions": "§6Mantenga pulsada la tecla §e[Shift]§6 para obtener más información.",
   "tooltip.netherandend.explanation.shulker_falchion": "Después de atacar a un mob, presiona §eRight-click§7 para lanzar una bala shulker que se adhiere a ellos.",
 
@@ -183,6 +185,8 @@
   "resourcePack.netherandend.ore_borders.name": "Nether & End Mena Fronteras",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether & End Mena Luminoso X Mena Fronteras",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether & End X Vanilla Tweaks Piedra Madre Suplente",
+  "resourcePack.netherandend.bare_bones.name": "Nether & End X Bare Bones",
+  "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether & End Mena Luminoso X Bare Bones",
 
   "itemgroup.netherandend": "Nether & End"
 }

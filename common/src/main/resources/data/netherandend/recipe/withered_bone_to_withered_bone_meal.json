@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "netherandend:withered_bone"
+  ],
+  "result": {
+    "count": 3,
+    "id": "netherandend:withered_bone_meal"
+  }
+}

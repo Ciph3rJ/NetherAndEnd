@@ -65,7 +65,7 @@ public class NetherAndEndBlocks {
             properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
 
     public static final BlockWithItemRegistryHandle<Block> NETHER_REDSTONE_ORE = Services.REGISTRY.registerBlockWithItem("nether_redstone_ore",
-            properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
+            properties -> new RedStoneOreBlock(properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
 
     public static final BlockWithItemRegistryHandle<Block> NETHER_EMERALD_ORE = Services.REGISTRY.registerBlockWithItem("nether_emerald_ore",
             properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));
@@ -89,7 +89,7 @@ public class NetherAndEndBlocks {
             properties -> new Block(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
 
     public static final BlockWithItemRegistryHandle<Block> END_REDSTONE_ORE = Services.REGISTRY.registerBlockWithItem("end_redstone_ore",
-            properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
+            properties -> new RedStoneOreBlock(properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));
 
     public static final BlockWithItemRegistryHandle<Block> END_EMERALD_ORE = Services.REGISTRY.registerBlockWithItem("end_emerald_ore",
             properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F)));

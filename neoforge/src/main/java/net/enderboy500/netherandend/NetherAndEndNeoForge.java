@@ -3,26 +3,12 @@ package net.enderboy500.netherandend;
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.services.NeoForgeRegistryHelperService;
 import net.enderboy500.netherandend.util.NeoForgeEvents;
-import net.enderboy500.netherandend.util.ShulkerPearlDispenseBehavior;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
-import net.minecraft.core.dispenser.BlockSource;
-import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
-import net.minecraft.core.dispenser.DispenseItemBehavior;
-import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.repository.Pack;
-import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.item.ItemStack;
+import net.enderboy500.netherandend.util.dispenser.ShulkerPearlDispenseBehavior;
+import net.enderboy500.netherandend.util.dispenser.WitheredBoneMealDispenseBehavior;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.neoforge.event.AddPackFindersEvent;
-import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
-import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
 
 @Mod(Constants.MOD_ID)
 public class NetherAndEndNeoForge {
@@ -53,6 +39,7 @@ public class NetherAndEndNeoForge {
         event.enqueueWork(() -> {
             DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE.get());
             DispenserBlock.registerBehavior(NetherAndEndItems.SHULKER_PEARL.get(), new ShulkerPearlDispenseBehavior(NetherAndEndItems.SHULKER_PEARL.get()));
+            DispenserBlock.registerBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get(), new WitheredBoneMealDispenseBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get()));
         });
     }
 }

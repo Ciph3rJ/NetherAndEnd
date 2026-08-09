@@ -20,11 +20,11 @@ public class InstantWarpingEffect extends InstantenousMobEffect {
 
     @Override
     public boolean isInstantenous() {
-        return false;
+        return true;
     }
 
     @Override
-    public void onEffectStarted(LivingEntity entity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         Level world = entity.level();
         if (!world.isClientSide()) {
             for (int i = 0; i < 16; i++) {
@@ -44,8 +44,8 @@ public class InstantWarpingEffect extends InstantenousMobEffect {
                     world.gameEvent(GameEvent.TELEPORT, vec3d, GameEvent.Context.of(entity));
                     SoundSource soundCategory;
                     SoundEvent soundEvent;
-                        soundEvent = SoundEvents.ENDERMAN_TELEPORT;
-                        soundCategory = SoundSource.PLAYERS;
+                    soundEvent = SoundEvents.ENDERMAN_TELEPORT;
+                    soundCategory = SoundSource.PLAYERS;
 
                     world.playSound(null, entity.getX(), entity.getY(), entity.getZ(), soundEvent, soundCategory);
                     entity.resetFallDistance();
@@ -57,12 +57,7 @@ public class InstantWarpingEffect extends InstantenousMobEffect {
                 playerEntity.resetCurrentImpulseContext();
             }
         }
-        super.onEffectAdded(entity, amplifier);
-    }
-
-    @Override
-    public boolean applyEffectTick(ServerLevel world, LivingEntity entity, int amplifier) {
-        return super.applyEffectTick(world, entity, amplifier);
+        return super.applyEffectTick(serverLevel, entity, amplifier);
     }
 
     @Override

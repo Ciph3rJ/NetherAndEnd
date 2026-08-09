@@ -161,7 +161,7 @@
   "advancement.netherandend.ore_collector.title": "Collecteur de Minerai",
 
   "advancement.netherandend.nether_and_end.desc": "Un Début",
-  "advancement.netherandend.double_wart.desc": "Obtenir des Verrues du Nether et de Warped",
+  "advancement.netherandend.double_wart.desc": "Obtenir des Verrues du Nether et de Tordu",
   "advancement.netherandend.why_is_this_so_complicated.desc": "Viande d'arpenteur, Si Compliqué",
   "advancement.netherandend.why_was_this_so_hard.desc": "Enfin!!",
   "advancement.netherandend.well_thats_unique.desc": "Effriter le Basalte",
@@ -176,6 +176,8 @@
 
   "gamerule.minecraft.disable_elytras": "Désactiver Élytres",
 
+  "stat.netherandend.eat_warped_cake_slice": "Part de Gâteau Tordu Mangées",
+
   "tooltip.netherandend.explanation.instructions": "§6Maintenez la touche §e[Shift]§6 enfoncée pour plus d'informations.",
   "tooltip.netherandend.explanation.shulker_falchion": "Après avoir attaqué un monstre, appuyez sur §eRight-click§7 pour lancer une balle shulker qui s'accroche à eux.",
 
@@ -183,6 +185,8 @@
   "resourcePack.netherandend.ore_borders.name": "Nether et End Minirais Frontières",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether et End Minirais Luisant X Minirais Frontières",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether et End X Vanilla Tweaks Bedrock Suppléant",
+  "resourcePack.netherandend.bare_bones.name": "Nether et End X Bare Bones",
+  "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether et End Minirais Luisant X Bare Bones",
 
   "itemgroup.netherandend": "Nether et End"
 }

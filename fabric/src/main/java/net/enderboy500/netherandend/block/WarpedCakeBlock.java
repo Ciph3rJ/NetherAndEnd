@@ -1,6 +1,8 @@
 package net.enderboy500.netherandend.block;
 
 import com.mojang.serialization.MapCodec;
+import net.enderboy500.netherandend.NetherAndEndCommon;
+import net.enderboy500.netherandend.NetherAndEndFabric;
 import net.enderboy500.netherandend.compat.NEFDRFCompat;
 import net.enderboy500.netherandend.content.FabricBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
@@ -137,18 +139,21 @@ public class WarpedCakeBlock extends Block {
     }
 
     public static InteractionResult eat(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, Player player) {
-        player.awardStat(Stats.EAT_CAKE_SLICE);
-        player.getFoodData().eat(2, 0.1F);
-        player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
-        int i = blockState.getValue(BITES);
-        levelAccessor.gameEvent(player, GameEvent.EAT, blockPos);
-        if (i < 6) {
-            levelAccessor.setBlock(blockPos, blockState.setValue(BITES, i + 1), 3);
-        } else {
-            levelAccessor.removeBlock(blockPos, false);
-            levelAccessor.gameEvent(player, GameEvent.BLOCK_DESTROY, blockPos);
+        if (player.getFoodData().needsFood()) {
+            player.awardStat(NetherAndEndFabric.EAT_WARPED_CAKE_SLICE);
+            player.getFoodData().eat(2, 0.1F);
+            player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
+            int i = blockState.getValue(BITES);
+            levelAccessor.gameEvent(player, GameEvent.EAT, blockPos);
+            if (i < 6) {
+                levelAccessor.setBlock(blockPos, blockState.setValue(BITES, i + 1), 3);
+            } else {
+                levelAccessor.removeBlock(blockPos, false);
+                levelAccessor.gameEvent(player, GameEvent.BLOCK_DESTROY, blockPos);
+            }
+            return InteractionResult.SUCCESS;
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResult.PASS;
     }
 
     protected BlockState updateShape(BlockState blockState, LevelReader levelReader, ScheduledTickAccess scheduledTickAccess, BlockPos blockPos, Direction direction, BlockPos blockPos2, BlockState blockState2, RandomSource randomSource) {

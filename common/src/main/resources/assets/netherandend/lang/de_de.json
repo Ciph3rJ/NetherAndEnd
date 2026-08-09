@@ -175,6 +175,8 @@
 
   "gamerule.minecraft.disable_elytras": "Deaktivieren Elytren",
 
+  "stat.netherandend.eat_warped_cake_slice": "Wirrkuchenstück Gegessen",
+
   "tooltip.netherandend.explanation.instructions": "§6Halten Sie die §e[Shift]§6 gedrückt, um weitere Informationen zu erhalten.",
   "tooltip.netherandend.explanation.shulker_falchion": "Nach dem Angriff auf eine Gruppe, drücken Sie §eRight-click§7, um eine Shulker-Kugel abzufeuern, die sich an ihnen festsetzt.",
 
@@ -182,6 +184,8 @@
   "resourcePack.netherandend.ore_borders.name": "Nether und End Erz Grenzen",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether und End Leucht-Erz X Erz Grenzen",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether und End X Vanilla Tweaks Alternativ Grundgestein",
+  "resourcePack.netherandend.bare_bones.name": "Nether und End X Bare Bones",
+  "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether und End Leucht-Erz X Bare Bones",
 
   "itemgroup.netherandend": "Nether und End"
 }

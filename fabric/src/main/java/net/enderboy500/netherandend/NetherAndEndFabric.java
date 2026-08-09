@@ -3,14 +3,20 @@ package net.enderboy500.netherandend;
 import net.enderboy500.netherandend.compat.NEFDRFCompat;
 import net.enderboy500.netherandend.content.*;
 import net.enderboy500.netherandend.services.Services;
-import net.enderboy500.netherandend.util.ShulkerPearlDispenseBehavior;
+import net.enderboy500.netherandend.util.dispenser.ShulkerPearlDispenseBehavior;
+import net.enderboy500.netherandend.util.dispenser.WitheredBoneMealDispenseBehavior;
 import net.enderboy500.netherandend.world.FabricBiomeModifications;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.stats.StatFormatter;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -22,6 +28,8 @@ import net.minecraft.world.level.gamerules.GameRules;
 
 public class NetherAndEndFabric implements ModInitializer {
     public static final GameRule<Boolean> DISABLE_ELYTRA = GameRules.registerBoolean("disable_elytras", GameRuleCategory.PLAYER, false);
+
+    public static final Identifier EAT_WARPED_CAKE_SLICE = makeCustomStat("eat_warped_cake_slice", StatFormatter.DEFAULT);
 
     @Override
     public void onInitialize() {
@@ -48,9 +56,14 @@ public class NetherAndEndFabric implements ModInitializer {
                 Component.translatable("resourcePack.netherandend.glowing_ore_borders.name"), PackActivationType.NORMAL));
         FabricLoader.getInstance().getModContainer(Constants.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Constants.id("alternate_cracked_bedrock"), container,
                 Component.translatable("resourcePack.netherandend.alternate_cracked_bedrock.name"), PackActivationType.NORMAL));
+        FabricLoader.getInstance().getModContainer(Constants.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Constants.id("bare_bones"), container,
+                Component.translatable("resourcePack.netherandend.bare_bones.name"), PackActivationType.NORMAL));
+        FabricLoader.getInstance().getModContainer(Constants.MOD_ID).ifPresent(container -> ResourceLoader.registerBuiltinPack(Constants.id("bare_bones_glowing_ores"), container,
+                Component.translatable("resourcePack.netherandend.bare_bones_glowing_ores.name"), PackActivationType.NORMAL));
 
         DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE.get());
         DispenserBlock.registerBehavior(NetherAndEndItems.SHULKER_PEARL.get(), new ShulkerPearlDispenseBehavior(NetherAndEndItems.SHULKER_PEARL.get()));
+        DispenserBlock.registerBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get(), new WitheredBoneMealDispenseBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get()));
 
         FabricPotionBrewingBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.HARDENED_SHULKER_PEARL.get()), FabricPotions.AVERSION_POTION);
@@ -81,5 +94,12 @@ public class NetherAndEndFabric implements ModInitializer {
         });
 
         Constants.LOG.info("Finished Initializing Nether & End");
+    }
+
+    private static Identifier makeCustomStat(String id, StatFormatter formatter) {
+        Identifier location = Constants.id(id);
+        Registry.register(BuiltInRegistries.CUSTOM_STAT, id, location);
+        Stats.CUSTOM.get(location, formatter);
+        return location;
     }
 }
