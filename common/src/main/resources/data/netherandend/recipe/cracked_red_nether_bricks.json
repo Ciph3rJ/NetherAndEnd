@@ -1,6 +1,5 @@
 {
   "type": "minecraft:smelting",
-  "category": "block",
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": "minecraft:red_nether_bricks",

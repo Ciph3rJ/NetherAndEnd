@@ -53,6 +53,8 @@ public class NeoForgeEvents {
         event.addPackFinders(Constants.id("resourcepacks/ore_borders"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.ore_borders.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
         event.addPackFinders(Constants.id("resourcepacks/glowing_ore_borders"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.glowing_ore_borders.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
         event.addPackFinders(Constants.id("resourcepacks/alternate_cracked_bedrock"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.alternate_cracked_bedrock.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
+        event.addPackFinders(Constants.id("resourcepacks/bare_bones"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.bare_bones.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
+        event.addPackFinders(Constants.id("resourcepacks/bare_bones_glowing_ores"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.bare_bones_glowing_ores.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
     }
 
     public static void onBlockEntityTypeAddBlocks(BlockEntityTypeAddBlocksEvent event) {

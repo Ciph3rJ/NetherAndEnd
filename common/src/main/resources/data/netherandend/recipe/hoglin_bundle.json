@@ -1,10 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    "netherandend:hoglin_skin",
-    "minecraft:string"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "L"
   ],
+  "key": {
+    "#": "minecraft:string",
+    "L": "netherandend:hoglin_skin"
+  },
   "result": {
     "count": 1,
     "id": "netherandend:hoglin_bundle"

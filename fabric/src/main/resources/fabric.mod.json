@@ -8,6 +8,10 @@
         "Enderboy500",
         "Ciph3rJ"
     ],
+    "contact": {
+        "homepage": "https://modrinth.com/mod/netherandend",
+        "issues": "https://github.com/EnderBoy500/Issues/issues"
+    },
     "license": "${license}",
     "icon": "icon.png",
     "environment": "*",

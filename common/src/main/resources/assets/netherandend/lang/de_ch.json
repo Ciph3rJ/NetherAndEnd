@@ -175,6 +175,8 @@
 
   "gamerule.minecraft.disable_elytras": "Deaktiviere Elytre",
 
+  "stat.netherandend.eat_warped_cake_slice": "Wirrchuechestück Gegessen",
+
   "tooltip.netherandend.explanation.instructions": "§6Hald §e[Shift]§6 für meh Informatione.",
   "tooltip.netherandend.explanation.shulker_falchion": "Nach dem Angriff auf eine Mob, drucksch mit dr §eRight-click§7, dass en Shulker Projektil abgfohre chunnt, wo sich dra feschtkrallt.",
 
@@ -182,6 +184,8 @@
   "resourcePack.netherandend.ore_borders.name": "Nether und End Erz Grenzen",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether und End Lücht-Erz X Erz Grenzen",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether und End X Vanilla Tweaks Alternative Grundgstei",
+  "resourcePack.netherandend.bare_bones.name": "Nether und End X Bare Bones",
+  "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether und End Lücht-Erz X Bare Bones",
 
   "itemgroup.netherandend": "Nether und End"
 }
