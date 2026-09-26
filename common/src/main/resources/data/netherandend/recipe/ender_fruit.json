@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "#": "minecraft:chorus_fruit",
     "E": "minecraft:ender_pearl"
@@ -11,7 +10,6 @@
     " # "
   ],
   "result": {
-    "count": 1,
     "id": "netherandend:ender_fruit"
   }
 }

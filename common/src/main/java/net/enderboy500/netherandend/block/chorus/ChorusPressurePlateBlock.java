@@ -9,6 +9,6 @@ import net.minecraft.world.level.material.PushReaction;
 public class ChorusPressurePlateBlock extends PressurePlateBlock {
     public ChorusPressurePlateBlock(Properties properties) {
         super(NetherAndEndBlockSetTypes.CHORUS, properties.mapColor(NetherAndEndBlocks.CHORUS_BLOCK.block().get().defaultMapColor())
-                .forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollision().strength(0.5F).pushReaction(PushReaction.DESTROY));
+                .forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).noCollision().strength(0.5F).pushReaction(PushReaction.POPPED));
     }
 }

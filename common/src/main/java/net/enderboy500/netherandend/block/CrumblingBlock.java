@@ -14,15 +14,12 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Fallable;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public abstract class CrumblingBlock extends Block implements Fallable {
     public CrumblingBlock(Properties settings) {
         super(settings);
     }
-    @Override
-    protected abstract MapCodec<? extends CrumblingBlock> codec();
 
     @Override
     protected void onPlace(BlockState state, Level world, BlockPos pos, BlockState oldState, boolean notify) {

@@ -3,9 +3,6 @@ package net.enderboy500.netherandend.block;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import java.util.List;
-import java.util.Map;
-
 import net.enderboy500.netherandend.content.NeoForgeBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -24,7 +21,10 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.AbstractCandleBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -35,17 +35,15 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.List;
+import java.util.Map;
+
 public class WarpedCandleCakeBlock extends AbstractCandleBlock {
-    public static final MapCodec<WarpedCandleCakeBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("candle").forGetter((block) -> block.candle), propertiesCodec()).apply(instance, WarpedCandleCakeBlock::new));
     public static final BooleanProperty LIT;
     private static final VoxelShape SHAPE;
     private static final Map<CandleBlock, WarpedCandleCakeBlock> CANDLES_TO_CANDLE_CAKES;
     private static final Iterable<Vec3> PARTICLE_OFFSETS;
     private final CandleBlock candle;
-
-    public MapCodec<WarpedCandleCakeBlock> codec() {
-        return CODEC;
-    }
 
     public WarpedCandleCakeBlock(Block candle, Properties settings) {
         super(settings);

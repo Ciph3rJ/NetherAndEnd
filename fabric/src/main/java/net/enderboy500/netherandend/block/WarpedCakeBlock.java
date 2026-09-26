@@ -1,6 +1,5 @@
 package net.enderboy500.netherandend.block;
 
-import com.mojang.serialization.MapCodec;
 import net.enderboy500.netherandend.NetherAndEndFabric;
 import net.enderboy500.netherandend.compat.NEFDRFCompat;
 import net.enderboy500.netherandend.content.FabricBlocks;
@@ -20,7 +19,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.*;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -35,15 +36,10 @@ import vectorwing.farmersdelight.common.tag.ModTags;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 
 public class WarpedCakeBlock extends Block {
-    public static final MapCodec<WarpedCakeBlock> CODEC = simpleCodec(WarpedCakeBlock::new);
     public static final int MAX_BITES = 6;
     public static final IntegerProperty BITES;
     public static final int FULL_CAKE_SIGNAL;
     private static final VoxelShape[] SHAPES;
-
-    public MapCodec<WarpedCakeBlock> codec() {
-        return CODEC;
-    }
 
     public WarpedCakeBlock(Properties properties) {
         super(properties);

@@ -1,13 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "minecraft:crimson_fungus",
     "minecraft:sugar",
     "#minecraft:eggs"
   ],
   "result": {
-    "count": 1,
     "id": "netherandend:crimson_pie"
   }
 }

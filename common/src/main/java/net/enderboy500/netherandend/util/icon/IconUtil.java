@@ -2,16 +2,13 @@ package net.enderboy500.netherandend.util.icon;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import net.enderboy500.netherandend.Constants;
 import net.enderboy500.netherandend.NetherAndEndCommon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.URL;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Objects;
 
 public class IconUtil {
     public static boolean checkEverything(Icon icon)  {
@@ -24,7 +21,8 @@ public class IconUtil {
             int startMonth = icons.get("start").getAsJsonObject().get("month").getAsInt();
             int endDay = icons.get("end").getAsJsonObject().get("day").getAsInt();
             int endMonth = icons.get("end").getAsJsonObject().get("month").getAsInt();
-            Calendar calendar = Calendar.getInstance();boolean b = icons.get("available").getAsBoolean();
+            Calendar calendar = Calendar.getInstance();
+            boolean b = icons.get("available").getAsBoolean();
 
             return (calendar.get(Calendar.MONTH) >= startMonth && calendar.get(Calendar.DATE) >= startDay) && (calendar.get(Calendar.MONTH) <= endMonth && calendar.get(Calendar.DATE) <= endDay) && b;
         } catch (IOException e) {

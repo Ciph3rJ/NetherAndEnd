@@ -1,7 +1,6 @@
 package net.enderboy500.netherandend.projectile;
 
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
-import net.enderboy500.netherandend.projectile.AbstractDragonChargeEntity;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.PowerParticleOption;
 import net.minecraft.network.protocol.Packet;

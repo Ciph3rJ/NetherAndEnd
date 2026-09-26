@@ -1,6 +1,5 @@
 package net.enderboy500.netherandend.content;
 
-import net.enderboy500.netherandend.item.NetherAndEndToolMaterials;
 import net.enderboy500.netherandend.item.ShulkerFalchionItem;
 import net.enderboy500.netherandend.item.WitheredBoneMealItem;
 import net.enderboy500.netherandend.projectile.DragonChargeItem;

@@ -140,8 +140,8 @@ public class WitheredBoneMealItem extends Item {
         return handleWithVanillaBehavior(level, stack, pos, block, state, 0);
     }
     private static boolean handleWithVanillaBehavior(final Level level, final ItemStack stack, final BlockPos pos, final BonemealableBlock block, final BlockState state, final double particleYOffset) {
-        if (!block.isValidBonemealTarget(level, pos, state)) return false;
-        if (level instanceof ServerLevel serverLevel) block.performBonemeal(serverLevel, random.get(), pos, state);
+        if (!block.isValidBonemealTarget(level, pos, state, BonemealSource.INTERACTION)) return false;
+        if (level instanceof ServerLevel serverLevel) block.performBonemeal(serverLevel, random.get(), pos, state, BonemealSource.INTERACTION);
 
         onSuccess(level, stack, pos, particleYOffset);
         return true;

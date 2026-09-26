@@ -1,16 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "catrgory": "building_blocks",
-  "pattern": [
-    "###",
-    "###",
-    "###"
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart",
+    "netherandend:warped_wart"
   ],
-  "key": {
-    "#": "netherandend:warped_wart"
-  },
   "result": {
-    "id": "minecraft:warped_wart_block",
-    "count": 1
+    "id": "minecraft:warped_wart_block"
   }
 }

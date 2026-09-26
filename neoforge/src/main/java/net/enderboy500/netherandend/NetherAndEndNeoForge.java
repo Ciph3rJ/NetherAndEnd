@@ -35,8 +35,6 @@ public class NetherAndEndNeoForge {
         Constants.LOG.info("Finished Initializing Nether & End");
     }
 
-
-
     private void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE.get());

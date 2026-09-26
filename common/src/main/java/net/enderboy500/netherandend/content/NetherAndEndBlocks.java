@@ -1,27 +1,25 @@
 package net.enderboy500.netherandend.content;
 
-import net.enderboy500.netherandend.block.*;
+import net.enderboy500.netherandend.block.BrickFenceGateBlock;
+import net.enderboy500.netherandend.block.CrumblingBasaltBlock;
+import net.enderboy500.netherandend.block.NetherAndEndStairBlock;
+import net.enderboy500.netherandend.block.WarpedWartBlock;
 import net.enderboy500.netherandend.block.chorus.ChorusButtonBlock;
 import net.enderboy500.netherandend.block.chorus.ChorusDoorBlock;
 import net.enderboy500.netherandend.block.chorus.ChorusPressurePlateBlock;
 import net.enderboy500.netherandend.block.chorus.ChorusTrapDoorBlock;
 import net.enderboy500.netherandend.services.Services;
 import net.enderboy500.netherandend.services.util.BlockWithItemRegistryHandle;
-import net.enderboy500.netherandend.util.type.NetherAndEndBlockSetTypes;
 import net.enderboy500.netherandend.util.type.NetherAndEndWoodTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
-
-import java.util.function.ToIntFunction;
 
 public class NetherAndEndBlocks {
     public static final BlockWithItemRegistryHandle<Block> CHORUS_BLOCK = Services.REGISTRY.registerBlockWithItem("chorus_block", properties -> new Block(properties.instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.NETHER_WOOD).mapColor(MapColor.WARPED_HYPHAE)));
@@ -53,7 +51,7 @@ public class NetherAndEndBlocks {
     public static final BlockWithItemRegistryHandle<Block> CYAN_NETHER_BRICK_FENCE = Services.REGISTRY.registerBlockWithItem("cyan_nether_brick_fence", properties -> new FenceBlock(properties.mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(SoundType.NETHER_BRICKS)));
     public static final BlockWithItemRegistryHandle<Block> CYAN_NETHER_BRICK_FENCE_GATE = Services.REGISTRY.registerBlockWithItem("cyan_nether_brick_fence_gate", properties -> new BrickFenceGateBlock(properties.mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(SoundType.NETHER_BRICKS)));
     public static final BlockWithItemRegistryHandle<Block> CHISELED_CYAN_NETHER_BRICKS = Services.REGISTRY.registerBlockWithItem("chiseled_cyan_nether_bricks", properties -> new Block(properties.mapColor(MapColor.TERRACOTTA_GREEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(SoundType.NETHER_BRICKS)));
-    public static final BlockWithItemRegistryHandle<Block> WARPED_WART = Services.REGISTRY.registerBlockWithItem("warped_wart", properties -> new WarpedWartBlock(properties.mapColor(MapColor.TERRACOTTA_GREEN).noCollision().randomTicks().sound(SoundType.NETHER_WART).pushReaction(PushReaction.DESTROY)));
+    public static final BlockWithItemRegistryHandle<Block> WARPED_WART = Services.REGISTRY.registerBlockWithItem("warped_wart", properties -> new WarpedWartBlock(properties.mapColor(MapColor.TERRACOTTA_GREEN).noCollision().randomTicks().sound(SoundType.NETHER_WART).pushReaction(PushReaction.POPPED)));
 
     public static final BlockWithItemRegistryHandle<Block> NETHER_COAL_ORE = Services.REGISTRY.registerBlockWithItem("nether_coal_ore",
             properties -> new DropExperienceBlock(UniformInt.of(0, 2), properties.mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F).sound(SoundType.NETHER_GOLD_ORE)));

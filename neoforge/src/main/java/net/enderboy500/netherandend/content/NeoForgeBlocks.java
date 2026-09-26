@@ -14,7 +14,7 @@ import net.minecraft.world.level.material.PushReaction;
 import java.util.function.ToIntFunction;
 
 public class NeoForgeBlocks {
-    public static final BlockWithItemRegistryHandle<Block> WARPED_CAKE = Services.REGISTRY.registerBlockWithItem("warped_cake", properties -> new WarpedCakeBlock(properties.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
+    public static final BlockWithItemRegistryHandle<Block> WARPED_CAKE = Services.REGISTRY.registerBlockWithItem("warped_cake", properties -> new WarpedCakeBlock(properties.forceSolidOn().strength(0.5F).sound(SoundType.WOOL).pushReaction(PushReaction.POPPED)));
 
     public static final BlockWithItemRegistryHandle<Block> WARPED_CANDLE_CAKE = Services.REGISTRY.registerBlockWithItem("warped_candle_cake", properties -> new WarpedCandleCakeBlock(Blocks.CANDLE, properties.lightLevel(litBlockEmission(3))));
     public static final BlockWithItemRegistryHandle<Block> WARPED_WHITE_CANDLE_CAKE = Services.REGISTRY.registerBlockWithItem("white_warped_candle_cake", properties -> new WarpedCandleCakeBlock(Blocks.DYED_CANDLE.white(), properties.lightLevel(litBlockEmission(3))));

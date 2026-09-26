@@ -1,7 +1,6 @@
 package net.enderboy500.netherandend.content;
 
 import net.enderboy500.netherandend.Constants;
-import net.enderboy500.netherandend.services.Services;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

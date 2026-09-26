@@ -5,8 +5,7 @@
     "name": "${mod_name}",
     "description": "${description}",
     "authors": [
-        "Enderboy500",
-        "Ciph3rJ"
+        "${mod_author}"
     ],
     "contact": {
         "homepage": "https://modrinth.com/mod/netherandend",
@@ -17,10 +16,13 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "net.enderboy500.netherandend.NetherAndEndFabric"
+            "net.enderboy500.netherandend.NetherAndEndFabric"
         ],
         "client": [
             "net.enderboy500.netherandend.client.NetherAndEndFabricClient"
+        ],
+        "fabric-datagen": [
+            "net.enderboy500.netherandend.data.NetherAndEndFabricDataGenerator"
         ]
     },
     "mixins": [
@@ -32,6 +34,9 @@
         "fabric-api": "*",
         "minecraft": "~${minecraft_version}",
         "java": ">=${java_version}"
+    },
+    "suggests": {
+        "another-mod": "*"
     }
 }
   

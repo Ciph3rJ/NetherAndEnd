@@ -1,10 +1,11 @@
 package net.enderboy500.netherandend.effect;
 
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.effect.*;
+import net.minecraft.world.effect.InstantaneousMobEffect;
+import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 
-import java.util.Collection;
 import java.util.List;
 
 public class InstantCuringEffect extends InstantaneousMobEffect {

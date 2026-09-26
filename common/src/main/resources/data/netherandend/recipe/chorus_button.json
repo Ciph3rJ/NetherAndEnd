@@ -1,11 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "building",
-  "ingredients": [
-    "netherandend:chorus_planks"
+  "key": {
+    "#": "netherandend:chorus_planks"
+  },
+  "pattern": [
+    "#"
   ],
   "result": {
-    "count": 1,
     "id": "netherandend:chorus_button"
   }
 }

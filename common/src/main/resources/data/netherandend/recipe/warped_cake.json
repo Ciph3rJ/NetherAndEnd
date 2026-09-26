@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "building",
   "key": {
     "E": "#minecraft:eggs",
     "F": "minecraft:warped_fungus",
@@ -13,7 +13,6 @@
     "FFF"
   ],
   "result": {
-    "count": 1,
     "id": "netherandend:warped_cake"
   }
 }

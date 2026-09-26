@@ -1,8 +1,6 @@
 package net.enderboy500.netherandend.block;
 
 import com.google.common.collect.Maps;
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -38,7 +36,6 @@ import java.util.Map;
 import java.util.function.BiConsumer;
 
 public class BrickFenceGateBlock extends HorizontalDirectionalBlock {
-    public static final MapCodec<BrickFenceGateBlock> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(propertiesCodec()).apply(instance, BrickFenceGateBlock::new));
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
     public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
     public static final BooleanProperty IN_WALL = BlockStateProperties.IN_WALL;
@@ -52,11 +49,6 @@ public class BrickFenceGateBlock extends HorizontalDirectionalBlock {
     public BrickFenceGateBlock(Properties properties) {
         super(properties.sound(SoundType.NETHER_BRICKS));
         this.registerDefaultState((((this.stateDefinition.any()).setValue(OPEN, false)).setValue(POWERED, false)).setValue(IN_WALL, false));
-    }
-
-    @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return CODEC;
     }
 
     @Override

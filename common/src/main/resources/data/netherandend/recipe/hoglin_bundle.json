@@ -1,15 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#",
-    "L"
-  ],
   "key": {
     "#": "minecraft:string",
-    "L": "netherandend:hoglin_skin"
+    "S": "netherandend:hoglin_skin"
   },
+  "pattern": [
+    "#",
+    "S"
+  ],
   "result": {
-    "count": 1,
     "id": "netherandend:hoglin_bundle"
   }
 }

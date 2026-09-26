@@ -17,30 +17,31 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GameRenderer.class)
 public abstract class GameRendererMixin implements TrackedWaypoint.Projector, AutoCloseable {
-    @Shadow
-    protected abstract void setPostEffect(Identifier id);
-
-    @Shadow
-    public abstract void clearPostEffect();
 
     @Mutable
     @Final
     @Shadow
     private final Minecraft minecraft;
 
+    @Shadow
+    protected abstract void setSpectatedEntityPostEffect(Identifier id);
+
+    @Shadow
+    public abstract void clearSpectatedEntityPostEffect();
+
     protected GameRendererMixin(Minecraft client) {
         this.minecraft = client;
     }
 
     @Inject(method = "renderLevel", at = @At("TAIL"))
-    private void nae$renderLevel(DeltaTracker deltaTracker, CallbackInfo ci) {
+    private void nae$renderLevel(CallbackInfo ci) {
         if (this.minecraft != null) {
             LocalPlayer localPlayer = this.minecraft.player;
             if (localPlayer != null) {
                 if (localPlayer.hasEffect(FabricMobEffects.INVERTED_VISION)) {
-                    this.setPostEffect(Identifier.withDefaultNamespace("invert"));
+                    this.setSpectatedEntityPostEffect(Identifier.withDefaultNamespace("invert"));
                 } else {
-                    this.clearPostEffect();
+                    this.clearSpectatedEntityPostEffect();
                 }
             }
         }

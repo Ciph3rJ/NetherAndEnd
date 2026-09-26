@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:ore",
+  "discard_chance_on_air_exposure": 0.0,
+  "size": 15,
+  "targets": [
+    {
+      "state": "netherandend:cracked_bedrock",
+      "target": {
+        "block": "minecraft:bedrock",
+        "predicate_type": "minecraft:block_match"
+      }
+    }
+  ]
+}

@@ -5,6 +5,6 @@
   "experience": 0.1,
   "ingredient": "netherandend:nether_redstone_ore",
   "result": {
-    "id": "minecraft:redstone_dust"
+    "id": "minecraft:redstone"
   }
 }

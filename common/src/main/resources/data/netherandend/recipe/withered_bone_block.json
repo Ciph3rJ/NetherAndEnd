@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal",
+    "netherandend:withered_bone_meal"
+  ],
+  "result": {
+    "id": "netherandend:withered_bone_block"
+  }
+}

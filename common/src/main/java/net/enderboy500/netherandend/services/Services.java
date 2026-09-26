@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.services;
 
+import net.enderboy500.netherandend.Constants;
 import net.enderboy500.netherandend.services.type.IPlatformHelper;
 import net.enderboy500.netherandend.services.type.RegistryHelperService;
 
@@ -10,9 +11,11 @@ public class Services {
     public static final RegistryHelperService REGISTRY = load(RegistryHelperService.class);
 
     public static <T> T load(Class<T> clazz) {
+
         final T loadedService = ServiceLoader.load(clazz, Services.class.getClassLoader())
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
+        Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }

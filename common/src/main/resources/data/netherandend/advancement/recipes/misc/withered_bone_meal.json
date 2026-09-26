@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "netherandend:withered_bone_meal"
+        "recipes": "netherandend:withered_bone_meal"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -11,7 +11,7 @@
       "conditions": {
         "items": [
           {
-            "items": "netherandend:withered_bone"
+            "items": "netherandend:withered_bone_block"
           }
         ]
       },

@@ -4,6 +4,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.InstantaneousMobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -40,7 +41,7 @@ public class InstantWarpingEffect extends InstantaneousMobEffect {
                 }
 
                 Vec3 vec3d = entity.position();
-                if (entity.randomTeleport(d, e, f, true)) {
+                if (entity.randomTeleport(d, e, f, true, BlockTags.DANGEROUS_FOR_TELEPORTATION)) {
                     world.gameEvent(GameEvent.TELEPORT, vec3d, GameEvent.Context.of(entity));
                     SoundSource soundCategory;
                     SoundEvent soundEvent;

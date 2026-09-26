@@ -1,5 +1,6 @@
 {
   "values": [
-    "netherandend:ender_pearl_cluster"
+    "#netherandend:nether_ores",
+    "#netherandend:end_ores"
   ]
 }

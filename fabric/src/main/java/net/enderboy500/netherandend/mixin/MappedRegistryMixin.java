@@ -1,5 +1,6 @@
 package net.enderboy500.netherandend.mixin;
 
+
 import net.enderboy500.netherandend.Constants;
 import net.minecraft.core.MappedRegistry;
 import net.minecraft.core.Registry;

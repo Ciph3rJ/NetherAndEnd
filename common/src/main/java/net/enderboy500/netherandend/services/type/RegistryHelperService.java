@@ -2,11 +2,9 @@ package net.enderboy500.netherandend.services.type;
 
 import net.enderboy500.netherandend.Constants;
 import net.enderboy500.netherandend.services.util.BlockWithItemRegistryHandle;
-import net.enderboy500.netherandend.services.util.HolderRegistryHandle;
 import net.enderboy500.netherandend.services.util.RegistryHandle;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;

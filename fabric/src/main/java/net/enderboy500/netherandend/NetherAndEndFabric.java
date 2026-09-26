@@ -2,12 +2,12 @@ package net.enderboy500.netherandend;
 
 import net.enderboy500.netherandend.compat.NEFDRFCompat;
 import net.enderboy500.netherandend.content.*;
+import net.enderboy500.netherandend.resource.NetherAndEndResourceConditions;
 import net.enderboy500.netherandend.services.Services;
 import net.enderboy500.netherandend.util.dispenser.ShulkerPearlDispenseBehavior;
 import net.enderboy500.netherandend.util.dispenser.WitheredBoneMealDispenseBehavior;
 import net.enderboy500.netherandend.world.FabricBiomeModifications;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -17,10 +17,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.gamerules.GameRule;
 import net.minecraft.world.level.gamerules.GameRuleCategory;
@@ -35,16 +34,18 @@ public class NetherAndEndFabric implements ModInitializer {
     public void onInitialize() {
         Constants.LOG.info("Initializing Nether & End");
 
-        NetherAndEndCommon.init();
         BlockEntityTypes.SHELF.addValidBlock(NetherAndEndBlocks.CHORUS_SHELF.block().get());
+
+        NetherAndEndCommon.init();
+
+        NetherAndEndResourceConditions.load();
+        FabricBiomeModifications.loadBiomeModifications();
 
         FabricBlocks.loadBlocks();
         FabricPotions.loadPotions();
         FabricMobEffects.loadMobEffects();
         FabricCreativeModeTab.loadCreativeModeTab();
         FabricCreativeModeTabModifier.loadCreativeModeTabModifier();
-
-        FabricBiomeModifications.loadBiomeModifications();
 
         if (Services.PLATFORM.isModLoaded("farmersdelight")) NEFDRFCompat.loadNEFDRFCompat();
 
@@ -64,34 +65,6 @@ public class NetherAndEndFabric implements ModInitializer {
         DispenserBlock.registerProjectileBehavior(NetherAndEndItems.DRAGON_CHARGE.get());
         DispenserBlock.registerBehavior(NetherAndEndItems.SHULKER_PEARL.get(), new ShulkerPearlDispenseBehavior(NetherAndEndItems.SHULKER_PEARL.get()));
         DispenserBlock.registerBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get(), new WitheredBoneMealDispenseBehavior(NetherAndEndItems.WITHERED_BONE_MEAL.get()));
-
-        FabricPotionBrewingBuilder.BUILD.register(builder -> {
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.HARDENED_SHULKER_PEARL.get()), FabricPotions.AVERSION_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.NETHER_WART), FabricPotions.MALNOURISHMENT_POTION);
-            builder.registerPotionRecipe(FabricPotions.MALNOURISHMENT_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_MALNOURISHMENT_POTION);
-            builder.registerPotionRecipe(FabricPotions.MALNOURISHMENT_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_MALNOURISHMENT_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndBlocks.WARPED_WART.blockItem().get()), FabricPotions.SICKNESS_POTION);
-            builder.registerPotionRecipe(FabricPotions.SICKNESS_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_SICKNESS_POTION);
-            builder.registerPotionRecipe(FabricPotions.SICKNESS_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_SICKNESS_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.SHULKER_PEARL.get()), FabricPotions.BUOYANT_POTION);
-            builder.registerPotionRecipe(FabricPotions.BUOYANT_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_BUOYANT_POTION);
-            builder.registerPotionRecipe(FabricPotions.BUOYANT_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_BUOYANT_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.WITHER_ROSE), FabricPotions.DECAY_POTION);
-            builder.registerPotionRecipe(FabricPotions.DECAY_POTION, Ingredient.of(Items.REDSTONE), FabricPotions.LONG_DECAY_POTION);
-            builder.registerPotionRecipe(FabricPotions.DECAY_POTION, Ingredient.of(Items.GLOWSTONE_DUST), FabricPotions.STRONG_DECAY_POTION);
-
-            builder.registerPotionRecipe(FabricPotions.SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
-            builder.registerPotionRecipe(FabricPotions.LONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
-            builder.registerPotionRecipe(FabricPotions.STRONG_SICKNESS_POTION, Ingredient.of(Items.FERMENTED_SPIDER_EYE), FabricPotions.INSTANT_CURING_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(NetherAndEndItems.ENDER_FRUIT.get()), FabricPotions.INSTANT_WARPING_POTION);
-
-            builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.ENDER_EYE), FabricPotions.ENDERSIGHT_POTION);
-        });
 
         Constants.LOG.info("Finished Initializing Nether & End");
     }
