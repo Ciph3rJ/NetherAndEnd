@@ -1,0 +1,32 @@
+{
+  "parent": "netherandend:entered_nether",
+  "criteria": {
+    "got_raw_strider_meat": {
+      "conditions": {
+        "items": [
+          {
+            "items": "netherandend:raw_strider_meat"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancement.netherandend.why_is_this_so_complicated.desc"
+    },
+    "icon": {
+      "id": "netherandend:raw_strider_meat"
+    },
+    "title": {
+      "translate": "advancement.netherandend.why_is_this_so_complicated.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_raw_strider_meat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
