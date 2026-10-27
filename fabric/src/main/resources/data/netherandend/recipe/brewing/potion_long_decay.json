@@ -1,4 +1,9 @@
 {
+  "fabric:load_conditions": [
+    {
+      "condition": "netherandend:brewing_recipe"
+    }
+  ],
   "type": "minecraft:brewing",
   "input": {
     "item": "minecraft:potion",

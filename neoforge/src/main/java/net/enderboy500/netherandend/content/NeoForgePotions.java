@@ -54,6 +54,9 @@ public class NeoForgePotions {
     public static final Holder<Potion> ENDERSIGHT_POTION = POTIONS.register("endersight_potion",
             () -> new Potion("endersight", new MobEffectInstance(NeoForgeMobEffects.INVERTED_VISION, 4800, 0)));
 
+    public static final Holder<Potion> PERDURANS_POTION = POTIONS.register("perdurans_potion", () -> new Potion("perdurans", new MobEffectInstance(NeoForgeMobEffects.PERDURANS, 4 * 60 * 20)));
+    public static final Holder<Potion> STERBEN_POTION = POTIONS.register("sterben_potion",  () -> new Potion("sterben", new MobEffectInstance(NeoForgeMobEffects.STERBEN, 4 * 60 * 20)));
+
     public static void loadPotions(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

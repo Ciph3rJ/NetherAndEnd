@@ -118,6 +118,9 @@ public class NetherAndEndRecipeGenerator extends FabricRecipeProvider {
                 this.shapeless(RecipeCategory.MISC, NetherAndEndItems.CRIMSON_PIE.get()).requires(Items.CRIMSON_FUNGUS).requires(Items.SUGAR).requires(ItemTags.EGGS)
                         .unlockedBy(getHasName(NetherAndEndItems.CRIMSON_PIE.get()), has(Items.CRIMSON_FUNGUS)).save(output);
 
+                this.shapeless(RecipeCategory.MISC, NetherAndEndItems.CRIMSON_STEW.get()).requires(Items.CRIMSON_FUNGUS).requires(Items.NETHER_WART)
+                        .requires(Items.BOWL).unlockedBy(getHasName(NetherAndEndItems.CRIMSON_STEW.get()), has(Items.NETHER_WART)).save(output);
+
                 this.shaped(RecipeCategory.BUILDING_BLOCKS, NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE.block().get(), 3)
                         .define('#', NetherAndEndBlocks.CYAN_NETHER_BRICKS.block().get()).define('/', Items.NETHER_BRICK)
                         .pattern("#/#").pattern("#/#").unlockedBy(getHasName(NetherAndEndBlocks.CYAN_NETHER_BRICK_FENCE.block().get()), has(NetherAndEndBlocks.CYAN_NETHER_BRICKS.block().get()))

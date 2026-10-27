@@ -9,6 +9,7 @@
   "item.netherandend.warped_stew": "Warped Stew",
   "item.netherandend.warped_cake_slice": "Slice of Warped Cake",
   "item.netherandend.crimson_pie": "Crimson Pie",
+  "item.netherandend.crimson_stew": "Crimson Stew",
   "item.netherandend.hoglin_skin": "Hoglin Skin",
   "item.netherandend.hoglin_bundle": "Hoglin Bundle",
   "item.netherandend.raw_strider_meat": "Raw Strider Meat",
@@ -95,6 +96,16 @@
   "item.minecraft.lingering_potion.effect.endersight": "Lingering Potion of Endersight",
   "item.minecraft.tipped_arrow.effect.endersight": "Arrow of Endersight",
 
+  "item.minecraft.potion.effect.perdurans": "Potion of Perdurans",
+  "item.minecraft.splash_potion.effect.perdurans": "Splash Potion of Perdurans",
+  "item.minecraft.lingering_potion.effect.perdurans": "Lingering Potion of Perdurans",
+  "item.minecraft.tipped_arrow.effect.perdurans": "Arrow of Perdurans",
+
+  "item.minecraft.potion.effect.sterben": "Potion of Sterben",
+  "item.minecraft.splash_potion.effect.sterben": "Splash Potion of Sterben",
+  "item.minecraft.lingering_potion.effect.sterben": "Lingering Potion of Sterben",
+  "item.minecraft.tipped_arrow.effect.sterben": "Arrow of Sterben",
+
 
   "block.netherandend.nether_coal_ore": "Nether Coal Ore",
   "block.netherandend.nether_iron_ore": "Nether Iron Ore",
@@ -145,6 +156,8 @@
   "effect.netherandend.instant_warping": "Instant Warping",
   "effect.netherandend.instant_curing": "Instant Curing",
   "effect.netherandend.inverted_vision": "Inverted Vision",
+  "effect.netherandend.perdurans": "Perdurans",
+  "effect.netherandend.sterben": "Sterben",
 
   "advancement.netherandend.nether_and_end.title": "Nether & End",
   "advancement.netherandend.double_wart.title": "Double Wart",
@@ -181,12 +194,21 @@
   "tooltip.netherandend.explanation.instructions": "§6Hold §e[Shift]§6 for more information.",
   "tooltip.netherandend.explanation.shulker_falchion": "After attacking a mob, press §eRight-click§7 to launch a shulker bullet that latches onto them.",
 
+  "options.netherandend.customize.title": "Nether and End Customization",
+  "options.netherandend.customize": "N&E Customization",
+  "options.netherandend.customize.narration": "Nether and End Customization",
+  "options.netherandend.icon_designs": "Icon Designs",
+  "option.netherandend.icon_designs.none": "None",
+  "option.netherandend.icon_designs.warped": "Warped",
+  "option.netherandend.icon_designs.crimson": "Crimson",
+
   "resourcePack.netherandend.glowing_ores.name": "Nether & End Glowing Ores",
   "resourcePack.netherandend.ore_borders.name": "Nether & End Ore Borders",
   "resourcePack.netherandend.glowing_ore_borders.name": "Nether & End Glowing Ores X Ore Borders",
   "resourcePack.netherandend.alternate_cracked_bedrock.name": "Nether & End X Vanilla Tweaks Alternate Bedrock",
   "resourcePack.netherandend.bare_bones.name": "Nether & End X Bare Bones",
   "resourcePack.netherandend.bare_bones_glowing_ores.name": "Nether & End Glowing Ores X Bare Bones",
+  "resourcePack.netherandend.legacy_chorus_blocks.name": "Nether & End Legacy Chorus Blocks",
 
   "itemgroup.netherandend": "Nether & End"
 }

@@ -3,17 +3,20 @@ package net.enderboy500.netherandend;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
+import net.enderboy500.netherandend.options.NetherAndEndOptions;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
-import net.minecraft.world.level.block.entity.BlockEntityTypes;
 
 public class NetherAndEndCommon {
-    public static void init() {
-        // TODO: Fix Icons not working
+    public static NetherAndEndOptions options;
 
-        // DONE: Make Crumbling Basalt act like Magma Blocks in Sulfur Cubes
-        // FIXED: Farmer's Delight Compatibility
-        // FIXED: Burnt Strider Meat is now obtainable and it's advancement now works
-        // FIXED: Hoglins didn't drop porkchop
+    public static void init() {
+
+        // TODO: Fix Icons not working
+        // TODO: Do lang for all languages
+
+        // DONE: Added Sterben and Perdurans effects
+        // DONE: Changed textures of: all strider meats, all chorus blocks except for chorus block, warped stew, and hardened shulker pearl
+        // DONE: Fixed Inconsistencies in shulker pearl
 
         NetherAndEndBlocks.loadBlocks();
         NetherAndEndItems.loadItems();

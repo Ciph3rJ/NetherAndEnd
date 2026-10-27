@@ -25,6 +25,7 @@ public class NeoForgeEvents {
         event.addPackFinders(Constants.id("resourcepacks/alternate_cracked_bedrock"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.alternate_cracked_bedrock.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
         event.addPackFinders(Constants.id("resourcepacks/bare_bones"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.bare_bones.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
         event.addPackFinders(Constants.id("resourcepacks/bare_bones_glowing_ores"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.bare_bones_glowing_ores.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
+        event.addPackFinders(Constants.id("resourcepacks/legacy_chorus_blocks"), PackType.CLIENT_RESOURCES, Component.translatable("resourcePack.netherandend.legacy_chorus_blocks.name"), PackSource.BUILT_IN, false, Pack.Position.TOP);
     }
 
     public static void onBlockEntityTypeAddBlocks(BlockEntityTypeAddBlocksEvent event) {

@@ -14,12 +14,13 @@ public class NetherAndEndFabricDataGenerator implements DataGeneratorEntrypoint 
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        pack.addProvider(NetherAndEndRecipeGenerator::new);
+//        pack.addProvider(NetherAndEndRecipeGenerator::new);
 //        pack.addProvider(NetherAndEndAdvancementProvider::new);
-        pack.addProvider(NetherAndEndDynamicRegistryProvider::new);
+/*        pack.addProvider(NetherAndEndDynamicRegistryProvider::new);
         pack.addProvider(NetherAndEndBlockLootTableProvider::new);
         pack.addProvider(NetherAndEndBlockTagProvider::new);
-        pack.addProvider(NetherAndEndItemTagProvider::new);
+        pack.addProvider(NetherAndEndItemTagProvider::new);*/
+//        pack.addProvider(NetherAndEndModelProvider::new);
     }
 
     @Override

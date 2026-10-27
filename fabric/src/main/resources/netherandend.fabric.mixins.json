@@ -4,7 +4,11 @@
   "package": "net.enderboy500.netherandend.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
-    "ItemMixin"
+    "AbstractPiglinMixin",
+    "ItemMixin",
+    "HoglinMixin",
+    "PlayerMixinFabric",
+    "client.SkinCustomizationScreenMixin"
   ],
   "client": [
     "GameRendererMixin"

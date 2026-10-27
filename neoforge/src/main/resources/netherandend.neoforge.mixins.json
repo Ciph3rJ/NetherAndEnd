@@ -5,7 +5,11 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [],
   "client": [
-    "GameRendererMixin"
+    "AbstractPiglinMixin",
+    "GameRendererMixin",
+    "HoglinMixin",
+    "PlayerMixinNeoForge",
+    "client.SkinCustomizationScreenMixin"
   ],
   "server": [],
   "injectors": {

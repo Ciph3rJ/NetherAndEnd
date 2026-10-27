@@ -47,6 +47,9 @@ public class FabricPotions {
 
     public static final Holder<Potion> ENDERSIGHT_POTION = register("endersight_potion", new Potion("endersight", new MobEffectInstance(FabricMobEffects.INVERTED_VISION, 4800, 0)));
 
+    public static final Holder<Potion> PERDURANS_POTION = register("perdurans_potion", new Potion("perdurans", new MobEffectInstance(FabricMobEffects.PERDURANS, 4 * 60 * 20)));
+    public static final Holder<Potion> STERBEN_POTION = register("sterben_potion", new Potion("sterben", new MobEffectInstance(FabricMobEffects.STERBEN, 4 * 60 * 20)));
+
     private static Holder<Potion> register(String name, Potion potion) {
         return Registry.registerForHolder(BuiltInRegistries.POTION, Identifier.withDefaultNamespace(name), potion);
     }

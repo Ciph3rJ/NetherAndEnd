@@ -23,6 +23,7 @@ public class NetherAndEndItems {
     public static final RegistryHandle<Item> DRAGON_CHARGE = Services.REGISTRY.registerItem("dragon_charge", properties -> new DragonChargeItem(properties.useCooldown(3).rarity(Rarity.UNCOMMON)));
     public static final RegistryHandle<Item> SHULKER_FALCHION = Services.REGISTRY.registerItem("shulker_falchion", ShulkerFalchionItem::new);
 
+    public static final RegistryHandle<Item> CRIMSON_STEW = Services.REGISTRY.registerItem("crimson_stew", properties -> new Item(properties.food(NetherAndEndFoodComponents.WARPED_STEW).stacksTo(1).usingConvertsTo(Items.BOWL)));
     public static final RegistryHandle<Item> WARPED_STEW = Services.REGISTRY.registerItem("warped_stew", properties -> new Item(properties.food(NetherAndEndFoodComponents.WARPED_STEW).stacksTo(1).usingConvertsTo(Items.BOWL)));
     public static final RegistryHandle<Item> CRIMSON_PIE = Services.REGISTRY.registerItem("crimson_pie", properties -> new Item(properties.food(NetherAndEndFoodComponents.CRIMSON_PIE)));
     public static final RegistryHandle<Item> HOGLIN_SKIN = Services.REGISTRY.registerItem("hoglin_skin", properties -> new Item(properties.fireResistant()));

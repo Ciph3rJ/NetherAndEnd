@@ -14,6 +14,7 @@
     "license": "${license}",
     "icon": "icon.png",
     "environment": "*",
+    "accessWidener": "netherandend.accesswidener",
     "entrypoints": {
         "main": [
             "net.enderboy500.netherandend.NetherAndEndFabric"
@@ -23,6 +24,9 @@
         ],
         "fabric-datagen": [
             "net.enderboy500.netherandend.data.NetherAndEndFabricDataGenerator"
+        ],
+        "modmenu": [
+            "net.enderboy500.netherandend.compat.ModMenuIntegration"
         ]
     },
     "mixins": [
@@ -34,9 +38,6 @@
         "fabric-api": "*",
         "minecraft": "~${minecraft_version}",
         "java": ">=${java_version}"
-    },
-    "suggests": {
-        "another-mod": "*"
     }
 }
   
