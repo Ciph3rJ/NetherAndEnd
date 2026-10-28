@@ -10,7 +10,9 @@ public class NetherAndEndConfig {
     public static final NetherAndEndConfig CONFIG = pair.getLeft();
     public static final ModConfigSpec SPEC = pair.getRight();
 
+    public static ModConfigSpec.ConfigValue<IconDesigns> iconDesign;
+
     public NetherAndEndConfig(ModConfigSpec.Builder builder) {
-        builder.defineEnum("iconDesign", IconDesigns.NONE);
+        iconDesign = builder.translation("options.netherandend.icon_designs").defineEnum("iconDesign", IconDesigns.None);
     }
 }

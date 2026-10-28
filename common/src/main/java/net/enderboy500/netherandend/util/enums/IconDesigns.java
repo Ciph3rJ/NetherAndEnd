@@ -8,9 +8,9 @@ import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.Nullable;
 
 public enum IconDesigns implements StringRepresentable {
-    NONE("none", Constants.id("none"), null),
-    WARPED("warped", Constants.id("warped"), '\uE001'),
-    CRIMSON("crimson", Constants.id("crimson"), '\uE002')
+    None("none", Constants.id("none"), null),
+    Warped("warped", Constants.id("warped"), '\uE001'),
+    Crimson("crimson", Constants.id("crimson"), '\uE002')
     ;
 
     public static final Codec<IconDesigns> CODEC = StringRepresentable.fromEnum(IconDesigns::values);

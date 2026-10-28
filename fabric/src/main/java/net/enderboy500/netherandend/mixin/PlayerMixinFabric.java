@@ -1,6 +1,7 @@
 package net.enderboy500.netherandend.mixin;
 
 import net.enderboy500.netherandend.NetherAndEndCommon;
+import net.enderboy500.netherandend.NetherAndEndFabric;
 import net.enderboy500.netherandend.content.FabricMobEffects;
 import net.enderboy500.netherandend.util.enums.IconDesigns;
 import net.minecraft.core.BlockPos;
@@ -34,9 +35,9 @@ public abstract class PlayerMixinFabric extends Avatar {
 
     @Inject(method = "getDisplayName", at = @At("HEAD"),cancellable = true)
     public void name(CallbackInfoReturnable<Component> cir) {
-        if (NetherAndEndCommon.options.getIconDesign().get() != IconDesigns.NONE) {
+        if (NetherAndEndFabric.options.getIconDesign().get() != IconDesigns.None) {
             MutableComponent mutableText = PlayerTeam.formatNameForTeam(this.getTeam(), this.getName());
-            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + NetherAndEndCommon.options.getIconDesign().get().getCharacter())));
+            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + NetherAndEndFabric.options.getIconDesign().get().getCharacter())));
         }
     }
 

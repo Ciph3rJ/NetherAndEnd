@@ -3,12 +3,9 @@ package net.enderboy500.netherandend;
 import net.enderboy500.netherandend.content.NetherAndEndBlocks;
 import net.enderboy500.netherandend.content.NetherAndEndEntities;
 import net.enderboy500.netherandend.content.NetherAndEndItems;
-import net.enderboy500.netherandend.options.NetherAndEndOptions;
 import net.enderboy500.netherandend.util.NetherAndEndUtils;
 
 public class NetherAndEndCommon {
-    public static NetherAndEndOptions options;
-
     public static void init() {
 
         // TODO: Fix Icons not working

@@ -37,7 +37,7 @@ public class NetherAndEndOptions {
     public NetherAndEndOptions(File workingDirectory) {
         this.optionsFile = new File(workingDirectory, "config/netherandend.txt");
 
-        this.iconDesign = new OptionInstance<>("options.netherandend.icon_designs", (value) -> Tooltip.create(value.getTooltip()), (var0, value) -> value.getTranslatable(), new OptionInstance.Enum<>(Arrays.asList(IconDesigns.values()), IconDesigns.CODEC), IconDesigns.CODEC, IconDesigns.NONE, (var0) -> {});
+        this.iconDesign = new OptionInstance<>("options.netherandend.icon_designs", (value) -> Tooltip.create(value.getTooltip()), (var0, value) -> value.getTranslatable(), new OptionInstance.Enum<>(Arrays.asList(IconDesigns.values()), IconDesigns.CODEC), IconDesigns.CODEC, IconDesigns.None, (var0) -> {});
     }
 
     public OptionInstance<IconDesigns> getIconDesign() {

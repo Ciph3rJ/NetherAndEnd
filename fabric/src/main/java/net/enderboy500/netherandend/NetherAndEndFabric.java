@@ -9,12 +9,10 @@ import net.enderboy500.netherandend.util.dispenser.ShulkerPearlDispenseBehavior;
 import net.enderboy500.netherandend.util.dispenser.WitheredBoneMealDispenseBehavior;
 import net.enderboy500.netherandend.world.FabricBiomeModifications;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Options;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -24,14 +22,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.stats.StatFormatter;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.gamerules.GameRule;
 import net.minecraft.world.level.gamerules.GameRuleCategory;
 import net.minecraft.world.level.gamerules.GameRules;
 
 public class NetherAndEndFabric implements ModInitializer {
+    public static NetherAndEndOptions options;
     public static final GameRule<Boolean> DISABLE_ELYTRA = GameRules.registerBoolean("disable_elytras", GameRuleCategory.PLAYER, false);
 
     public static final Identifier EAT_WARPED_CAKE_SLICE = makeCustomStat("eat_warped_cake_slice", StatFormatter.DEFAULT);
@@ -44,8 +41,8 @@ public class NetherAndEndFabric implements ModInitializer {
     public void onInitialize() {
         Constants.LOG.info("Initializing Nether & End");
 
-        NetherAndEndCommon.options = new NetherAndEndOptions(Minecraft.getInstance().gameDirectory);
-        NetherAndEndCommon.options.load();
+        options = new NetherAndEndOptions(Minecraft.getInstance().gameDirectory);
+        options.load();
 
         BlockEntityTypes.SHELF.addValidBlock(NetherAndEndBlocks.CHORUS_SHELF.block().get());
 

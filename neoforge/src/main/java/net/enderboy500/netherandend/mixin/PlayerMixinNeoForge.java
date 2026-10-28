@@ -1,7 +1,11 @@
 package net.enderboy500.netherandend.mixin;
 
+import net.enderboy500.netherandend.NetherAndEndCommon;
+import net.enderboy500.netherandend.config.NetherAndEndConfig;
 import net.enderboy500.netherandend.content.NeoForgeMobEffects;
+import net.enderboy500.netherandend.util.enums.IconDesigns;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.entity.Avatar;
@@ -11,12 +15,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.scores.PlayerTeam;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Player.class)
 public abstract class PlayerMixinNeoForge extends Avatar {
@@ -25,6 +31,14 @@ public abstract class PlayerMixinNeoForge extends Avatar {
 
     public PlayerMixinNeoForge(EntityType<? extends LivingEntity> type, Level level) {
         super(type, level);
+    }
+
+    @Inject(method = "getDisplayName", at = @At("HEAD"),cancellable = true)
+    public void name(CallbackInfoReturnable<Component> cir) {
+        if (NetherAndEndConfig.iconDesign.get() != IconDesigns.None) {
+            MutableComponent mutableText = PlayerTeam.formatNameForTeam(this.getTeam(), this.getName());
+            cir.setReturnValue(this.decorateDisplayNameComponent(mutableText).append(Component.literal(" " + NetherAndEndConfig.iconDesign.get().getCharacter())));
+        }
     }
 
     @Unique
