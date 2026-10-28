@@ -1,8 +1,7 @@
 package net.enderboy500.netherandend.options;
 
-import net.enderboy500.netherandend.NetherAndEndCommon;
+import net.enderboy500.netherandend.NetherAndEndFabric;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.Options;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.options.OptionsSubScreen;
 import net.minecraft.network.chat.Component;
@@ -15,11 +14,11 @@ public class NetherAndEndCustomizationScreen extends OptionsSubScreen {
     @Override
     public void onClose() {
         super.onClose();
-        NetherAndEndCommon.options.save();
+        NetherAndEndFabric.options.save();
     }
 
     @Override
     protected void addOptions() {
-        this.list.addSmall(NetherAndEndCommon.options.iconDesign);
+        this.list.addSmall(NetherAndEndFabric.options.iconDesign);
     }
 }
